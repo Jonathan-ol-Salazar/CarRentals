@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace CarRentalsManagement
+{
+    public class Vehicle
+    {
+
+        public enum VehicleClass
+        {
+            
+        }
+
+        public enum TransmissionType
+        {
+
+        }
+        public enum FuelType
+        {
+
+        }
+
+        public Vehicle( string vehicleRego, VehicleClass vehicleClass, string make, string model, int year)
+        {
+
+
+        }
+        public Vehicle(string vehicleRego, VehicleClass vehicleClass, string make,
+            string model, int year, int numSeats, TransmissionType transmissionType,
+            FuelType fuelType, bool GPS, bool sunRoof, double dailyRate, string colour)
+        {
+
+        }
+
+        public string ToCSVString()
+        {
+            return "";
+        }
+
+        public string ToString()
+        {
+            return "";
+        }
+
+        public List<string> GetAttributeList()
+        {
+            return new List<string>();
+        }
+
+    }
+}
