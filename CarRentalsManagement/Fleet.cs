@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CarRentalsManagement
 {
-    class Fleet
+    public class Fleet
     {  
         // Globals
         List<Vehicle> vehicles;

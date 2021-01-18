@@ -4,10 +4,15 @@ using System.Text;
 
 namespace CarRentalsManagement
 {
-    class Customer
+    public class Customer
     {
 
         public enum Gender
+        {
+
+        }
+        
+        public Customer()
         {
 
         }
