@@ -9,9 +9,9 @@ namespace CarRentalsManagement
         // Globals
         List<Vehicle> vehicles;
         Dictionary<string, int> rentals;
-        string fleetFile;
+        //string fleetFile;
         string rentalFile;
-
+        private string fleetFile = @"CarRentals\ProjectDocuments\fleet.csv";
 
 
         public Fleet()

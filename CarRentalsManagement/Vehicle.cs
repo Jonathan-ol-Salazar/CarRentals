@@ -6,20 +6,6 @@ namespace CarRentalsManagement
     public class Vehicle
     {
 
-        public enum VehicleClass
-        {
-            
-        }
-
-        public enum TransmissionType
-        {
-
-        }
-        public enum FuelType
-        {
-
-        }
-
         public Vehicle( string vehicleRego, VehicleClass vehicleClass, string make, string model, int year)
         {
 
@@ -46,6 +32,19 @@ namespace CarRentalsManagement
         {
             return new List<string>();
         }
+
+    }
+    public enum VehicleClass
+    {
+
+    }
+
+    public enum TransmissionType
+    {
+
+    }
+    public enum FuelType
+    {
 
     }
 }
