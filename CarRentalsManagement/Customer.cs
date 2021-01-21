@@ -7,7 +7,7 @@ namespace CarRentalsManagement
     public class Customer
     {
         // Globals
-        private string fleetFile = @"CarRentals\ProjectDocuments\customer.csv";
+        private string customerFile = @"CarRentals\ProjectDocuments\customer.csv";
 
         
         public Customer()
