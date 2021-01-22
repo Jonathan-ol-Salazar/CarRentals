@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CarRentalsManagement
 {
@@ -94,7 +95,7 @@ namespace CarRentalsManagement
         //        DailyRate
         //    };
         //}
-
+        [Key]
         public string VehicleRego { get; set;}
         public VehicleClass VehicleClass { get; set; }
         public string Make { get; set; }
