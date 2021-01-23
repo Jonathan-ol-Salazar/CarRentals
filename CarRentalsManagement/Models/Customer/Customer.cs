@@ -4,12 +4,12 @@ using System.Text;
 
 namespace CarRentalsManagement
 {
-    public class Customer
+    public class Customer : ICustomer
     {
         // Globals
         private string customerFile = @"CarRentals\ProjectDocuments\customer.csv";
 
-        
+
         public Customer()
         {
 

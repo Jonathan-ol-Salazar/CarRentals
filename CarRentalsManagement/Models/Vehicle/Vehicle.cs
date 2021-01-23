@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CarRentalsManagement
 {
-    public class Vehicle
+    public class Vehicle : IVehicle
     {
 
         public Vehicle(string vehicleRego, VehicleClass vehicleClass, string make, string model, int year)
@@ -96,7 +96,7 @@ namespace CarRentalsManagement
         //    };
         //}
         [Key]
-        public string VehicleRego { get; set;}
+        public string VehicleRego { get; set; }
         public VehicleClass VehicleClass { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }

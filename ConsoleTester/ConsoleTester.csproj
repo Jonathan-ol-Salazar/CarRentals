@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CarRentalsManagement\CarRentalsManagement.csproj" />
+    <ProjectReference Include="..\CarRentalsManagement\DomainLayer.csproj" />
     <ProjectReference Include="..\CarRentals\CarRentals.csproj" />
   </ItemGroup>
 
