@@ -14,7 +14,7 @@ namespace CarRentals
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-8EUPV7O\\SQLEXPRESS;Database=CarRentalsDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-8EUPV7O.\SQLEXPRESS;Database=CarRentalsDB;Trusted_Connection=True;");
         }
 
     }
