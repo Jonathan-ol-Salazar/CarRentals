@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ServiceLayer.Services.CustomerServices
 {
-    interface ICustomerRepository
+    public interface ICustomerRepository
     {
         void Add(ICustomer customer);
         void Update(ICustomer customer);

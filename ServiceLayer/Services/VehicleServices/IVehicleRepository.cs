@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ServiceLayer.Services.VehicleServices
 {
-    interface IVehicleRepository
+    public interface IVehicleRepository
     {
         void Add(IVehicle customer);
         void Update(IVehicle customer);

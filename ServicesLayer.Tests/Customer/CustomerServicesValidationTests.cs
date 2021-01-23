@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ServicesLayer.Tests
+namespace ServicesLayer.Tests.Customer
 {
-    class VehicleServicesFixture
+    class CustomerServicesValidationTests
     {
     }
 }
