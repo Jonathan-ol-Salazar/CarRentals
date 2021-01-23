@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTester", "ConsoleTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{F9E24F2E-8F74-41CC-B428-01B628DDD207}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesLayer.Tests", "ServicesLayer.Tests\ServicesLayer.Tests.csproj", "{58C08E13-B3F4-4D8E-8712-6DEEB89B313D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{F9E24F2E-8F74-41CC-B428-01B628DDD207}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9E24F2E-8F74-41CC-B428-01B628DDD207}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9E24F2E-8F74-41CC-B428-01B628DDD207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58C08E13-B3F4-4D8E-8712-6DEEB89B313D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58C08E13-B3F4-4D8E-8712-6DEEB89B313D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58C08E13-B3F4-4D8E-8712-6DEEB89B313D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58C08E13-B3F4-4D8E-8712-6DEEB89B313D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
