@@ -1,4 +1,4 @@
-﻿namespace CarRentalsManagement
+﻿namespace DomainLayer
 {
     public interface IVehicle
     {

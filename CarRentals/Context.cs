@@ -1,8 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using CarRentalsManagement;
+﻿using DomainLayer;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarRentals
 {

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using CarRentalsManagement;
+using DomainLayer;
 using ServiceLayer.Services.CustomerServices;
 
-namespace InfrastructureLayer.Repositories.Customer
+namespace InfrastructureLayer.Repositories
 {
     public class CustomerRepository : ICustomerRepository
     {
@@ -18,12 +17,12 @@ namespace InfrastructureLayer.Repositories.Customer
             throw new NotImplementedException();
         }
 
-        public IEnumerable<CarRentalsManagement.Customer> GetAll()
+        public IEnumerable<Customer> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public CarRentalsManagement.Customer GetById(int id)
+        public Customer GetById(int id)
         {
             throw new NotImplementedException();
         }
@@ -32,5 +31,7 @@ namespace InfrastructureLayer.Repositories.Customer
         {
             throw new NotImplementedException();
         }
+
+
     }
 }
