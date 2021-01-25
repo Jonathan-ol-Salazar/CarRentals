@@ -13,12 +13,12 @@ namespace ServiceLayer.Services.VehicleServices
             _vehicleRepository = vehicleRepository;
         }
 
-        public void Add(IVehicle customer)
+        public void Add(Vehicle customer)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(IVehicle customer)
+        public void Delete(Vehicle customer)
         {
             throw new NotImplementedException();
         }
@@ -33,7 +33,7 @@ namespace ServiceLayer.Services.VehicleServices
             throw new NotImplementedException();
         }
 
-        public void Update(IVehicle customer)
+        public void Update(Vehicle customer)
         {
             throw new NotImplementedException();
         }

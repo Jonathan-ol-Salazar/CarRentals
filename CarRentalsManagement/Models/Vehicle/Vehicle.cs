@@ -4,7 +4,10 @@ namespace DomainLayer
 {
     public class Vehicle : IVehicle
     {
+        public Vehicle()
+        {
 
+        }
         public Vehicle(string vehicleRego, VehicleClass vehicleClass, string make, string model, int year)
         {
             VehicleRego = vehicleRego;

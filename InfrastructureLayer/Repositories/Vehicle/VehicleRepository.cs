@@ -1,4 +1,5 @@
-﻿using DomainLayer;
+﻿using CarRentals;
+using DomainLayer;
 using ServiceLayer.Services.VehicleServices;
 using System;
 using System.Collections.Generic;
@@ -7,29 +8,49 @@ namespace InfrastructureLayer.Repositories
 {
     public class VehicleRepository : IVehicleRepository
     {
-        public void Add(IVehicle customer)
+        private Context _context;
+        public VehicleRepository(Context context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public void Delete(IVehicle customer)
+
+        public void Add(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            _context.Vehicles.Add(vehicle);
+            _context.SaveChanges();
         }
 
-        public IEnumerable<Vehicle> GetAll()
+        public void Delete(Vehicle vehicle)
         {
-            throw new NotImplementedException();
-        }
+            Vehicle vehicle2Delete = _context.Vehicles.Find(vehicle.VehicleRego);
+            _context.Vehicles.Remove(vehicle2Delete);
+            _context.SaveChanges();
 
+        }
+        public void Update(Vehicle vehicle)
+        {
+            Vehicle vehicle2Update = _context.Vehicles.Find(vehicle.VehicleRego);
+            vehicle2Update = vehicle;
+            _context.SaveChanges();
+        }
         public Vehicle GetById(int id)
         {
-            throw new NotImplementedException();
+            Vehicle vehicle = _context.Vehicles.Find(id);
+            return vehicle;
+
+        }
+        public IEnumerable<Vehicle> GetAll()
+        {
+            var vehicle = _context.Vehicles;
+            return vehicle;
+
         }
 
-        public void Update(IVehicle customer)
-        {
-            throw new NotImplementedException();
-        }
+
+
+
+
+
     }
 }

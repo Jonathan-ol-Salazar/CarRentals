@@ -21,6 +21,20 @@ namespace ConsoleTester
             };
 
             customerRepository.Add(customer);
+
+
+            Console.WriteLine("Hello World!");
+
+            VehicleRepository vehicleRepository = new VehicleRepository(context);
+
+            Vehicle vehicle = new Vehicle
+            {
+                VehicleRego = "Yeet",
+                Make = "Ferrari",
+                Model= "458 Pista"
+            };
+
+            vehicleRepository.Add(vehicle);
         }
     }
 }
