@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CarRentals;
 using DomainLayer;
 using ServiceLayer.Services.CustomerServices;
 
@@ -7,30 +8,48 @@ namespace InfrastructureLayer.Repositories
 {
     public class CustomerRepository : ICustomerRepository
     {
-        public void Add(ICustomer customer)
+        private Context _context;
+        public CustomerRepository(Context context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public void Delete(ICustomer customer)
+
+        public void Add(Customer customer)
         {
-            throw new NotImplementedException();
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
         }
 
-        public IEnumerable<Customer> GetAll()
+        public void Delete(Customer customer)
         {
-            throw new NotImplementedException();
-        }
+            Customer customer2Delete = _context.Customers.Find(customer.CustomerID);
+            _context.Customers.Remove(customer2Delete);
+            _context.SaveChanges();
 
+        }
+        public void Update(Customer customer)
+        {
+            Customer customer2Update = _context.Customers.Find(customer.CustomerID);
+            customer2Update = customer;
+            _context.SaveChanges();
+        }
         public Customer GetById(int id)
         {
-            throw new NotImplementedException();
+            Customer customer = _context.Customers.Find(id);
+            return customer;
+
+        }
+        public IEnumerable<Customer> GetAll()
+        {
+            var customer = _context.Customers;
+            return customer;
+
         }
 
-        public void Update(ICustomer customer)
-        {
-            throw new NotImplementedException();
-        }
+
+
+
 
 
     }

@@ -13,12 +13,12 @@ namespace ServiceLayer.Services.CustomerServices
             _customerRepository = customerRepository;
         }
 
-        public void Add(ICustomer customer)
+        public void Add(Customer customer)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(ICustomer customer)
+        public void Delete(Customer customer)
         {
             throw new NotImplementedException();
         }
@@ -33,7 +33,7 @@ namespace ServiceLayer.Services.CustomerServices
             throw new NotImplementedException();
         }
 
-        public void Update(ICustomer customer)
+        public void Update(Customer customer)
         {
             throw new NotImplementedException();
         }

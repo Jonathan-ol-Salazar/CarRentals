@@ -5,9 +5,9 @@ namespace ServiceLayer.Services.CustomerServices
 {
     public interface ICustomerRepository
     {
-        void Add(ICustomer customer);
-        void Update(ICustomer customer);
-        void Delete(ICustomer customer);
+        void Add(Customer customer);
+        void Update(Customer customer);
+        void Delete(Customer customer);
         IEnumerable<Customer> GetAll();
         Customer GetById(int id);
 

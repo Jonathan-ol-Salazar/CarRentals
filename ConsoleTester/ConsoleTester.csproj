@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CarRentalsManagement\DomainLayer.csproj" />
     <ProjectReference Include="..\CarRentals\CarRentals.csproj" />
+    <ProjectReference Include="..\InfrastructureLayer\InfrastructureLayer.csproj" />
   </ItemGroup>
 
 </Project>
