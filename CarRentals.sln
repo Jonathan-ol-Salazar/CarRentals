@@ -12,11 +12,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainLayer", "CarRentalsMa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTester", "ConsoleTester\ConsoleTester.csproj", "{DF0B88CB-F539-454B-8946-18055DDE732B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{F9E24F2E-8F74-41CC-B428-01B628DDD207}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{F9E24F2E-8F74-41CC-B428-01B628DDD207}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesLayer.Tests", "ServicesLayer.Tests\ServicesLayer.Tests.csproj", "{58C08E13-B3F4-4D8E-8712-6DEEB89B313D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServicesLayer.Tests", "ServicesLayer.Tests\ServicesLayer.Tests.csproj", "{58C08E13-B3F4-4D8E-8712-6DEEB89B313D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfrastructureLayer", "InfrastructureLayer\InfrastructureLayer.csproj", "{2B31A369-DF55-4222-B76E-FFB11A92B883}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfrastructureLayer", "InfrastructureLayer\InfrastructureLayer.csproj", "{2B31A369-DF55-4222-B76E-FFB11A92B883}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

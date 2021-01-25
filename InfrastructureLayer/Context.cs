@@ -1,7 +1,7 @@
 ﻿using DomainLayer;
 using Microsoft.EntityFrameworkCore;
 
-namespace InfrastructureLayer
+namespace CarRentals
 {
     public class Context : DbContext
     {

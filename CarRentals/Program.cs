@@ -1,3 +1,6 @@
+using CarRentals.Presenters;
+using DomainLayer;
+using InfrastructureLayer.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +20,28 @@ namespace CarRentals
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            //IMainPresenter mainPresenter = new IMainPresenter();
+
+            //IMainView mainView = MainPresenter.GetMainView();
+
+            Context context = new Context();
+
+
+            VehicleRepository vehicleRepository = new VehicleRepository(context);
+
+            Vehicle vehicle = new Vehicle
+            {
+                VehicleRego = "Yeet",
+                Make = "Ferrari",
+                Model = "458 Pista"
+            };
+
+            //vehicleRepository.Add(vehicle);
+
+
+
+            Application.Run(new MainView(vehicleRepository));
         }
     }
 }
