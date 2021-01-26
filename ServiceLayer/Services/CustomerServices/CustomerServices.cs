@@ -16,27 +16,27 @@ namespace ServiceLayer.Services.CustomerServices
 
         public void Add(Customer customer)
         {
-            throw new NotImplementedException();
+            _customerRepository.Add(customer);
         }
 
         public void Delete(Customer customer)
         {
-            throw new NotImplementedException();
+            _customerRepository.Delete(customer);
         }
 
         public IEnumerable<Customer> GetAll()
         {
-            throw new NotImplementedException();
+            return _customerRepository.GetAll();
         }
 
         public Customer GetById(int id)
         {
-            throw new NotImplementedException();
+            return _customerRepository.GetById(id);
         }
 
         public void Update(Customer customer)
         {
-            throw new NotImplementedException();
+            _customerRepository.Update(customer);
         }
     }
 }

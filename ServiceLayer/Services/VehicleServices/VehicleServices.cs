@@ -14,29 +14,29 @@ namespace ServiceLayer.Services.VehicleServices
             _vehicleRepository = vehicleRepository;
         }
 
-        public void Add(Vehicle customer)
+        public void Add(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            _vehicleRepository.Add(vehicle);
         }
 
-        public void Delete(Vehicle customer)
+        public void Delete(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            _vehicleRepository.Delete(vehicle);
         }
 
         public IEnumerable<Vehicle> GetAll()
         {
-            throw new NotImplementedException();
+            return _vehicleRepository.GetAll();
         }
 
         public Vehicle GetById(int id)
         {
-            throw new NotImplementedException();
+            return _vehicleRepository.GetById(id);
         }
 
-        public void Update(Vehicle customer)
+        public void Update(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            _vehicleRepository.Update(vehicle);
         }
     }
 }
