@@ -1,7 +1,7 @@
 ﻿using DomainLayer;
 using System.Collections.Generic;
 
-namespace ServiceLayer.Services.CustomerServices
+namespace InfrastructureLayer.Repositories
 {
     public interface ICustomerRepository
     {

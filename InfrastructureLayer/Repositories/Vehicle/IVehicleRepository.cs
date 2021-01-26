@@ -1,7 +1,7 @@
 ﻿using DomainLayer;
 using System.Collections.Generic;
 
-namespace ServiceLayer.Services.VehicleServices
+namespace InfrastructureLayer.Repositories
 {
     public interface IVehicleRepository
     {

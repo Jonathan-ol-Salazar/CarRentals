@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DomainLayer;
+using InfrastructureLayer.Repositories;
 
 namespace ServiceLayer.Services.CustomerServices
 {
