@@ -32,6 +32,7 @@ namespace CarRentals
             //DataGridView_Customer.DataSource = vehicleRepository.GetAll().ToList();
 
             DataGridView_Fleet.DataSource = _mainPresenter.GetAllVehicles().ToList();
+            DataGridView_Customers.DataSource = _mainPresenter.GetAllCustomers().ToList();
 
 
         }

@@ -28,7 +28,10 @@ namespace CarRentals.Presenters
         {            
             return _vehicleRepository.GetAll();
         }
-
+        public IEnumerable<Customer> GetAllCustomers()
+        {
+            return _customerRepository.GetAll();
+        }
 
         public IMainView GetMainView()
         {
