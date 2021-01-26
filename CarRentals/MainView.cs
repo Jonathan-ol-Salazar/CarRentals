@@ -1,4 +1,5 @@
-﻿using InfrastructureLayer.Repositories;
+﻿using CarRentals.Presenters;
+using InfrastructureLayer.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,24 +19,26 @@ namespace CarRentals
             this.Show();
         }
 
-        public MainView(VehicleRepository vehicleRepository)
+        public MainPresenter _mainPresenter; 
+
+        public MainView(MainPresenter mainPresenter )
         {
             InitializeComponent();
 
-            // Adding Datasource
-            DataGridView dataGridView = new DataGridView();
-            dataGridView.AutoGenerateColumns = true;
-            var data = dataGridView.DataSource = vehicleRepository.GetAll().ToList();
-            //this.Controls.Add(dataGridView);
-            dataGridView1.DataSource = vehicleRepository.GetAll().ToList();
+            _mainPresenter = mainPresenter;
+            _mainPresenter.AddView(this);
+            //// Populating DataGridView
+            //DataGridView_Fleet.DataSource = vehicleRepository.GetAll().ToList();
+            //DataGridView_Customer.DataSource = vehicleRepository.GetAll().ToList();
 
-           
+            DataGridView_Fleet.DataSource = _mainPresenter.GetAllVehicles().ToList();
+
 
         }
 
+
         private void MainView_Load(object sender, EventArgs e)
         {
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

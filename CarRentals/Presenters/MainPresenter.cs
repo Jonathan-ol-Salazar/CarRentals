@@ -1,18 +1,34 @@
-﻿using CarRentals;
-using System;
+﻿using DomainLayer;
+using InfrastructureLayer.Repositories;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CarRentals.Presenters
 {
     public class MainPresenter : IMainPresenter
     {
+        // View object
         IMainView _mainView;
+        IVehicleRepository _vehicleRepository;
+        ICustomerRepository _customerRepository;
 
-        public MainPresenter(IMainView mainView)
+        public MainPresenter(IVehicleRepository vehicleRepository, ICustomerRepository customerRepository)
+        {
+            //_mainView = mainView;
+            _vehicleRepository = vehicleRepository;
+            _customerRepository = customerRepository;   
+        }
+
+        public void AddView(IMainView mainView)
         {
             _mainView = mainView;
         }
+
+
+        public IEnumerable<Vehicle> GetAllVehicles()
+        {            
+            return _vehicleRepository.GetAll();
+        }
+
 
         public IMainView GetMainView()
         {

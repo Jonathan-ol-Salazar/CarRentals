@@ -21,27 +21,17 @@ namespace CarRentals
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //IMainPresenter mainPresenter = new IMainPresenter();
-
-            //IMainView mainView = MainPresenter.GetMainView();
 
             Context context = new Context();
-
-
             VehicleRepository vehicleRepository = new VehicleRepository(context);
-
-            Vehicle vehicle = new Vehicle
-            {
-                VehicleRego = "Yeet",
-                Make = "Ferrari",
-                Model = "458 Pista"
-            };
-
-            //vehicleRepository.Add(vehicle);
+            CustomerRepository customerRepository = new CustomerRepository(context);
 
 
+            MainPresenter mainPresenter = new MainPresenter(vehicleRepository, customerRepository);
 
-            Application.Run(new MainView(vehicleRepository));
+            //mainView.AddPresenter(mainPresenter);
+
+            Application.Run(new MainView(mainPresenter));
         }
     }
 }

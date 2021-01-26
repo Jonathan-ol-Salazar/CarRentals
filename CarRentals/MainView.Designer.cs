@@ -31,13 +31,22 @@ namespace CarRentals
         {
             this.TabControl_MainView = new System.Windows.Forms.TabControl();
             this.FleetTab = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DataGridView_Fleet = new System.Windows.Forms.DataGridView();
             this.CustomersTab = new System.Windows.Forms.TabPage();
             this.RentalReportTab = new System.Windows.Forms.TabPage();
             this.RentalSearchTab = new System.Windows.Forms.TabPage();
+            this.DataGridView_Customers = new System.Windows.Forms.DataGridView();
+            this.DataGridView_RentalReport = new System.Windows.Forms.DataGridView();
+            this.DataGridView_RentalSearch = new System.Windows.Forms.DataGridView();
             this.TabControl_MainView.SuspendLayout();
             this.FleetTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Fleet)).BeginInit();
+            this.CustomersTab.SuspendLayout();
+            this.RentalReportTab.SuspendLayout();
+            this.RentalSearchTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Customers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_MainView
@@ -55,7 +64,7 @@ namespace CarRentals
             // 
             // FleetTab
             // 
-            this.FleetTab.Controls.Add(this.dataGridView1);
+            this.FleetTab.Controls.Add(this.DataGridView_Fleet);
             this.FleetTab.Location = new System.Drawing.Point(4, 24);
             this.FleetTab.Name = "FleetTab";
             this.FleetTab.Padding = new System.Windows.Forms.Padding(3);
@@ -64,19 +73,20 @@ namespace CarRentals
             this.FleetTab.Text = "Fleet";
             this.FleetTab.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DataGridView_Fleet
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(786, 416);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.DataGridView_Fleet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_Fleet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridView_Fleet.Location = new System.Drawing.Point(3, 3);
+            this.DataGridView_Fleet.Name = "DataGridView_Fleet";
+            this.DataGridView_Fleet.RowTemplate.Height = 25;
+            this.DataGridView_Fleet.Size = new System.Drawing.Size(786, 416);
+            this.DataGridView_Fleet.TabIndex = 1;
+            this.DataGridView_Fleet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CustomersTab
             // 
+            this.CustomersTab.Controls.Add(this.DataGridView_Customers);
             this.CustomersTab.Location = new System.Drawing.Point(4, 24);
             this.CustomersTab.Name = "CustomersTab";
             this.CustomersTab.Padding = new System.Windows.Forms.Padding(3);
@@ -87,6 +97,7 @@ namespace CarRentals
             // 
             // RentalReportTab
             // 
+            this.RentalReportTab.Controls.Add(this.DataGridView_RentalReport);
             this.RentalReportTab.Location = new System.Drawing.Point(4, 24);
             this.RentalReportTab.Name = "RentalReportTab";
             this.RentalReportTab.Padding = new System.Windows.Forms.Padding(3);
@@ -97,6 +108,7 @@ namespace CarRentals
             // 
             // RentalSearchTab
             // 
+            this.RentalSearchTab.Controls.Add(this.DataGridView_RentalSearch);
             this.RentalSearchTab.Location = new System.Drawing.Point(4, 24);
             this.RentalSearchTab.Name = "RentalSearchTab";
             this.RentalSearchTab.Padding = new System.Windows.Forms.Padding(3);
@@ -104,6 +116,36 @@ namespace CarRentals
             this.RentalSearchTab.TabIndex = 3;
             this.RentalSearchTab.Text = "Rental Search";
             this.RentalSearchTab.UseVisualStyleBackColor = true;
+            // 
+            // DataGridView_Customers
+            // 
+            this.DataGridView_Customers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_Customers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridView_Customers.Location = new System.Drawing.Point(3, 3);
+            this.DataGridView_Customers.Name = "DataGridView_Customers";
+            this.DataGridView_Customers.RowTemplate.Height = 25;
+            this.DataGridView_Customers.Size = new System.Drawing.Size(786, 416);
+            this.DataGridView_Customers.TabIndex = 0;
+            // 
+            // DataGridView_RentalReport
+            // 
+            this.DataGridView_RentalReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_RentalReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridView_RentalReport.Location = new System.Drawing.Point(3, 3);
+            this.DataGridView_RentalReport.Name = "DataGridView_RentalReport";
+            this.DataGridView_RentalReport.RowTemplate.Height = 25;
+            this.DataGridView_RentalReport.Size = new System.Drawing.Size(786, 416);
+            this.DataGridView_RentalReport.TabIndex = 1;
+            // 
+            // DataGridView_RentalSearch
+            // 
+            this.DataGridView_RentalSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_RentalSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridView_RentalSearch.Location = new System.Drawing.Point(3, 3);
+            this.DataGridView_RentalSearch.Name = "DataGridView_RentalSearch";
+            this.DataGridView_RentalSearch.RowTemplate.Height = 25;
+            this.DataGridView_RentalSearch.Size = new System.Drawing.Size(786, 416);
+            this.DataGridView_RentalSearch.TabIndex = 1;
             // 
             // MainView
             // 
@@ -116,7 +158,13 @@ namespace CarRentals
             this.Load += new System.EventHandler(this.MainView_Load);
             this.TabControl_MainView.ResumeLayout(false);
             this.FleetTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Fleet)).EndInit();
+            this.CustomersTab.ResumeLayout(false);
+            this.RentalReportTab.ResumeLayout(false);
+            this.RentalSearchTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Customers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,7 +176,10 @@ namespace CarRentals
         private System.Windows.Forms.TabPage CustomersTab;
         private System.Windows.Forms.TabPage RentalReportTab;
         private System.Windows.Forms.TabPage RentalSearchTab;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DataGridView_Fleet;
+        private System.Windows.Forms.DataGridView DataGridView_Customers;
+        private System.Windows.Forms.DataGridView DataGridView_RentalReport;
+        private System.Windows.Forms.DataGridView DataGridView_RentalSearch;
     }
 }
 
