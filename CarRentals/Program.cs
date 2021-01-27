@@ -18,23 +18,20 @@ namespace CarRentals
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
+            // Setup Context -> Repository -> Service
             Context context = new Context();
             VehicleRepository vehicleRepository = new VehicleRepository(context);
             CustomerRepository customerRepository = new CustomerRepository(context);
             VehicleService vehicleService = new VehicleService(vehicleRepository);
             CustomerService customerService = new CustomerService(customerRepository);
 
-            // Make conext, repo, service
-            // Make view
-            // Make presenter with view and repo
+            // Initialize View
+            MainView mainView = new MainView();
 
+            // Initialize Presenter
+            MainPresenter mainPresenter = new MainPresenter(mainView, vehicleService, customerService);
 
-            MainPresenter mainPresenter = new MainPresenter(vehicleService, customerService);
-
-            //mainView.AddPresenter(mainPresenter);
-
-            Application.Run(new MainView(mainPresenter));
+            Application.Run(mainView);
         }
     }
 }

@@ -3,6 +3,8 @@ using DomainLayer.Customers;
 using DomainLayer.Vehicles;
 using InfrastructureLayer.Repositories;
 using System.Collections.Generic;
+using System.Windows.Forms;
+using System.Linq;
 
 namespace CarRentals.Presenters
 {
@@ -13,31 +15,40 @@ namespace CarRentals.Presenters
         IVehicleRepository _vehicleService;
         ICustomerRepository _customerService;
 
-        public MainPresenter(IVehicleRepository vehicleService, ICustomerRepository customerService)
+        public MainPresenter(IMainView mainView,IVehicleRepository vehicleService, ICustomerRepository customerService)
         {
-            //_mainView = mainView;
+            // Set View 
+
+            _mainView = mainView;
+            _mainView.SetPresenter(this);
+
             _vehicleService = vehicleService;
-            _customerService = customerService;   
+            _customerService = customerService;
+
+
+            StartUpView();
+           
         }
 
-        public void AddView(IMainView mainView)
+        private void StartUpView()
         {
-            _mainView = mainView;
+            _mainView.FleetList = GetAllVehicles();
+            _mainView.CustomerList = GetAllCustomers();
         }
 
 
         public IEnumerable<Vehicle> GetAllVehicles()
         {            
-            return _vehicleService.GetAll();
+            return _vehicleService.GetAll().ToList();
         }
         public IEnumerable<Customer> GetAllCustomers()
         {
-            return _customerService.GetAll();
+            return _customerService.GetAll().ToList();
         }
 
-        public IMainView GetMainView()
+        public MainView GetMainView()
         {
-            return _mainView;
+            return (MainView)_mainView;
         }
 
     }

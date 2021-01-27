@@ -1,5 +1,8 @@
 ﻿using CarRentals.Presenters;
+using DomainLayer.Customers;
+using DomainLayer.Vehicles;
 using InfrastructureLayer.Repositories;
+using ServiceLayer.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,27 +17,29 @@ namespace CarRentals
 {
     public partial class MainView : Form, IMainView
     {
-        public void ShowMainView()
-        {
-            this.Show();
-        }
 
-        public MainPresenter _mainPresenter; 
+        public IMainPresenter _mainPresenter;
 
-        public MainView(MainPresenter mainPresenter )
+        public MainView()
         {
             InitializeComponent();
 
+        }
+
+        public IEnumerable<Vehicle> FleetList
+        {
+            get { return (IEnumerable<Vehicle>)this.DataGridView_Fleet.DataSource; }
+            set { this.DataGridView_Fleet.DataSource = value; }
+        }
+        public IEnumerable<Customer> CustomerList
+        {
+            get { return (IEnumerable<Customer>)this.DataGridView_Customers.DataSource; }
+            set { this.DataGridView_Customers.DataSource = value; }
+        }
+
+        public void SetPresenter(IMainPresenter mainPresenter)
+        {
             _mainPresenter = mainPresenter;
-            _mainPresenter.AddView(this);
-            //// Populating DataGridView
-            //DataGridView_Fleet.DataSource = vehicleRepository.GetAll().ToList();
-            //DataGridView_Customer.DataSource = vehicleRepository.GetAll().ToList();
-
-            DataGridView_Fleet.DataSource = _mainPresenter.GetAllVehicles().ToList();
-            DataGridView_Customers.DataSource = _mainPresenter.GetAllCustomers().ToList();
-
-
         }
 
 
