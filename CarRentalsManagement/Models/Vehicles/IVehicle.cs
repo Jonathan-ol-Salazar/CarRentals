@@ -1,4 +1,4 @@
-﻿namespace DomainLayer
+﻿namespace DomainLayer.Vehicles
 {
     public interface IVehicle
     {

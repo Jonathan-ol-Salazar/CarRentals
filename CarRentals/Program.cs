@@ -1,10 +1,7 @@
 using CarRentals.Presenters;
-using DomainLayer;
 using InfrastructureLayer.Repositories;
+using ServiceLayer.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarRentals
@@ -25,6 +22,12 @@ namespace CarRentals
             Context context = new Context();
             VehicleRepository vehicleRepository = new VehicleRepository(context);
             CustomerRepository customerRepository = new CustomerRepository(context);
+            VehicleService vehicleService = new VehicleService(vehicleRepository);
+            CustomerService customerService = new CustomerService(customerRepository);
+
+            // Make conext, repo, service
+            // Make view
+            // Make presenter with view and repo
 
 
             MainPresenter mainPresenter = new MainPresenter(vehicleRepository, customerRepository);

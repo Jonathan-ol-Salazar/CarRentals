@@ -1,15 +1,16 @@
 ﻿using DomainLayer;
+using DomainLayer.Vehicles;
 using InfrastructureLayer.Repositories;
 using System;
 using System.Collections.Generic;
 
-namespace ServiceLayer.Services.VehicleServices
+namespace ServiceLayer.Services
 {
-    class VehicleServices : IVehicleRepository
+    public class VehicleService : IVehicleRepository
     {
         private IVehicleRepository _vehicleRepository;
 
-        public VehicleServices(IVehicleRepository vehicleRepository)
+        public VehicleService(IVehicleRepository vehicleRepository)
         {
             _vehicleRepository = vehicleRepository;
         }

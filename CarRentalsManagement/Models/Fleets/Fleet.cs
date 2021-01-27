@@ -1,8 +1,9 @@
-﻿using System;
+﻿using DomainLayer.Vehicles;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DomainLayer
+namespace DomainLayer.Fleets
 {
     public class Fleet
     {  

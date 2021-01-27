@@ -1,5 +1,7 @@
 ﻿using CarRentals;
 using DomainLayer;
+using DomainLayer.Customers;
+using DomainLayer.Vehicles;
 using InfrastructureLayer.Repositories;
 using System;
 

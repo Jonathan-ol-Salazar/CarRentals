@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DomainLayer
+namespace DomainLayer.Vehicles
 {
     public class Vehicle : IVehicle
     {

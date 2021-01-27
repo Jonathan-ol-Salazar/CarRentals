@@ -1,4 +1,5 @@
 ﻿using DomainLayer;
+using DomainLayer.Customers;
 using System.Collections.Generic;
 
 namespace InfrastructureLayer.Repositories

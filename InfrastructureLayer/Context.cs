@@ -1,4 +1,5 @@
-﻿using DomainLayer;
+﻿using DomainLayer.Customers;
+using DomainLayer.Vehicles;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarRentals

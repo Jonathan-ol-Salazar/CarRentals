@@ -1,4 +1,4 @@
-﻿namespace DomainLayer
+﻿namespace DomainLayer.Customers
 {
     public interface ICustomer
     {

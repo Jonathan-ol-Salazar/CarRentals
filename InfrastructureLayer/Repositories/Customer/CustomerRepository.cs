@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using CarRentals;
 using DomainLayer;
+using DomainLayer.Customers;
 
 namespace InfrastructureLayer.Repositories
 {

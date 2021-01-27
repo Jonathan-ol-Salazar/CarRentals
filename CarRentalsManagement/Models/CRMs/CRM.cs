@@ -1,8 +1,10 @@
-﻿using System;
+﻿using DomainLayer.Customers;
+using DomainLayer.Fleets;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DomainLayer
+namespace DomainLayer.CRMs
 {
     public class CRM : Customer
     {

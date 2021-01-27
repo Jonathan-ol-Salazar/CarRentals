@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using DomainLayer;
+using DomainLayer.Customers;
 using InfrastructureLayer.Repositories;
 
-namespace ServiceLayer.Services.CustomerServices
+namespace ServiceLayer.Services
 {
-    class CustomerServices : ICustomerRepository
+    public class CustomerService : ICustomerRepository
     {
         private ICustomerRepository _customerRepository;
 
-        public CustomerServices(ICustomerRepository customerRepository)
+        public CustomerService(ICustomerRepository customerRepository)
         {
             _customerRepository = customerRepository;
         }
