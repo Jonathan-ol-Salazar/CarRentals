@@ -30,7 +30,7 @@ namespace CarRentals
             // Make presenter with view and repo
 
 
-            MainPresenter mainPresenter = new MainPresenter(vehicleRepository, customerRepository);
+            MainPresenter mainPresenter = new MainPresenter(vehicleService, customerService);
 
             //mainView.AddPresenter(mainPresenter);
 

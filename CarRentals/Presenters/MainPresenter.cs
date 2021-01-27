@@ -10,14 +10,14 @@ namespace CarRentals.Presenters
     {
         // View object
         IMainView _mainView;
-        IVehicleRepository _vehicleRepository;
-        ICustomerRepository _customerRepository;
+        IVehicleRepository _vehicleService;
+        ICustomerRepository _customerService;
 
-        public MainPresenter(IVehicleRepository vehicleRepository, ICustomerRepository customerRepository)
+        public MainPresenter(IVehicleRepository vehicleService, ICustomerRepository customerService)
         {
             //_mainView = mainView;
-            _vehicleRepository = vehicleRepository;
-            _customerRepository = customerRepository;   
+            _vehicleService = vehicleService;
+            _customerService = customerService;   
         }
 
         public void AddView(IMainView mainView)
@@ -28,11 +28,11 @@ namespace CarRentals.Presenters
 
         public IEnumerable<Vehicle> GetAllVehicles()
         {            
-            return _vehicleRepository.GetAll();
+            return _vehicleService.GetAll();
         }
         public IEnumerable<Customer> GetAllCustomers()
         {
-            return _customerRepository.GetAll();
+            return _customerService.GetAll();
         }
 
         public IMainView GetMainView()
