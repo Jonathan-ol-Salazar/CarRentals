@@ -17,11 +17,11 @@ namespace DomainLayer.Vehicles
             Year = year;
 
             // Default
-            NumSeats = 4;
+            Seats = 4;
             TransmissionType = TransmissionType.Automatic;
             FuelType = FuelType.Petrol;
             GPS = false;
-            SunRoof = false;
+            Sunroof = false;
             Colour = "Black";
 
 
@@ -37,7 +37,7 @@ namespace DomainLayer.Vehicles
                     break;
                 case ClassType.Luxury:
                     GPS = true;
-                    SunRoof = true;
+                    Sunroof = true;
                     DailyRate = 120.00;
                     break;
                 case ClassType.Commercial:
@@ -51,31 +51,31 @@ namespace DomainLayer.Vehicles
         }
 
         public Vehicle(string rego, ClassType classType, string make,
-            string model, int year, int numSeats, TransmissionType transmissionType,
-            FuelType fuelType, bool gps, bool sunRoof, double dailyRate, string colour)
+            string model, int year, int seats, TransmissionType transmissionType,
+            FuelType fuelType, bool gps, bool sunroof, double dailyRate, string colour)
         {
             Rego = rego;
             ClassType = classType;
             Make = make;
             Model = model;
             Year = year;
-            NumSeats = numSeats;
+            Seats = seats;
             TransmissionType = transmissionType;
             FuelType = fuelType;
             GPS = gps;
-            SunRoof = sunRoof;
+            Sunroof = sunroof;
             DailyRate = dailyRate;
             Colour = colour;
         }
 
         public string ToCSVString()
         {
-            return Rego + "," + ClassType.ToString() + "," + Make + "," + Model + "," + Year.ToString() + "," + NumSeats.ToString() + "," + TransmissionType.ToString() + "," + FuelType.ToString() + "," + GPS.ToString() + "," + SunRoof.ToString() + "," + DailyRate.ToString() + "," + Colour;
+            return Rego + "," + ClassType.ToString() + "," + Make + "," + Model + "," + Year.ToString() + "," + Seats.ToString() + "," + TransmissionType.ToString() + "," + FuelType.ToString() + "," + GPS.ToString() + "," + Sunroof.ToString() + "," + DailyRate.ToString() + "," + Colour;
         }
 
         public override string ToString()
         {
-            return Rego + Make + Model + Year + ClassType + NumSeats + TransmissionType + FuelType + GPS + SunRoof + Colour + DailyRate;
+            return Rego + Make + Model + Year + ClassType + Seats + TransmissionType + FuelType + GPS + Sunroof + Colour + DailyRate;
         }
 
 
@@ -85,11 +85,11 @@ namespace DomainLayer.Vehicles
         public string Make { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
-        public int NumSeats { get; set; }
+        public int Seats { get; set; }
         public TransmissionType TransmissionType { get; set; }
         public FuelType FuelType { get; set; }
         public bool GPS { get; set; }
-        public bool SunRoof { get; set; }
+        public bool Sunroof { get; set; }
         public double DailyRate { get; set; }
         public string Colour { get; set; }
 

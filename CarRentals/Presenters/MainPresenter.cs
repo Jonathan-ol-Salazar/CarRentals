@@ -55,8 +55,16 @@ namespace CarRentals.Presenters
         {
             Vehicle vehicle = new Vehicle
             {
-                //VehicleRego = 
+                //Rego = _mainView.Rego,
+                //Make
+                //Model =
+                //ClassType = 
+                //Year = 
+                //TransmissionType = 
+                //FuelType = 
                 
+
+
 
 
 
