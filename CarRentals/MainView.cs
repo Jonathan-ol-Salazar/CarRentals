@@ -50,6 +50,8 @@ namespace CarRentals
         public string Colour { get { return this.GroupBox_Modify_Add_TextBox_Colour.Text; } set { this.GroupBox_Modify_Add_TextBox_Colour.Text = value; } }
         public int DailyRate { get { return (int)this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value; } set { this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value = value; } }
 
+        public Vehicle SelectedVehicle { get { return (Vehicle)this.DataGridView_Fleet.CurrentRow.DataBoundItem; } }
+
         public void SetPresenter(IMainPresenter mainPresenter)
         {
             _mainPresenter = mainPresenter;
@@ -93,8 +95,9 @@ namespace CarRentals
             _mainPresenter.SaveNewVehicle();
         }
 
-
-
-
+        private void GroupBox_Fleet_Button_Remove_Click(object sender, EventArgs e)
+        {
+            _mainPresenter.DeleteVehicle();
+        }
     }
 }

@@ -85,5 +85,14 @@ namespace CarRentals.Presenters
         }
 
 
+        public void DeleteVehicle()
+        {
+            _vehicleService.Delete(_mainView.SelectedVehicle);
+            UpdateFleetListView();
+        }
+
+
+
+
     }
 }

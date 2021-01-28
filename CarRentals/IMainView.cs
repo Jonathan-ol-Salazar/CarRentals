@@ -25,7 +25,7 @@ namespace CarRentals
         bool GPS { get; set; }
         string Colour { get; set; }
         int DailyRate { get; set; }
-
+        Vehicle SelectedVehicle { get; }
 
 
     }

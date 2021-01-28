@@ -13,5 +13,6 @@ namespace CarRentals.Presenters
         IEnumerable<Vehicle> GetAllVehicles();
         IEnumerable<Customer> GetAllCustomers();
         void SaveNewVehicle();
+        void DeleteVehicle();
     }
 }

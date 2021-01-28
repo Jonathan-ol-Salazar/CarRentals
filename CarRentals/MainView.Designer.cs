@@ -408,6 +408,7 @@ namespace CarRentals
             this.GroupBox_Fleet_Button_Remove.TabIndex = 1;
             this.GroupBox_Fleet_Button_Remove.Text = "Remove";
             this.GroupBox_Fleet_Button_Remove.UseVisualStyleBackColor = true;
+            this.GroupBox_Fleet_Button_Remove.Click += new System.EventHandler(this.GroupBox_Fleet_Button_Remove_Click);
             // 
             // GroupBox_Fleet_Button_Modify
             // 
