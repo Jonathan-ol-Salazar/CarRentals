@@ -77,7 +77,6 @@ namespace CarRentals.Presenters
                 GPS = _mainView.GPS,
                 Colour = _mainView.Colour,
                 DailyRate = _mainView.DailyRate
-
             };
 
             _vehicleService.Add(vehicle);
@@ -91,8 +90,42 @@ namespace CarRentals.Presenters
             UpdateFleetListView();
         }
 
+        public void UpdateVehicle()
+        {
+            Vehicle vehicle = _vehicleService.GetByRego(_mainView.Rego);
+            vehicle.Make = _mainView.Make;
+            vehicle.Model = _mainView.Model;
+            vehicle.ClassType = (ClassType)Enum.Parse(typeof(ClassType), _mainView.Class, true);
+            vehicle.Year = _mainView.Year;
+            vehicle.TransmissionType = (TransmissionType)Enum.Parse(typeof(TransmissionType), _mainView.Transmission, true);
+            vehicle.FuelType = (FuelType)Enum.Parse(typeof(FuelType), _mainView.Fuel, true);
+            vehicle.Seats = _mainView.Seats;
+            vehicle.Sunroof = _mainView.Sunroof;
+            vehicle.GPS = _mainView.GPS;
+            vehicle.Colour = _mainView.Colour;
+            vehicle.DailyRate = _mainView.DailyRate;
 
+            _vehicleService.Update(vehicle);
 
+            UpdateFleetListView();
+        }
 
+        public void RefreshVehicleForm()
+        {
+            Vehicle vehicle = _mainView.SelectedVehicle;
+            _mainView.Rego = vehicle.Rego;
+            _mainView.Make = vehicle.Make;
+            _mainView.Model = vehicle.Model;
+            _mainView.Class = vehicle.ClassType.ToString();
+            _mainView.Year = vehicle.Year;
+            _mainView.Transmission = vehicle.TransmissionType.ToString();
+            _mainView.Fuel = vehicle.FuelType.ToString();
+            _mainView.Seats = vehicle.Seats;
+            _mainView.Sunroof = vehicle.Sunroof;
+            _mainView.GPS = vehicle.GPS;
+            _mainView.Colour = vehicle.Colour;
+            _mainView.DailyRate = vehicle.DailyRate;
+
+        }
     }
 }

@@ -14,5 +14,7 @@ namespace CarRentals.Presenters
         IEnumerable<Customer> GetAllCustomers();
         void SaveNewVehicle();
         void DeleteVehicle();
+        void UpdateVehicle();
+        void RefreshVehicleForm();
     }
 }

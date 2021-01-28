@@ -10,6 +10,6 @@ namespace InfrastructureLayer.Repositories
         void Update(Vehicle vehicle);
         void Delete(Vehicle vehicle);
         IEnumerable<Vehicle> GetAll();
-        Vehicle GetById(int id);
+        Vehicle GetByRego(string rego);
     }
 }

@@ -30,9 +30,9 @@ namespace ServiceLayer.Services
             return _vehicleRepository.GetAll();
         }
 
-        public Vehicle GetById(int id)
+        public Vehicle GetByRego(string rego)
         {
-            return _vehicleRepository.GetById(id);
+            return _vehicleRepository.GetByRego(rego);
         }
 
         public void Update(Vehicle vehicle)

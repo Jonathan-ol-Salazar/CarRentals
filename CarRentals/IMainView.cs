@@ -17,14 +17,14 @@ namespace CarRentals
         string Make { get; set; }
         string Model { get; set; }
         string Class{ get; set; }
-        int Year { get; set; }
+        string Year { get; set; }
         string Transmission { get; set; }
         string Fuel{ get; set; }
         int Seats { get; set; }
         bool Sunroof { get; set; }
         bool GPS { get; set; }
         string Colour { get; set; }
-        int DailyRate { get; set; }
+        double DailyRate { get; set; }
         Vehicle SelectedVehicle { get; }
 
 

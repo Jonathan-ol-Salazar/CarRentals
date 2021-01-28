@@ -8,7 +8,7 @@ namespace DomainLayer.Vehicles
         {
 
         }
-        public Vehicle(string rego, ClassType classType, string make, string model, int year)
+        public Vehicle(string rego, ClassType classType, string make, string model, string year)
         {
             Rego = rego;
             ClassType = classType;
@@ -51,7 +51,7 @@ namespace DomainLayer.Vehicles
         }
 
         public Vehicle(string rego, ClassType classType, string make,
-            string model, int year, int seats, TransmissionType transmissionType,
+            string model, string year, int seats, TransmissionType transmissionType,
             FuelType fuelType, bool gps, bool sunroof, double dailyRate, string colour)
         {
             Rego = rego;
@@ -84,7 +84,7 @@ namespace DomainLayer.Vehicles
         public ClassType ClassType { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
-        public int Year { get; set; }
+        public string Year { get; set; }
         public int Seats { get; set; }
         public TransmissionType TransmissionType { get; set; }
         public FuelType FuelType { get; set; }

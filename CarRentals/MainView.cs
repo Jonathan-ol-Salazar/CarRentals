@@ -17,7 +17,7 @@ namespace CarRentals
 {
     public partial class MainView : Form, IMainView
     {
-
+        private bool Add = false;
         public IMainPresenter _mainPresenter;
 
         public MainView()
@@ -41,14 +41,14 @@ namespace CarRentals
         public string Make { get { return this.GroupBox_Modify_Add_TextBox_Make.Text; } set { this.GroupBox_Modify_Add_TextBox_Make.Text = value; } }
         public string Model { get { return this.GroupBox_Modify_Add_TextBox_Model.Text; } set { this.GroupBox_Modify_Add_TextBox_Model.Text = value; } }
         public string Class { get { return this.GroupBox_Modify_Add_ComboBox_Class.Text; } set { this.GroupBox_Modify_Add_ComboBox_Class.Text = value; } }
-        public int Year { get { return Int32.Parse(this.GroupBox_Modify_Add_TextBox_Year.Text); } set { this.Year = value; } }
+        public string Year { get { return this.GroupBox_Modify_Add_TextBox_Year.Text; } set { GroupBox_Modify_Add_TextBox_Year.Text = value; } }
         public string Transmission { get { return this.GroupBox_Modify_Add_ComboBox_Transmission.Text; } set { this.GroupBox_Modify_Add_ComboBox_Transmission.Text = value; } }
         public string Fuel { get { return this.GroupBox_Modify_Add_ComboBox_Fuel.Text; } set { this.GroupBox_Modify_Add_ComboBox_Fuel.Text = value; } }
         public int Seats { get { return (int)this.GroupBox_Modify_Add_NumericUpDown_Seats.Value; } set { this.GroupBox_Modify_Add_NumericUpDown_Seats.Value = value; } }
         public bool Sunroof { get { return this.GroupBox_Modify_Add_CheckBox_Sunroof.Checked; } set { this.GroupBox_Modify_Add_CheckBox_Sunroof.Checked = value; } }
         public bool GPS { get { return this.GroupBox_Modify_Add_CheckBox_GPS.Checked; } set { this.GroupBox_Modify_Add_CheckBox_GPS.Checked = value; } }
         public string Colour { get { return this.GroupBox_Modify_Add_TextBox_Colour.Text; } set { this.GroupBox_Modify_Add_TextBox_Colour.Text = value; } }
-        public int DailyRate { get { return (int)this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value; } set { this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value = value; } }
+        public double DailyRate { get { return (double)this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value; } set { this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value = (decimal)value; } }
 
         public Vehicle SelectedVehicle { get { return (Vehicle)this.DataGridView_Fleet.CurrentRow.DataBoundItem; } }
 
@@ -69,30 +69,41 @@ namespace CarRentals
 
         private void GroupBox_Fleet_Button_Add_Click(object sender, EventArgs e)
         {
-            this.GroupBox_Modify_Add.Visible = true;
-            this.GroupBox_Modify_Add.Text = "Add Vehicle";
+            GroupBox_Modify_Add.Visible = true;
+            GroupBox_Modify_Add.Text = "Add Vehicle";
+            Add = true;
 
-
+        }
+        private void GroupBox_Fleet_Button_Modify_Click(object sender, EventArgs e)
+        {
+            GroupBox_Modify_Add.Visible = true;
+            GroupBox_Modify_Add.Text = "Modify Vehicle";
+            Add = false;
+            _mainPresenter.RefreshVehicleForm();
         }
 
         private void GroupBox_Modify_Add_Button_Cancel_Click(object sender, EventArgs e)
         {
             // Fix: not functional
-            this.GroupBox_Modify_Add.Visible = false;
-            this.GroupBox_Modify_Add.Enabled = false;
+            GroupBox_Modify_Add.Visible = false;
+            GroupBox_Modify_Add.Enabled = false;
 
 
         }
 
-        private void GroupBox_Fleet_Button_Modify_Click(object sender, EventArgs e)
-        {
-            this.GroupBox_Modify_Add.Visible = true;
-            this.GroupBox_Modify_Add.Text = "Modify Vehicle";
-        }
+
 
         private void GroupBox_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
         {
-            _mainPresenter.SaveNewVehicle();
+            if(Add == true)
+            {
+                _mainPresenter.SaveNewVehicle();
+
+            }
+            else
+            {
+                _mainPresenter.UpdateVehicle();
+            }
         }
 
         private void GroupBox_Fleet_Button_Remove_Click(object sender, EventArgs e)

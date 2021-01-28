@@ -13,7 +13,7 @@
         TransmissionType TransmissionType { get; set; }
         ClassType ClassType { get; set; }
         string Rego { get; set; }
-        int Year { get; set; }
+        string Year { get; set; }
 
         string ToCSVString();
         string ToString();

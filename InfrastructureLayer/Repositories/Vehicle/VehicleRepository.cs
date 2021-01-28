@@ -33,9 +33,9 @@ namespace InfrastructureLayer.Repositories
             vehicle2Update = vehicle;
             _context.SaveChanges();
         }
-        public Vehicle GetById(int id)
+        public Vehicle GetByRego(string rego)
         {
-            Vehicle vehicle = _context.Vehicles.Find(id);
+            Vehicle vehicle = _context.Vehicles.Find(rego);
             return vehicle;
 
         }
