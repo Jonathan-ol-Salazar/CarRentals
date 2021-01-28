@@ -6,9 +6,9 @@ namespace InfrastructureLayer.Repositories
 {
     public interface IVehicleRepository
     {
-        void Add(Vehicle customer);
-        void Update(Vehicle customer);
-        void Delete(Vehicle customer);
+        void Add(Vehicle vehicle);
+        void Update(Vehicle vehicle);
+        void Delete(Vehicle vehicle);
         IEnumerable<Vehicle> GetAll();
         Vehicle GetById(int id);
     }

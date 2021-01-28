@@ -41,14 +41,14 @@ namespace CarRentals
         public string Make { get { return this.GroupBox_Modify_Add_TextBox_Make.Text; } set { this.GroupBox_Modify_Add_TextBox_Make.Text = value; } }
         public string Model { get { return this.GroupBox_Modify_Add_TextBox_Model.Text; } set { this.GroupBox_Modify_Add_TextBox_Model.Text = value; } }
         public string Class { get { return this.GroupBox_Modify_Add_ComboBox_Class.Text; } set { this.GroupBox_Modify_Add_ComboBox_Class.Text = value; } }
-        public string Year { get { return this.GroupBox_Modify_Add_TextBox_Year.Text; } set { this.GroupBox_Modify_Add_TextBox_Year.Text = value; } }
+        public int Year { get { return Int32.Parse(this.GroupBox_Modify_Add_TextBox_Year.Text); } set { this.Year = value; } }
         public string Transmission { get { return this.GroupBox_Modify_Add_ComboBox_Transmission.Text; } set { this.GroupBox_Modify_Add_ComboBox_Transmission.Text = value; } }
         public string Fuel { get { return this.GroupBox_Modify_Add_ComboBox_Fuel.Text; } set { this.GroupBox_Modify_Add_ComboBox_Fuel.Text = value; } }
-        public decimal Seats { get { return this.GroupBox_Modify_Add_NumericUpDown_Seats.Value; } set { this.GroupBox_Modify_Add_NumericUpDown_Seats.Value = value; } }
+        public int Seats { get { return (int)this.GroupBox_Modify_Add_NumericUpDown_Seats.Value; } set { this.GroupBox_Modify_Add_NumericUpDown_Seats.Value = value; } }
         public bool Sunroof { get { return this.GroupBox_Modify_Add_CheckBox_Sunroof.Checked; } set { this.GroupBox_Modify_Add_CheckBox_Sunroof.Checked = value; } }
         public bool GPS { get { return this.GroupBox_Modify_Add_CheckBox_GPS.Checked; } set { this.GroupBox_Modify_Add_CheckBox_GPS.Checked = value; } }
         public string Colour { get { return this.GroupBox_Modify_Add_TextBox_Colour.Text; } set { this.GroupBox_Modify_Add_TextBox_Colour.Text = value; } }
-        public decimal DailyRate { get { return this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value; } set { this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value = value; } }
+        public int DailyRate { get { return (int)this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value; } set { this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value = value; } }
 
         public void SetPresenter(IMainPresenter mainPresenter)
         {

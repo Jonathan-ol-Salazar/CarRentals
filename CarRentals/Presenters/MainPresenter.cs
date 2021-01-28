@@ -32,10 +32,19 @@ namespace CarRentals.Presenters
 
         private void StartUpView()
         {
-            _mainView.FleetList = GetAllVehicles();
-            _mainView.CustomerList = GetAllCustomers();
+            UpdateFleetListView();
+            UpdateCustomerListView();
         }
 
+        private void UpdateFleetListView()
+        {
+            _mainView.FleetList = GetAllVehicles();
+        }
+
+        private void UpdateCustomerListView()
+        {
+            _mainView.CustomerList = GetAllCustomers();            
+        }
 
         public IEnumerable<Vehicle> GetAllVehicles()
         {            
@@ -55,20 +64,23 @@ namespace CarRentals.Presenters
         {
             Vehicle vehicle = new Vehicle
             {
-                //Rego = _mainView.Rego,
-                //Make
-                //Model =
-                //ClassType = 
-                //Year = 
+                Rego = _mainView.Rego,
+                Make = _mainView.Make,
+                Model = _mainView.Model,
+                //ClassType = _mainView.Class,
+                Year = _mainView.Year,
                 //TransmissionType = 
-                //FuelType = 
-                
-
-
-
-
+                //FuelType =
+                Seats = _mainView.Seats,
+                Sunroof = _mainView.Sunroof,
+                GPS = _mainView.GPS,
+                Colour = _mainView.Colour,
+                DailyRate = _mainView.DailyRate
 
             };
+
+            _vehicleService.Add(vehicle);
+            UpdateFleetListView();
         }
 
 
