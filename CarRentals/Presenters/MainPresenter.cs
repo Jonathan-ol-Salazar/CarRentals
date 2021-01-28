@@ -51,5 +51,18 @@ namespace CarRentals.Presenters
             return (MainView)_mainView;
         }
 
+        public void SaveNewVehicle()
+        {
+            Vehicle vehicle = new Vehicle
+            {
+                //VehicleRego = 
+                
+
+
+
+            };
+        }
+
+
     }
 }

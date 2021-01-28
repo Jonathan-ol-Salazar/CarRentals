@@ -12,5 +12,6 @@ namespace CarRentals.Presenters
         MainView GetMainView();
         IEnumerable<Vehicle> GetAllVehicles();
         IEnumerable<Customer> GetAllCustomers();
+        void SaveNewVehicle();
     }
 }

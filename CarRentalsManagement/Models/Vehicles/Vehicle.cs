@@ -8,10 +8,10 @@ namespace DomainLayer.Vehicles
         {
 
         }
-        public Vehicle(string vehicleRego, VehicleClass vehicleClass, string make, string model, int year)
+        public Vehicle(string rego, ClassType classType, string make, string model, int year)
         {
-            VehicleRego = vehicleRego;
-            VehicleClass = vehicleClass;
+            Rego = rego;
+            ClassType = classType;
             Make = make;
             Model = model;
             Year = year;
@@ -25,22 +25,22 @@ namespace DomainLayer.Vehicles
             Colour = "Black";
 
 
-            switch (VehicleClass)
+            switch (ClassType)
             {
-                case VehicleClass.Ecomony:
+                case ClassType.Ecomony:
                     TransmissionType = TransmissionType.Automatic;
                     DailyRate = 50.00;
                     break;
-                case VehicleClass.Family:
+                case ClassType.Family:
                     TransmissionType = TransmissionType.Automatic;
                     DailyRate = 80.00;
                     break;
-                case VehicleClass.Luxury:
+                case ClassType.Luxury:
                     GPS = true;
                     SunRoof = true;
                     DailyRate = 120.00;
                     break;
-                case VehicleClass.Commercial:
+                case ClassType.Commercial:
                     FuelType = FuelType.Diesel;
                     DailyRate = 130.00;
                     break;
@@ -50,12 +50,12 @@ namespace DomainLayer.Vehicles
             }
         }
 
-        public Vehicle(string vehicleRego, VehicleClass vehicleClass, string make,
+        public Vehicle(string rego, ClassType classType, string make,
             string model, int year, int numSeats, TransmissionType transmissionType,
             FuelType fuelType, bool gps, bool sunRoof, double dailyRate, string colour)
         {
-            VehicleRego = vehicleRego;
-            VehicleClass = vehicleClass;
+            Rego = rego;
+            ClassType = classType;
             Make = make;
             Model = model;
             Year = year;
@@ -70,35 +70,18 @@ namespace DomainLayer.Vehicles
 
         public string ToCSVString()
         {
-            return VehicleRego + "," + VehicleClass.ToString() + "," + Make + "," + Model + "," + Year.ToString() + "," + NumSeats.ToString() + "," + TransmissionType.ToString() + "," + FuelType.ToString() + "," + GPS.ToString() + "," + SunRoof.ToString() + "," + DailyRate.ToString() + "," + Colour;
+            return Rego + "," + ClassType.ToString() + "," + Make + "," + Model + "," + Year.ToString() + "," + NumSeats.ToString() + "," + TransmissionType.ToString() + "," + FuelType.ToString() + "," + GPS.ToString() + "," + SunRoof.ToString() + "," + DailyRate.ToString() + "," + Colour;
         }
 
         public override string ToString()
         {
-            return VehicleRego + Make + Model + Year + VehicleClass + NumSeats + TransmissionType + FuelType + GPS + SunRoof + Colour + DailyRate;
+            return Rego + Make + Model + Year + ClassType + NumSeats + TransmissionType + FuelType + GPS + SunRoof + Colour + DailyRate;
         }
 
-        //public List<string> GetAttributeList()
-        //{
-        //    return new List<string>()
-        //    {
-        //        VehicleRego,
-        //        Make,
-        //        Model,
-        //        Year.ToString(),
-        //        VehicleClass,                
-        //        NumSeats,
-        //        TransmissionType,
-        //        FuelType,
-        //        GPS,
-        //        SunRoof,
-        //        Colour,
-        //        DailyRate
-        //    };
-        //}
+
         [Key]
-        public string VehicleRego { get; set; }
-        public VehicleClass VehicleClass { get; set; }
+        public string Rego { get; set; }
+        public ClassType ClassType { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
@@ -111,7 +94,7 @@ namespace DomainLayer.Vehicles
         public string Colour { get; set; }
 
     }
-    public enum VehicleClass
+    public enum ClassType
     {
         Ecomony,
         Family,

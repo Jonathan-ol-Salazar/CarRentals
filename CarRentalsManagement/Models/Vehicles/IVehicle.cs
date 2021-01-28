@@ -11,8 +11,8 @@
         int NumSeats { get; set; }
         bool SunRoof { get; set; }
         TransmissionType TransmissionType { get; set; }
-        VehicleClass VehicleClass { get; set; }
-        string VehicleRego { get; set; }
+        ClassType ClassType { get; set; }
+        string Rego { get; set; }
         int Year { get; set; }
 
         string ToCSVString();

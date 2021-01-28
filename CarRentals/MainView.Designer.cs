@@ -32,12 +32,37 @@ namespace CarRentals
             this.TabControl_MainView = new System.Windows.Forms.TabControl();
             this.FleetTab = new System.Windows.Forms.TabPage();
             this.GroupBox_Modify_Add = new System.Windows.Forms.GroupBox();
+            this.GroupBox_Modify_Add_NumericUpDown_DailyRate = new System.Windows.Forms.NumericUpDown();
+            this.GroupBox_Modify_Add_NumericUpDown_Seats = new System.Windows.Forms.NumericUpDown();
+            this.GroupBox_Modify_Add_CheckBox_GPS = new System.Windows.Forms.CheckBox();
+            this.GroupBox_Modify_Add_CheckBox_Sunroof = new System.Windows.Forms.CheckBox();
+            this.GroupBox_Modify_Add_ComboBox_Fuel = new System.Windows.Forms.ComboBox();
+            this.GroupBox_Modify_Add_ComboBox_Class = new System.Windows.Forms.ComboBox();
+            this.GroupBox_Modify_Add_ComboBox_Transmission = new System.Windows.Forms.ComboBox();
+            this.GroupBox_Modify_Add_Button_Cancel = new System.Windows.Forms.Button();
+            this.GroupBox_Modify_Add_Button_Submit = new System.Windows.Forms.Button();
+            this.Label_GPS = new System.Windows.Forms.Label();
+            this.Label_Class = new System.Windows.Forms.Label();
+            this.Label_Transmission = new System.Windows.Forms.Label();
+            this.Label_Fuel = new System.Windows.Forms.Label();
+            this.Label_Seats = new System.Windows.Forms.Label();
+            this.Label_Sunroof = new System.Windows.Forms.Label();
+            this.Label_DailyRate = new System.Windows.Forms.Label();
+            this.GroupBox_Modify_Add_TextBox_Colour = new System.Windows.Forms.TextBox();
+            this.Label_Colour = new System.Windows.Forms.Label();
+            this.GroupBox_Modify_Add_TextBox_Year = new System.Windows.Forms.TextBox();
+            this.Label_Year = new System.Windows.Forms.Label();
+            this.GroupBox_Modify_Add_TextBox_Make = new System.Windows.Forms.TextBox();
+            this.Label_Make = new System.Windows.Forms.Label();
+            this.GroupBox_Modify_Add_TextBox_Model = new System.Windows.Forms.TextBox();
+            this.Label_Model = new System.Windows.Forms.Label();
             this.GroupBox_Modify_Add_TextBox_Rego = new System.Windows.Forms.TextBox();
             this.Label_Rego = new System.Windows.Forms.Label();
             this.GroupBox_Fleet = new System.Windows.Forms.GroupBox();
             this.GroupBox_Fleet_Button_Add = new System.Windows.Forms.Button();
             this.GroupBox_Fleet_Button_Remove = new System.Windows.Forms.Button();
             this.GroupBox_Fleet_Button_Modify = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.DataGridView_Fleet = new System.Windows.Forms.DataGridView();
             this.CustomersTab = new System.Windows.Forms.TabPage();
             this.DataGridView_Customers = new System.Windows.Forms.DataGridView();
@@ -45,34 +70,11 @@ namespace CarRentals
             this.DataGridView_RentalReport = new System.Windows.Forms.DataGridView();
             this.RentalSearchTab = new System.Windows.Forms.TabPage();
             this.DataGridView_RentalSearch = new System.Windows.Forms.DataGridView();
-            this.GroupBox_Modify_Add_TextBox_Model = new System.Windows.Forms.TextBox();
-            this.Label_Model = new System.Windows.Forms.Label();
-            this.GroupBox_Modify_Add_TextBox_Make = new System.Windows.Forms.TextBox();
-            this.Label_Make = new System.Windows.Forms.Label();
-            this.GroupBox_Modify_Add_TextBox_Year = new System.Windows.Forms.TextBox();
-            this.Label_Year = new System.Windows.Forms.Label();
-            this.GroupBox_Modify_Add_TextBox_Colour = new System.Windows.Forms.TextBox();
-            this.Label_Colour = new System.Windows.Forms.Label();
-            this.Label_DailyRate = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Label_Sunroof = new System.Windows.Forms.Label();
-            this.Label_Seats = new System.Windows.Forms.Label();
-            this.Label_Fuel = new System.Windows.Forms.Label();
-            this.Label_Transmission = new System.Windows.Forms.Label();
-            this.Label_Class = new System.Windows.Forms.Label();
-            this.Label_GPS = new System.Windows.Forms.Label();
-            this.GroupBox_Modify_Add_Button_Submit = new System.Windows.Forms.Button();
-            this.GroupBox_Modify_Add_Button_Cancel = new System.Windows.Forms.Button();
-            this.GroupBox_Modify_Add_ComboBox_Transmission = new System.Windows.Forms.ComboBox();
-            this.GroupBox_Modify_Add_ComboBox_Class = new System.Windows.Forms.ComboBox();
-            this.GroupBox_Modify_Add_ComboBox_Fuel = new System.Windows.Forms.ComboBox();
-            this.GroupBox_Modify_Add_CheckBox_Sunroof = new System.Windows.Forms.CheckBox();
-            this.GroupBox_Modify_Add_CheckBox_GPS = new System.Windows.Forms.CheckBox();
-            this.GroupBox_Modify_Add_NumericUpDown_Seats = new System.Windows.Forms.NumericUpDown();
-            this.GroupBox_Modify_Add_NumericUpDown_DailyRate = new System.Windows.Forms.NumericUpDown();
             this.TabControl_MainView.SuspendLayout();
             this.FleetTab.SuspendLayout();
             this.GroupBox_Modify_Add.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Modify_Add_NumericUpDown_DailyRate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Modify_Add_NumericUpDown_Seats)).BeginInit();
             this.GroupBox_Fleet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Fleet)).BeginInit();
             this.CustomersTab.SuspendLayout();
@@ -81,8 +83,6 @@ namespace CarRentals
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalReport)).BeginInit();
             this.RentalSearchTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Modify_Add_NumericUpDown_Seats)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Modify_Add_NumericUpDown_DailyRate)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_MainView
@@ -145,6 +145,220 @@ namespace CarRentals
             this.GroupBox_Modify_Add.TabIndex = 3;
             this.GroupBox_Modify_Add.TabStop = false;
             this.GroupBox_Modify_Add.Text = "groupBox1";
+            this.GroupBox_Modify_Add.Visible = false;
+            // 
+            // GroupBox_Modify_Add_NumericUpDown_DailyRate
+            // 
+            this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Location = new System.Drawing.Point(489, 112);
+            this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Name = "GroupBox_Modify_Add_NumericUpDown_DailyRate";
+            this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Size = new System.Drawing.Size(31, 23);
+            this.GroupBox_Modify_Add_NumericUpDown_DailyRate.TabIndex = 29;
+            // 
+            // GroupBox_Modify_Add_NumericUpDown_Seats
+            // 
+            this.GroupBox_Modify_Add_NumericUpDown_Seats.Location = new System.Drawing.Point(271, 149);
+            this.GroupBox_Modify_Add_NumericUpDown_Seats.Name = "GroupBox_Modify_Add_NumericUpDown_Seats";
+            this.GroupBox_Modify_Add_NumericUpDown_Seats.Size = new System.Drawing.Size(31, 23);
+            this.GroupBox_Modify_Add_NumericUpDown_Seats.TabIndex = 28;
+            // 
+            // GroupBox_Modify_Add_CheckBox_GPS
+            // 
+            this.GroupBox_Modify_Add_CheckBox_GPS.AutoSize = true;
+            this.GroupBox_Modify_Add_CheckBox_GPS.Location = new System.Drawing.Point(573, 37);
+            this.GroupBox_Modify_Add_CheckBox_GPS.Name = "GroupBox_Modify_Add_CheckBox_GPS";
+            this.GroupBox_Modify_Add_CheckBox_GPS.Size = new System.Drawing.Size(15, 14);
+            this.GroupBox_Modify_Add_CheckBox_GPS.TabIndex = 27;
+            this.GroupBox_Modify_Add_CheckBox_GPS.UseVisualStyleBackColor = true;
+            // 
+            // GroupBox_Modify_Add_CheckBox_Sunroof
+            // 
+            this.GroupBox_Modify_Add_CheckBox_Sunroof.AutoSize = true;
+            this.GroupBox_Modify_Add_CheckBox_Sunroof.Location = new System.Drawing.Point(489, 38);
+            this.GroupBox_Modify_Add_CheckBox_Sunroof.Name = "GroupBox_Modify_Add_CheckBox_Sunroof";
+            this.GroupBox_Modify_Add_CheckBox_Sunroof.Size = new System.Drawing.Size(15, 14);
+            this.GroupBox_Modify_Add_CheckBox_Sunroof.TabIndex = 26;
+            this.GroupBox_Modify_Add_CheckBox_Sunroof.UseVisualStyleBackColor = true;
+            // 
+            // GroupBox_Modify_Add_ComboBox_Fuel
+            // 
+            this.GroupBox_Modify_Add_ComboBox_Fuel.FormattingEnabled = true;
+            this.GroupBox_Modify_Add_ComboBox_Fuel.Location = new System.Drawing.Point(271, 111);
+            this.GroupBox_Modify_Add_ComboBox_Fuel.Name = "GroupBox_Modify_Add_ComboBox_Fuel";
+            this.GroupBox_Modify_Add_ComboBox_Fuel.Size = new System.Drawing.Size(108, 23);
+            this.GroupBox_Modify_Add_ComboBox_Fuel.TabIndex = 25;
+            // 
+            // GroupBox_Modify_Add_ComboBox_Class
+            // 
+            this.GroupBox_Modify_Add_ComboBox_Class.FormattingEnabled = true;
+            this.GroupBox_Modify_Add_ComboBox_Class.Location = new System.Drawing.Point(70, 148);
+            this.GroupBox_Modify_Add_ComboBox_Class.Name = "GroupBox_Modify_Add_ComboBox_Class";
+            this.GroupBox_Modify_Add_ComboBox_Class.Size = new System.Drawing.Size(100, 23);
+            this.GroupBox_Modify_Add_ComboBox_Class.TabIndex = 24;
+            // 
+            // GroupBox_Modify_Add_ComboBox_Transmission
+            // 
+            this.GroupBox_Modify_Add_ComboBox_Transmission.FormattingEnabled = true;
+            this.GroupBox_Modify_Add_ComboBox_Transmission.Location = new System.Drawing.Point(271, 74);
+            this.GroupBox_Modify_Add_ComboBox_Transmission.Name = "GroupBox_Modify_Add_ComboBox_Transmission";
+            this.GroupBox_Modify_Add_ComboBox_Transmission.Size = new System.Drawing.Size(108, 23);
+            this.GroupBox_Modify_Add_ComboBox_Transmission.TabIndex = 23;
+            // 
+            // GroupBox_Modify_Add_Button_Cancel
+            // 
+            this.GroupBox_Modify_Add_Button_Cancel.Location = new System.Drawing.Point(703, 151);
+            this.GroupBox_Modify_Add_Button_Cancel.Name = "GroupBox_Modify_Add_Button_Cancel";
+            this.GroupBox_Modify_Add_Button_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.GroupBox_Modify_Add_Button_Cancel.TabIndex = 22;
+            this.GroupBox_Modify_Add_Button_Cancel.Text = "Cancel";
+            this.GroupBox_Modify_Add_Button_Cancel.UseVisualStyleBackColor = true;
+            // 
+            // GroupBox_Modify_Add_Button_Submit
+            // 
+            this.GroupBox_Modify_Add_Button_Submit.Location = new System.Drawing.Point(622, 151);
+            this.GroupBox_Modify_Add_Button_Submit.Name = "GroupBox_Modify_Add_Button_Submit";
+            this.GroupBox_Modify_Add_Button_Submit.Size = new System.Drawing.Size(75, 23);
+            this.GroupBox_Modify_Add_Button_Submit.TabIndex = 21;
+            this.GroupBox_Modify_Add_Button_Submit.Text = "Submit";
+            this.GroupBox_Modify_Add_Button_Submit.UseVisualStyleBackColor = true;
+            this.GroupBox_Modify_Add_Button_Submit.Click += new System.EventHandler(this.GroupBox_Modify_Add_Button_Submit_Click);
+            // 
+            // Label_GPS
+            // 
+            this.Label_GPS.AutoSize = true;
+            this.Label_GPS.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label_GPS.Location = new System.Drawing.Point(534, 37);
+            this.Label_GPS.Name = "Label_GPS";
+            this.Label_GPS.Size = new System.Drawing.Size(33, 15);
+            this.Label_GPS.TabIndex = 20;
+            this.Label_GPS.Text = "GPS:";
+            // 
+            // Label_Class
+            // 
+            this.Label_Class.AutoSize = true;
+            this.Label_Class.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label_Class.Location = new System.Drawing.Point(30, 151);
+            this.Label_Class.Name = "Label_Class";
+            this.Label_Class.Size = new System.Drawing.Size(36, 15);
+            this.Label_Class.TabIndex = 18;
+            this.Label_Class.Text = "Class:";
+            // 
+            // Label_Transmission
+            // 
+            this.Label_Transmission.AutoSize = true;
+            this.Label_Transmission.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label_Transmission.Location = new System.Drawing.Point(180, 77);
+            this.Label_Transmission.Name = "Label_Transmission";
+            this.Label_Transmission.Size = new System.Drawing.Size(80, 15);
+            this.Label_Transmission.TabIndex = 17;
+            this.Label_Transmission.Text = "Transmission:";
+            // 
+            // Label_Fuel
+            // 
+            this.Label_Fuel.AutoSize = true;
+            this.Label_Fuel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label_Fuel.Location = new System.Drawing.Point(227, 114);
+            this.Label_Fuel.Name = "Label_Fuel";
+            this.Label_Fuel.Size = new System.Drawing.Size(33, 15);
+            this.Label_Fuel.TabIndex = 16;
+            this.Label_Fuel.Text = "Fuel:";
+            // 
+            // Label_Seats
+            // 
+            this.Label_Seats.AutoSize = true;
+            this.Label_Seats.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label_Seats.Location = new System.Drawing.Point(220, 151);
+            this.Label_Seats.Name = "Label_Seats";
+            this.Label_Seats.Size = new System.Drawing.Size(40, 15);
+            this.Label_Seats.TabIndex = 15;
+            this.Label_Seats.Text = "Seats:";
+            // 
+            // Label_Sunroof
+            // 
+            this.Label_Sunroof.AutoSize = true;
+            this.Label_Sunroof.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label_Sunroof.Location = new System.Drawing.Point(428, 37);
+            this.Label_Sunroof.Name = "Label_Sunroof";
+            this.Label_Sunroof.Size = new System.Drawing.Size(55, 15);
+            this.Label_Sunroof.TabIndex = 14;
+            this.Label_Sunroof.Text = "Sunroof:";
+            // 
+            // Label_DailyRate
+            // 
+            this.Label_DailyRate.AutoSize = true;
+            this.Label_DailyRate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label_DailyRate.Location = new System.Drawing.Point(417, 117);
+            this.Label_DailyRate.Name = "Label_DailyRate";
+            this.Label_DailyRate.Size = new System.Drawing.Size(66, 15);
+            this.Label_DailyRate.TabIndex = 12;
+            this.Label_DailyRate.Text = "Daily Rate:";
+            // 
+            // GroupBox_Modify_Add_TextBox_Colour
+            // 
+            this.GroupBox_Modify_Add_TextBox_Colour.Location = new System.Drawing.Point(489, 74);
+            this.GroupBox_Modify_Add_TextBox_Colour.Name = "GroupBox_Modify_Add_TextBox_Colour";
+            this.GroupBox_Modify_Add_TextBox_Colour.Size = new System.Drawing.Size(99, 23);
+            this.GroupBox_Modify_Add_TextBox_Colour.TabIndex = 11;
+            // 
+            // Label_Colour
+            // 
+            this.Label_Colour.AutoSize = true;
+            this.Label_Colour.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label_Colour.Location = new System.Drawing.Point(437, 77);
+            this.Label_Colour.Name = "Label_Colour";
+            this.Label_Colour.Size = new System.Drawing.Size(46, 15);
+            this.Label_Colour.TabIndex = 10;
+            this.Label_Colour.Text = "Colour:";
+            // 
+            // GroupBox_Modify_Add_TextBox_Year
+            // 
+            this.GroupBox_Modify_Add_TextBox_Year.Location = new System.Drawing.Point(271, 34);
+            this.GroupBox_Modify_Add_TextBox_Year.Name = "GroupBox_Modify_Add_TextBox_Year";
+            this.GroupBox_Modify_Add_TextBox_Year.Size = new System.Drawing.Size(108, 23);
+            this.GroupBox_Modify_Add_TextBox_Year.TabIndex = 9;
+            // 
+            // Label_Year
+            // 
+            this.Label_Year.AutoSize = true;
+            this.Label_Year.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label_Year.Location = new System.Drawing.Point(226, 37);
+            this.Label_Year.Name = "Label_Year";
+            this.Label_Year.Size = new System.Drawing.Size(34, 15);
+            this.Label_Year.TabIndex = 8;
+            this.Label_Year.Text = "Year:";
+            // 
+            // GroupBox_Modify_Add_TextBox_Make
+            // 
+            this.GroupBox_Modify_Add_TextBox_Make.Location = new System.Drawing.Point(70, 74);
+            this.GroupBox_Modify_Add_TextBox_Make.Name = "GroupBox_Modify_Add_TextBox_Make";
+            this.GroupBox_Modify_Add_TextBox_Make.Size = new System.Drawing.Size(100, 23);
+            this.GroupBox_Modify_Add_TextBox_Make.TabIndex = 7;
+            // 
+            // Label_Make
+            // 
+            this.Label_Make.AutoSize = true;
+            this.Label_Make.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label_Make.Location = new System.Drawing.Point(25, 77);
+            this.Label_Make.Name = "Label_Make";
+            this.Label_Make.Size = new System.Drawing.Size(41, 15);
+            this.Label_Make.TabIndex = 6;
+            this.Label_Make.Text = "Make:";
+            // 
+            // GroupBox_Modify_Add_TextBox_Model
+            // 
+            this.GroupBox_Modify_Add_TextBox_Model.Location = new System.Drawing.Point(70, 111);
+            this.GroupBox_Modify_Add_TextBox_Model.Name = "GroupBox_Modify_Add_TextBox_Model";
+            this.GroupBox_Modify_Add_TextBox_Model.Size = new System.Drawing.Size(100, 23);
+            this.GroupBox_Modify_Add_TextBox_Model.TabIndex = 3;
+            // 
+            // Label_Model
+            // 
+            this.Label_Model.AutoSize = true;
+            this.Label_Model.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label_Model.Location = new System.Drawing.Point(21, 114);
+            this.Label_Model.Name = "Label_Model";
+            this.Label_Model.Size = new System.Drawing.Size(45, 15);
+            this.Label_Model.TabIndex = 2;
+            this.Label_Model.Text = "Model:";
             // 
             // GroupBox_Modify_Add_TextBox_Rego
             // 
@@ -184,6 +398,7 @@ namespace CarRentals
             this.GroupBox_Fleet_Button_Add.TabIndex = 2;
             this.GroupBox_Fleet_Button_Add.Text = "Add";
             this.GroupBox_Fleet_Button_Add.UseVisualStyleBackColor = true;
+            this.GroupBox_Fleet_Button_Add.Click += new System.EventHandler(this.GroupBox_Fleet_Button_Add_Click);
             // 
             // GroupBox_Fleet_Button_Remove
             // 
@@ -202,6 +417,17 @@ namespace CarRentals
             this.GroupBox_Fleet_Button_Modify.TabIndex = 0;
             this.GroupBox_Fleet_Button_Modify.Text = "Modify";
             this.GroupBox_Fleet_Button_Modify.UseVisualStyleBackColor = true;
+            this.GroupBox_Fleet_Button_Modify.Click += new System.EventHandler(this.GroupBox_Fleet_Button_Modify_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(409, -75);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 15);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Rego:";
             // 
             // DataGridView_Fleet
             // 
@@ -276,228 +502,6 @@ namespace CarRentals
             this.DataGridView_RentalSearch.Size = new System.Drawing.Size(786, 658);
             this.DataGridView_RentalSearch.TabIndex = 1;
             // 
-            // GroupBox_Modify_Add_TextBox_Model
-            // 
-            this.GroupBox_Modify_Add_TextBox_Model.Location = new System.Drawing.Point(70, 111);
-            this.GroupBox_Modify_Add_TextBox_Model.Name = "GroupBox_Modify_Add_TextBox_Model";
-            this.GroupBox_Modify_Add_TextBox_Model.Size = new System.Drawing.Size(100, 23);
-            this.GroupBox_Modify_Add_TextBox_Model.TabIndex = 3;
-            // 
-            // Label_Model
-            // 
-            this.Label_Model.AutoSize = true;
-            this.Label_Model.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_Model.Location = new System.Drawing.Point(21, 114);
-            this.Label_Model.Name = "Label_Model";
-            this.Label_Model.Size = new System.Drawing.Size(45, 15);
-            this.Label_Model.TabIndex = 2;
-            this.Label_Model.Text = "Model:";
-            // 
-            // GroupBox_Modify_Add_TextBox_Make
-            // 
-            this.GroupBox_Modify_Add_TextBox_Make.Location = new System.Drawing.Point(70, 74);
-            this.GroupBox_Modify_Add_TextBox_Make.Name = "GroupBox_Modify_Add_TextBox_Make";
-            this.GroupBox_Modify_Add_TextBox_Make.Size = new System.Drawing.Size(100, 23);
-            this.GroupBox_Modify_Add_TextBox_Make.TabIndex = 7;
-            // 
-            // Label_Make
-            // 
-            this.Label_Make.AutoSize = true;
-            this.Label_Make.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_Make.Location = new System.Drawing.Point(25, 77);
-            this.Label_Make.Name = "Label_Make";
-            this.Label_Make.Size = new System.Drawing.Size(41, 15);
-            this.Label_Make.TabIndex = 6;
-            this.Label_Make.Text = "Make:";
-            // 
-            // GroupBox_Modify_Add_TextBox_Year
-            // 
-            this.GroupBox_Modify_Add_TextBox_Year.Location = new System.Drawing.Point(271, 34);
-            this.GroupBox_Modify_Add_TextBox_Year.Name = "GroupBox_Modify_Add_TextBox_Year";
-            this.GroupBox_Modify_Add_TextBox_Year.Size = new System.Drawing.Size(108, 23);
-            this.GroupBox_Modify_Add_TextBox_Year.TabIndex = 9;
-            // 
-            // Label_Year
-            // 
-            this.Label_Year.AutoSize = true;
-            this.Label_Year.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_Year.Location = new System.Drawing.Point(226, 37);
-            this.Label_Year.Name = "Label_Year";
-            this.Label_Year.Size = new System.Drawing.Size(34, 15);
-            this.Label_Year.TabIndex = 8;
-            this.Label_Year.Text = "Year:";
-            // 
-            // GroupBox_Modify_Add_TextBox_Colour
-            // 
-            this.GroupBox_Modify_Add_TextBox_Colour.Location = new System.Drawing.Point(489, 74);
-            this.GroupBox_Modify_Add_TextBox_Colour.Name = "GroupBox_Modify_Add_TextBox_Colour";
-            this.GroupBox_Modify_Add_TextBox_Colour.Size = new System.Drawing.Size(99, 23);
-            this.GroupBox_Modify_Add_TextBox_Colour.TabIndex = 11;
-            // 
-            // Label_Colour
-            // 
-            this.Label_Colour.AutoSize = true;
-            this.Label_Colour.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_Colour.Location = new System.Drawing.Point(437, 77);
-            this.Label_Colour.Name = "Label_Colour";
-            this.Label_Colour.Size = new System.Drawing.Size(46, 15);
-            this.Label_Colour.TabIndex = 10;
-            this.Label_Colour.Text = "Colour:";
-            // 
-            // Label_DailyRate
-            // 
-            this.Label_DailyRate.AutoSize = true;
-            this.Label_DailyRate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_DailyRate.Location = new System.Drawing.Point(417, 117);
-            this.Label_DailyRate.Name = "Label_DailyRate";
-            this.Label_DailyRate.Size = new System.Drawing.Size(66, 15);
-            this.Label_DailyRate.TabIndex = 12;
-            this.Label_DailyRate.Text = "Daily Rate:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(409, -75);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 15);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Rego:";
-            // 
-            // Label_Sunroof
-            // 
-            this.Label_Sunroof.AutoSize = true;
-            this.Label_Sunroof.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_Sunroof.Location = new System.Drawing.Point(428, 37);
-            this.Label_Sunroof.Name = "Label_Sunroof";
-            this.Label_Sunroof.Size = new System.Drawing.Size(55, 15);
-            this.Label_Sunroof.TabIndex = 14;
-            this.Label_Sunroof.Text = "Sunroof:";
-            // 
-            // Label_Seats
-            // 
-            this.Label_Seats.AutoSize = true;
-            this.Label_Seats.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_Seats.Location = new System.Drawing.Point(220, 151);
-            this.Label_Seats.Name = "Label_Seats";
-            this.Label_Seats.Size = new System.Drawing.Size(40, 15);
-            this.Label_Seats.TabIndex = 15;
-            this.Label_Seats.Text = "Seats:";
-            // 
-            // Label_Fuel
-            // 
-            this.Label_Fuel.AutoSize = true;
-            this.Label_Fuel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_Fuel.Location = new System.Drawing.Point(227, 114);
-            this.Label_Fuel.Name = "Label_Fuel";
-            this.Label_Fuel.Size = new System.Drawing.Size(33, 15);
-            this.Label_Fuel.TabIndex = 16;
-            this.Label_Fuel.Text = "Fuel:";
-            // 
-            // Label_Transmission
-            // 
-            this.Label_Transmission.AutoSize = true;
-            this.Label_Transmission.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_Transmission.Location = new System.Drawing.Point(180, 77);
-            this.Label_Transmission.Name = "Label_Transmission";
-            this.Label_Transmission.Size = new System.Drawing.Size(80, 15);
-            this.Label_Transmission.TabIndex = 17;
-            this.Label_Transmission.Text = "Transmission:";
-            // 
-            // Label_Class
-            // 
-            this.Label_Class.AutoSize = true;
-            this.Label_Class.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_Class.Location = new System.Drawing.Point(30, 151);
-            this.Label_Class.Name = "Label_Class";
-            this.Label_Class.Size = new System.Drawing.Size(36, 15);
-            this.Label_Class.TabIndex = 18;
-            this.Label_Class.Text = "Class:";
-            // 
-            // Label_GPS
-            // 
-            this.Label_GPS.AutoSize = true;
-            this.Label_GPS.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_GPS.Location = new System.Drawing.Point(534, 37);
-            this.Label_GPS.Name = "Label_GPS";
-            this.Label_GPS.Size = new System.Drawing.Size(33, 15);
-            this.Label_GPS.TabIndex = 20;
-            this.Label_GPS.Text = "GPS:";
-            // 
-            // GroupBox_Modify_Add_Button_Submit
-            // 
-            this.GroupBox_Modify_Add_Button_Submit.Location = new System.Drawing.Point(622, 151);
-            this.GroupBox_Modify_Add_Button_Submit.Name = "GroupBox_Modify_Add_Button_Submit";
-            this.GroupBox_Modify_Add_Button_Submit.Size = new System.Drawing.Size(75, 23);
-            this.GroupBox_Modify_Add_Button_Submit.TabIndex = 21;
-            this.GroupBox_Modify_Add_Button_Submit.Text = "Submit";
-            this.GroupBox_Modify_Add_Button_Submit.UseVisualStyleBackColor = true;
-            // 
-            // GroupBox_Modify_Add_Button_Cancel
-            // 
-            this.GroupBox_Modify_Add_Button_Cancel.Location = new System.Drawing.Point(703, 151);
-            this.GroupBox_Modify_Add_Button_Cancel.Name = "GroupBox_Modify_Add_Button_Cancel";
-            this.GroupBox_Modify_Add_Button_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.GroupBox_Modify_Add_Button_Cancel.TabIndex = 22;
-            this.GroupBox_Modify_Add_Button_Cancel.Text = "Cancel";
-            this.GroupBox_Modify_Add_Button_Cancel.UseVisualStyleBackColor = true;
-            // 
-            // GroupBox_Modify_Add_ComboBox_Transmission
-            // 
-            this.GroupBox_Modify_Add_ComboBox_Transmission.FormattingEnabled = true;
-            this.GroupBox_Modify_Add_ComboBox_Transmission.Location = new System.Drawing.Point(271, 74);
-            this.GroupBox_Modify_Add_ComboBox_Transmission.Name = "GroupBox_Modify_Add_ComboBox_Transmission";
-            this.GroupBox_Modify_Add_ComboBox_Transmission.Size = new System.Drawing.Size(108, 23);
-            this.GroupBox_Modify_Add_ComboBox_Transmission.TabIndex = 23;
-            // 
-            // GroupBox_Modify_Add_ComboBox_Class
-            // 
-            this.GroupBox_Modify_Add_ComboBox_Class.FormattingEnabled = true;
-            this.GroupBox_Modify_Add_ComboBox_Class.Location = new System.Drawing.Point(70, 148);
-            this.GroupBox_Modify_Add_ComboBox_Class.Name = "GroupBox_Modify_Add_ComboBox_Class";
-            this.GroupBox_Modify_Add_ComboBox_Class.Size = new System.Drawing.Size(100, 23);
-            this.GroupBox_Modify_Add_ComboBox_Class.TabIndex = 24;
-            // 
-            // GroupBox_Modify_Add_ComboBox_Fuel
-            // 
-            this.GroupBox_Modify_Add_ComboBox_Fuel.FormattingEnabled = true;
-            this.GroupBox_Modify_Add_ComboBox_Fuel.Location = new System.Drawing.Point(271, 111);
-            this.GroupBox_Modify_Add_ComboBox_Fuel.Name = "GroupBox_Modify_Add_ComboBox_Fuel";
-            this.GroupBox_Modify_Add_ComboBox_Fuel.Size = new System.Drawing.Size(108, 23);
-            this.GroupBox_Modify_Add_ComboBox_Fuel.TabIndex = 25;
-            // 
-            // GroupBox_Modify_Add_CheckBox_Sunroof
-            // 
-            this.GroupBox_Modify_Add_CheckBox_Sunroof.AutoSize = true;
-            this.GroupBox_Modify_Add_CheckBox_Sunroof.Location = new System.Drawing.Point(489, 38);
-            this.GroupBox_Modify_Add_CheckBox_Sunroof.Name = "GroupBox_Modify_Add_CheckBox_Sunroof";
-            this.GroupBox_Modify_Add_CheckBox_Sunroof.Size = new System.Drawing.Size(15, 14);
-            this.GroupBox_Modify_Add_CheckBox_Sunroof.TabIndex = 26;
-            this.GroupBox_Modify_Add_CheckBox_Sunroof.UseVisualStyleBackColor = true;
-            // 
-            // GroupBox_Modify_Add_CheckBox_GPS
-            // 
-            this.GroupBox_Modify_Add_CheckBox_GPS.AutoSize = true;
-            this.GroupBox_Modify_Add_CheckBox_GPS.Location = new System.Drawing.Point(573, 37);
-            this.GroupBox_Modify_Add_CheckBox_GPS.Name = "GroupBox_Modify_Add_CheckBox_GPS";
-            this.GroupBox_Modify_Add_CheckBox_GPS.Size = new System.Drawing.Size(15, 14);
-            this.GroupBox_Modify_Add_CheckBox_GPS.TabIndex = 27;
-            this.GroupBox_Modify_Add_CheckBox_GPS.UseVisualStyleBackColor = true;
-            // 
-            // GroupBox_Modify_Add_NumericUpDown_Seats
-            // 
-            this.GroupBox_Modify_Add_NumericUpDown_Seats.Location = new System.Drawing.Point(271, 149);
-            this.GroupBox_Modify_Add_NumericUpDown_Seats.Name = "GroupBox_Modify_Add_NumericUpDown_Seats";
-            this.GroupBox_Modify_Add_NumericUpDown_Seats.Size = new System.Drawing.Size(31, 23);
-            this.GroupBox_Modify_Add_NumericUpDown_Seats.TabIndex = 28;
-            // 
-            // GroupBox_Modify_Add_NumericUpDown_DailyRate
-            // 
-            this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Location = new System.Drawing.Point(489, 112);
-            this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Name = "GroupBox_Modify_Add_NumericUpDown_DailyRate";
-            this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Size = new System.Drawing.Size(31, 23);
-            this.GroupBox_Modify_Add_NumericUpDown_DailyRate.TabIndex = 29;
-            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -511,6 +515,8 @@ namespace CarRentals
             this.FleetTab.ResumeLayout(false);
             this.GroupBox_Modify_Add.ResumeLayout(false);
             this.GroupBox_Modify_Add.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Modify_Add_NumericUpDown_DailyRate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Modify_Add_NumericUpDown_Seats)).EndInit();
             this.GroupBox_Fleet.ResumeLayout(false);
             this.GroupBox_Fleet.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Fleet)).EndInit();
@@ -520,8 +526,6 @@ namespace CarRentals
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalReport)).EndInit();
             this.RentalSearchTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Modify_Add_NumericUpDown_Seats)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Modify_Add_NumericUpDown_DailyRate)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -13,6 +13,21 @@ namespace CarRentals
         IEnumerable<Vehicle> FleetList { get; set; }
         IEnumerable<Customer> CustomerList { get; set; }
 
+        string Rego { get; set; }
+        string Make { get; set; }
+        string Model { get; set; }
+        string Class{ get; set; }
+        string Year { get; set; }
+        string Transmission { get; set; }
+        string Fuel{ get; set; }
+        decimal Seats { get; set; }
+        bool Sunroof { get; set; }
+        bool GPS { get; set; }
+        string Colour { get; set; }
+        decimal DailyRate { get; set; }
+
+
+
     }
 
 

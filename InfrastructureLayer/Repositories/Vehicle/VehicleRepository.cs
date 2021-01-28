@@ -22,14 +22,14 @@ namespace InfrastructureLayer.Repositories
 
         public void Delete(Vehicle vehicle)
         {
-            Vehicle vehicle2Delete = _context.Vehicles.Find(vehicle.VehicleRego);
+            Vehicle vehicle2Delete = _context.Vehicles.Find(vehicle.Rego);
             _context.Vehicles.Remove(vehicle2Delete);
             _context.SaveChanges();
 
         }
         public void Update(Vehicle vehicle)
         {
-            Vehicle vehicle2Update = _context.Vehicles.Find(vehicle.VehicleRego);
+            Vehicle vehicle2Update = _context.Vehicles.Find(vehicle.Rego);
             vehicle2Update = vehicle;
             _context.SaveChanges();
         }

@@ -31,7 +31,7 @@ namespace ConsoleTester
 
             Vehicle vehicle = new Vehicle
             {
-                VehicleRego = "Yeet",
+                Rego = "Yeet",
                 Make = "Ferrari",
                 Model= "458 Pista"
             };
