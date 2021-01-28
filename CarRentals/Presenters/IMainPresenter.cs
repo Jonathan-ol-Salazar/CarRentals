@@ -12,7 +12,7 @@ namespace CarRentals.Presenters
         MainView GetMainView();
         IEnumerable<Vehicle> GetAllVehicles();
         IEnumerable<Customer> GetAllCustomers();
-        void SaveNewVehicle();
+        void AddVehicle();
         void DeleteVehicle();
         void UpdateVehicle();
         void RefreshVehicleForm();

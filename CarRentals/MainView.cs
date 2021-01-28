@@ -97,7 +97,7 @@ namespace CarRentals
         {
             if(Add == true)
             {
-                _mainPresenter.SaveNewVehicle();
+                _mainPresenter.AddVehicle();
 
             }
             else
