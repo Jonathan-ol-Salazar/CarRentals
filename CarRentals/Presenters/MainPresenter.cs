@@ -5,6 +5,7 @@ using InfrastructureLayer.Repositories;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
+using System;
 
 namespace CarRentals.Presenters
 {
@@ -67,10 +68,10 @@ namespace CarRentals.Presenters
                 Rego = _mainView.Rego,
                 Make = _mainView.Make,
                 Model = _mainView.Model,
-                //ClassType = _mainView.Class,
+                ClassType = (ClassType) Enum.Parse(typeof(ClassType), _mainView.Class, true),
                 Year = _mainView.Year,
-                //TransmissionType = 
-                //FuelType =
+                TransmissionType = (TransmissionType)Enum.Parse(typeof(TransmissionType), _mainView.Transmission, true),
+                FuelType = (FuelType)Enum.Parse(typeof(FuelType), _mainView.Fuel, true),
                 Seats = _mainView.Seats,
                 Sunroof = _mainView.Sunroof,
                 GPS = _mainView.GPS,
