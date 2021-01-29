@@ -141,6 +141,9 @@ namespace CarRentals
         {
             GroupBox_Customers_Modify_Add.Visible = true;
             GroupBox_Customers_Modify_Add.Text = "Add Customer";
+            GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = false;
+            Label_CustomerID.Visible = false;
+
             AddCustomer = true;
         }
 
@@ -148,6 +151,8 @@ namespace CarRentals
         {
             GroupBox_Customers_Modify_Add.Visible = true;
             GroupBox_Customers_Modify_Add.Text = "Modify Customer";
+            GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = true;
+            Label_CustomerID.Visible = true;
             AddCustomer = false;
             _mainPresenter.RefreshCustomerForm();
         }
