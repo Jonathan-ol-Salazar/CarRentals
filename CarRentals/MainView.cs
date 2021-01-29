@@ -1,5 +1,6 @@
 ﻿using CarRentals.Presenters;
 using DomainLayer.Customers;
+using DomainLayer.Rented;
 using DomainLayer.Vehicles;
 using System;
 using System.Collections.Generic;
@@ -31,9 +32,9 @@ namespace CarRentals
             set { DataGridView_Customers.DataSource = value; }
         }
 
-        public IEnumerable<Vehicle> ReportList 
+        public IEnumerable<Rented> ReportList 
         {
-            get { return (IEnumerable<Vehicle>)DataGridView_Report.DataSource; }
+            get { return (IEnumerable<Rented>)DataGridView_Report.DataSource; }
             set { DataGridView_Report.DataSource = value; }
         }
 

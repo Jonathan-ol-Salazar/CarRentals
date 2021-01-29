@@ -1,5 +1,6 @@
 ﻿using CarRentals.Presenters;
 using DomainLayer.Customers;
+using DomainLayer.Rented;
 using DomainLayer.Vehicles;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -12,7 +13,7 @@ namespace CarRentals
 
         IEnumerable<Vehicle> FleetList { get; set; }
         IEnumerable<Customer> CustomerList { get; set; }
-        IEnumerable<Vehicle> ReportList { get; set; }
+        IEnumerable<Rented> ReportList { get; set; }
 
         string Rego { get; set; }
         string Make { get; set; }

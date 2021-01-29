@@ -1,5 +1,4 @@
-﻿using DomainLayer;
-using DomainLayer.Vehicles;
+﻿using DomainLayer.Vehicles;
 using System.Collections.Generic;
 
 namespace InfrastructureLayer.Repositories

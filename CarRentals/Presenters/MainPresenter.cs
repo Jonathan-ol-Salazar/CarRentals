@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
 using System;
+using DomainLayer.Rented;
 
 namespace CarRentals.Presenters
 {
@@ -15,8 +16,9 @@ namespace CarRentals.Presenters
         IMainView _mainView;
         IVehicleRepository _vehicleService;
         ICustomerRepository _customerService;
+        IRentedRepository _rentedRepository;
 
-        public MainPresenter(IMainView mainView,IVehicleRepository vehicleService, ICustomerRepository customerService)
+        public MainPresenter(IMainView mainView,IVehicleRepository vehicleService, ICustomerRepository customerService, IRentedRepository rentedRepository)
         {
             // Set View 
 
@@ -25,7 +27,7 @@ namespace CarRentals.Presenters
 
             _vehicleService = vehicleService;
             _customerService = customerService;
-
+            _rentedRepository = rentedRepository;
 
             StartUpView();
            
@@ -54,12 +56,6 @@ namespace CarRentals.Presenters
 
         }
 
-        public IEnumerable<Vehicle> GetAllRented()
-        {
-            return _vehicleService.GetRented().ToList();
-        }
-
-
 
         public IEnumerable<Vehicle> GetAllVehicles()
         {            
@@ -69,6 +65,11 @@ namespace CarRentals.Presenters
         {
             return _customerService.GetAll().ToList();
         }
+        public IEnumerable<Rented> GetAllRented()
+        {
+            return _rentedRepository.GetAll().ToList();
+        }
+
 
         public MainView GetMainView()
         {
@@ -94,6 +95,7 @@ namespace CarRentals.Presenters
                 IsRented = true
                 
             };
+
 
             _vehicleService.Add(vehicle);
             UpdateFleetListView();

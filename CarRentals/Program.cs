@@ -24,12 +24,14 @@ namespace CarRentals
             CustomerRepository customerRepository = new CustomerRepository(context);
             VehicleService vehicleService = new VehicleService(vehicleRepository);
             CustomerService customerService = new CustomerService(customerRepository);
+            RentedRepository rentedRepository = new RentedRepository(context);
+            RentedService rentedService = new RentedService(rentedRepository);
 
             // Initialize View
             MainView mainView = new MainView();
 
             // Initialize Presenter
-            MainPresenter mainPresenter = new MainPresenter(mainView, vehicleService, customerService);
+            MainPresenter mainPresenter = new MainPresenter(mainView, vehicleService, customerService, rentedService);
 
             Application.Run(mainView);
         }
