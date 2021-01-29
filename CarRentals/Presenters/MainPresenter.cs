@@ -106,9 +106,46 @@ namespace CarRentals.Presenters
             vehicle.DailyRate = _mainView.DailyRate;
 
             _vehicleService.Update(vehicle);
-
             UpdateFleetListView();
         }
+
+
+
+        public void AddCustomer()
+        {
+            Customer customer = new Customer
+            {
+                //CustomerID = _mainView.CustomerID,
+                FirstName = _mainView.FirstName,
+                LastName = _mainView.LastName,
+                DOB = _mainView.DOB,
+                GenderType = (GenderType)Enum.Parse(typeof(GenderType), _mainView.Gender, true),
+                Title = _mainView.Title
+            };
+
+            _customerService.Add(customer);
+            UpdateCustomerListView();
+        }
+
+        public void DeleteCustomer()
+        {
+            _customerService.Delete(_mainView.SelectedCustomer);
+            UpdateCustomerListView();
+        }
+
+        public void UpdateCustomer()
+        {
+            Customer customer = _customerService.GetById(_mainView.CustomerID);
+            customer.FirstName = _mainView.FirstName;
+            customer.LastName = _mainView.LastName;
+            customer.DOB = _mainView.DOB;
+            customer.GenderType = (GenderType)Enum.Parse(typeof(GenderType), _mainView.Gender, true);
+            customer.Title = _mainView.Title;
+
+            _customerService.Update(customer);
+            UpdateCustomerListView();
+        }
+
 
         public void RefreshVehicleForm()
         {
@@ -125,7 +162,17 @@ namespace CarRentals.Presenters
             _mainView.GPS = vehicle.GPS;
             _mainView.Colour = vehicle.Colour;
             _mainView.DailyRate = vehicle.DailyRate;
+        }
 
+        public void RefreshCustomerForm()
+        {
+            Customer customer = _mainView.SelectedCustomer;
+            _mainView.CustomerID = customer.CustomerID;
+            _mainView.FirstName = customer.FirstName;
+            _mainView.LastName = customer.LastName;
+            _mainView.DOB = customer.DOB;
+            _mainView.Gender = customer.GenderType.ToString();
+            _mainView.Title = customer.Title;
         }
     }
 }

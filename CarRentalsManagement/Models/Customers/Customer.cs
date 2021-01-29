@@ -12,24 +12,24 @@
         }
 
         public Customer(int customerID, string title, string firstName, string
-            lastName, Gender gender, string dob)
+            lastName, GenderType genderType, string dob)
         {
             CustomerID = customerID;
             Title = title;
             FirstName = firstName;
             LastName = lastName;
-            Gender = gender;
+            GenderType = genderType;
             DOB = dob;
         }
 
         public string ToCSVString()
         {
-            return CustomerID.ToString() + ',' + Title + ',' + FirstName + ',' + LastName + ',' + Gender.ToString() + ',' + DOB;
+            return CustomerID.ToString() + ',' + Title + ',' + FirstName + ',' + LastName + ',' + GenderType.ToString() + ',' + DOB;
         }
 
         public override string ToString()
         {
-            return CustomerID.ToString() + Title + FirstName + LastName + Gender.ToString() + DOB;
+            return CustomerID.ToString() + Title + FirstName + LastName + GenderType.ToString() + DOB;
         }
 
 
@@ -38,11 +38,11 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string DOB { get; set; }
-        public Gender Gender { get; set; }
+        public GenderType GenderType { get; set; }
 
 
     }
-    public enum Gender
+    public enum GenderType
     {
         Male,
         Female

@@ -1,23 +1,17 @@
 ﻿using CarRentals.Presenters;
 using DomainLayer.Customers;
 using DomainLayer.Vehicles;
-using InfrastructureLayer.Repositories;
-using ServiceLayer.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarRentals
 {
     public partial class MainView : Form, IMainView
     {
-        private bool Add = false;
+        private bool AddVehicle = false;
+        private bool AddCustomer = false;
+
         public IMainPresenter _mainPresenter;
 
         public MainView()
@@ -28,29 +22,38 @@ namespace CarRentals
 
         public IEnumerable<Vehicle> FleetList
         {
-            get { return (IEnumerable<Vehicle>)this.DataGridView_Fleet.DataSource; }
-            set { this.DataGridView_Fleet.DataSource = value; }
+            get { return (IEnumerable<Vehicle>)DataGridView_Fleet.DataSource; }
+            set { DataGridView_Fleet.DataSource = value; }
         }
         public IEnumerable<Customer> CustomerList
         {
-            get { return (IEnumerable<Customer>)this.DataGridView_Customers.DataSource; }
-            set { this.DataGridView_Customers.DataSource = value; }
+            get { return (IEnumerable<Customer>)DataGridView_Customers.DataSource; }
+            set { DataGridView_Customers.DataSource = value; }
         }
 
-        public string Rego { get { return this.GroupBox_Modify_Add_TextBox_Rego.Text; } set { this.GroupBox_Modify_Add_TextBox_Rego.Text = value; } }
-        public string Make { get { return this.GroupBox_Modify_Add_TextBox_Make.Text; } set { this.GroupBox_Modify_Add_TextBox_Make.Text = value; } }
-        public string Model { get { return this.GroupBox_Modify_Add_TextBox_Model.Text; } set { this.GroupBox_Modify_Add_TextBox_Model.Text = value; } }
-        public string Class { get { return this.GroupBox_Modify_Add_ComboBox_Class.Text; } set { this.GroupBox_Modify_Add_ComboBox_Class.Text = value; } }
-        public string Year { get { return this.GroupBox_Modify_Add_TextBox_Year.Text; } set { GroupBox_Modify_Add_TextBox_Year.Text = value; } }
-        public string Transmission { get { return this.GroupBox_Modify_Add_ComboBox_Transmission.Text; } set { this.GroupBox_Modify_Add_ComboBox_Transmission.Text = value; } }
-        public string Fuel { get { return this.GroupBox_Modify_Add_ComboBox_Fuel.Text; } set { this.GroupBox_Modify_Add_ComboBox_Fuel.Text = value; } }
-        public int Seats { get { return (int)this.GroupBox_Modify_Add_NumericUpDown_Seats.Value; } set { this.GroupBox_Modify_Add_NumericUpDown_Seats.Value = value; } }
-        public bool Sunroof { get { return this.GroupBox_Modify_Add_CheckBox_Sunroof.Checked; } set { this.GroupBox_Modify_Add_CheckBox_Sunroof.Checked = value; } }
-        public bool GPS { get { return this.GroupBox_Modify_Add_CheckBox_GPS.Checked; } set { this.GroupBox_Modify_Add_CheckBox_GPS.Checked = value; } }
-        public string Colour { get { return this.GroupBox_Modify_Add_TextBox_Colour.Text; } set { this.GroupBox_Modify_Add_TextBox_Colour.Text = value; } }
-        public double DailyRate { get { return (double)this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value; } set { this.GroupBox_Modify_Add_NumericUpDown_DailyRate.Value = (decimal)value; } }
+        public string Rego { get { return GroupBox_Fleet_Modify_Add_TextBox_Rego.Text; } set { GroupBox_Fleet_Modify_Add_TextBox_Rego.Text = value; } }
+        public string Make { get { return GroupBox_Fleet_Modify_Add_TextBox_Make.Text; } set { GroupBox_Fleet_Modify_Add_TextBox_Make.Text = value; } }
+        public string Model { get { return GroupBox_Fleet_Modify_Add_TextBox_Model.Text; } set { GroupBox_Fleet_Modify_Add_TextBox_Model.Text = value; } }
+        public string Class { get { return GroupBox_Fleet_Modify_Add_ComboBox_Class.Text; } set { GroupBox_Fleet_Modify_Add_ComboBox_Class.Text = value; } }
+        public string Year { get { return GroupBox_Fleet_Modify_Add_TextBox_Year.Text; } set { GroupBox_Fleet_Modify_Add_TextBox_Year.Text = value; } }
+        public string Transmission { get { return GroupBox_Fleet_Modify_Add_ComboBox_Transmission.Text; } set { GroupBox_Fleet_Modify_Add_ComboBox_Transmission.Text = value; } }
+        public string Fuel { get { return GroupBox_Fleet_Modify_Add_ComboBox_Fuel.Text; } set { GroupBox_Fleet_Modify_Add_ComboBox_Fuel.Text = value; } }
+        public int Seats { get { return (int)GroupBox_Fleet_Modify_Add_NumericUpDown_Seats.Value; } set { GroupBox_Fleet_Modify_Add_NumericUpDown_Seats.Value = value; } }
+        public bool Sunroof { get { return GroupBox_Fleet_Modify_Add_CheckBox_Sunroof.Checked; } set { GroupBox_Fleet_Modify_Add_CheckBox_Sunroof.Checked = value; } }
+        public bool GPS { get { return GroupBox_Fleet_Modify_Add_CheckBox_GPS.Checked; } set { GroupBox_Fleet_Modify_Add_CheckBox_GPS.Checked = value; } }
+        public string Colour { get { return GroupBox_Fleet_Modify_Add_TextBox_Colour.Text; } set { GroupBox_Fleet_Modify_Add_TextBox_Colour.Text = value; } }
+        public double DailyRate { get { return (double)GroupBox_Fleet_Modify_Add_NumericUpDown_DailyRate.Value; } set { GroupBox_Fleet_Modify_Add_NumericUpDown_DailyRate.Value = (decimal)value; } }
 
-        public Vehicle SelectedVehicle { get { return (Vehicle)this.DataGridView_Fleet.CurrentRow.DataBoundItem; } }
+        public Vehicle SelectedVehicle { get { return (Vehicle)DataGridView_Fleet.CurrentRow.DataBoundItem; } }
+
+        public int CustomerID { get { return int.Parse(GroupBox_Customers_Modify_Add_TextBox_CustomerID.Text); } set { GroupBox_Customers_Modify_Add_TextBox_CustomerID.Text = value.ToString(); } }
+        public string FirstName { get { return GroupBox_Customers_Modify_Add_TextBox_FirstName.Text; } set { GroupBox_Customers_Modify_Add_TextBox_FirstName.Text = value; } }
+        public string LastName { get { return GroupBox_Customers_Modify_Add_TextBox_LastName.Text; } set { GroupBox_Customers_Modify_Add_TextBox_LastName.Text = value; } }
+        public string DOB { get { return GroupBox_Customers_Modify_Add_TextBox_DOB.Text; } set { GroupBox_Customers_Modify_Add_TextBox_DOB.Text = value; } }
+        public string Gender { get { return GroupBox_Customers_Modify_Add_ComboBox_Gender.Text; } set { GroupBox_Customers_Modify_Add_ComboBox_Gender.Text = value; } }
+        public string Title { get { return GroupBox_Customers_Modify_Add_ComboBox_Title.Text; } set { GroupBox_Customers_Modify_Add_ComboBox_Title.Text = value; } }
+
+        public Customer SelectedCustomer { get { return (Customer)DataGridView_Customers.CurrentRow.DataBoundItem; } }
 
         public void SetPresenter(IMainPresenter mainPresenter)
         {
@@ -69,33 +72,31 @@ namespace CarRentals
 
         private void GroupBox_Fleet_Button_Add_Click(object sender, EventArgs e)
         {
-            GroupBox_Modify_Add.Visible = true;
-            GroupBox_Modify_Add.Text = "Add Vehicle";
-            Add = true;
+            GroupBox_Fleet_Modify_Add.Visible = true;
+            GroupBox_Fleet_Modify_Add.Text = "Add Vehicle";
+            AddVehicle = true;
 
         }
         private void GroupBox_Fleet_Button_Modify_Click(object sender, EventArgs e)
         {
-            GroupBox_Modify_Add.Visible = true;
-            GroupBox_Modify_Add.Text = "Modify Vehicle";
-            Add = false;
+            GroupBox_Fleet_Modify_Add.Visible = true;
+            GroupBox_Fleet_Modify_Add.Text = "Modify Vehicle";
+            AddVehicle = false;
             _mainPresenter.RefreshVehicleForm();
         }
 
-        private void GroupBox_Modify_Add_Button_Cancel_Click(object sender, EventArgs e)
+        private void GroupBox_Fleet_Modify_Add_Button_Cancel_Click(object sender, EventArgs e)
         {
             // Fix: not functional
-            GroupBox_Modify_Add.Visible = false;
-            GroupBox_Modify_Add.Enabled = false;
-
-
+            GroupBox_Fleet_Modify_Add.Visible = false;
+            GroupBox_Fleet_Modify_Add.Enabled = false;
         }
 
 
 
-        private void GroupBox_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
+        private void GroupBox_Fleet_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
         {
-            if(Add == true)
+            if(AddVehicle == true)
             {
                 _mainPresenter.AddVehicle();
 
@@ -109,6 +110,46 @@ namespace CarRentals
         private void GroupBox_Fleet_Button_Remove_Click(object sender, EventArgs e)
         {
             _mainPresenter.DeleteVehicle();
+        }
+
+        private void GroupBox_Customers_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
+        {
+            if (AddCustomer == true)
+            {
+                _mainPresenter.AddCustomer();
+
+            }
+            else
+            {
+                _mainPresenter.UpdateCustomer();
+            }
+        }
+
+        private void GroupBox_Customers_Modify_Add_Button_Cancel_Click(object sender, EventArgs e)
+        {
+            // Fix: not functional
+            GroupBox_Customers_Modify_Add.Visible = false;
+
+        }
+
+        private void GroupBox_Customers_Button_Remove_Click(object sender, EventArgs e)
+        {
+            _mainPresenter.DeleteCustomer();
+        }
+
+        private void GroupBox_Customers_Button_Add_Click(object sender, EventArgs e)
+        {
+            GroupBox_Customers_Modify_Add.Visible = true;
+            GroupBox_Customers_Modify_Add.Text = "Add Customer";
+            AddCustomer = true;
+        }
+
+        private void GroupBox_Customers_Button_Modify_Click(object sender, EventArgs e)
+        {
+            GroupBox_Customers_Modify_Add.Visible = true;
+            GroupBox_Customers_Modify_Add.Text = "Modify Customer";
+            AddCustomer = false;
+            _mainPresenter.RefreshCustomerForm();
         }
     }
 }

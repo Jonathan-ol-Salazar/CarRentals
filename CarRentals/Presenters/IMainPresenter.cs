@@ -16,5 +16,9 @@ namespace CarRentals.Presenters
         void DeleteVehicle();
         void UpdateVehicle();
         void RefreshVehicleForm();
+        void AddCustomer();
+        void DeleteCustomer();
+        void UpdateCustomer();
+        void RefreshCustomerForm();
     }
 }
