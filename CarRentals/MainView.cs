@@ -64,6 +64,12 @@ namespace CarRentals
         public Customer SelectedCustomer { get { return (Customer)DataGridView_Customers.CurrentRow.DataBoundItem; } }
 
 
+        public int RentedCustomerID { get; set; }
+        public string RentedRego { get; set; }
+        public double RentedDailyRate { get; set; }
+
+        public Rented SelectedRented { get; set; }
+
         public void SetPresenter(IMainPresenter mainPresenter)
         {
             _mainPresenter = mainPresenter;

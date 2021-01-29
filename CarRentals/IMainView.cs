@@ -37,6 +37,11 @@ namespace CarRentals
         string Title { get; set; }
         Customer SelectedCustomer { get; }
 
+        int RentedCustomerID { get; set; }
+        string RentedRego { get; set; }
+        double RentedDailyRate { get; set; }
+        Rented SelectedRented { get; }
+
     }
 
 

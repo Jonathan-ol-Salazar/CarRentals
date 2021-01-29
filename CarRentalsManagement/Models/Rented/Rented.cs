@@ -8,7 +8,7 @@ namespace DomainLayer.Rented
         {
 
         }
-        public Rented(string rego, string customerID, double dailyRate)
+        public Rented(string rego, int customerID, double dailyRate)
         {
             Rego = rego;
             CustomerID = customerID;
@@ -19,7 +19,7 @@ namespace DomainLayer.Rented
         public int RentID { get; set; }
 
         public string Rego { get; set; }
-        public string CustomerID { get; set; }
+        public int CustomerID { get; set; }
         public double DailyRate { get; set; }
     }
 }

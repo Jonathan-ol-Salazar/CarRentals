@@ -16,7 +16,7 @@ namespace CarRentals.Presenters
         IMainView _mainView;
         IVehicleRepository _vehicleService;
         ICustomerRepository _customerService;
-        IRentedRepository _rentedRepository;
+        IRentedRepository _rentedService;
 
         public MainPresenter(IMainView mainView,IVehicleRepository vehicleService, ICustomerRepository customerService, IRentedRepository rentedRepository)
         {
@@ -27,7 +27,7 @@ namespace CarRentals.Presenters
 
             _vehicleService = vehicleService;
             _customerService = customerService;
-            _rentedRepository = rentedRepository;
+            _rentedService = rentedRepository;
 
             StartUpView();
            
@@ -67,7 +67,7 @@ namespace CarRentals.Presenters
         }
         public IEnumerable<Rented> GetAllRented()
         {
-            return _rentedRepository.GetAll().ToList();
+            return _rentedService.GetAll().ToList();
         }
 
 
@@ -191,6 +191,31 @@ namespace CarRentals.Presenters
             _mainView.DOB = customer.DOB;
             _mainView.Gender = customer.GenderType.ToString();
             _mainView.Title = customer.Title;
+        }
+
+        public void RentVehicle()
+        {
+            Rented rented = new Rented
+            {
+                CustomerID = _mainView.RentedCustomerID,
+                Rego = _mainView.RentedRego,
+                DailyRate = _mainView.RentedDailyRate
+                
+            };
+
+            _rentedService.Add(rented);
+        }
+
+        public void ReturnVehicle()
+        {
+            Rented rented = _mainView.SelectedRented;
+
+            Vehicle vehicle = _vehicleService.GetByRego(rented.Rego);
+            vehicle.IsRented = false;
+
+            _vehicleService.Update(vehicle);
+            _rentedService.Delete(rented);
+
         }
     }
 }
