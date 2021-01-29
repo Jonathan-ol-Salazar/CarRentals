@@ -12,6 +12,7 @@ namespace CarRentals
 
         IEnumerable<Vehicle> FleetList { get; set; }
         IEnumerable<Customer> CustomerList { get; set; }
+        IEnumerable<Vehicle> ReportList { get; set; }
 
         string Rego { get; set; }
         string Make { get; set; }

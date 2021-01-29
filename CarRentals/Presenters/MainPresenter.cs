@@ -35,17 +35,31 @@ namespace CarRentals.Presenters
         {
             UpdateFleetListView();
             UpdateCustomerListView();
+            UpdateReportListView();
         }
 
-        private void UpdateFleetListView()
+        public void UpdateFleetListView()
         {
             _mainView.FleetList = GetAllVehicles();
         }
 
-        private void UpdateCustomerListView()
+        public void UpdateCustomerListView()
         {
             _mainView.CustomerList = GetAllCustomers();            
         }
+
+        public void UpdateReportListView()
+        {
+            _mainView.ReportList = GetAllRented();
+
+        }
+
+        public IEnumerable<Vehicle> GetAllRented()
+        {
+            return _vehicleService.GetRented().ToList();
+        }
+
+
 
         public IEnumerable<Vehicle> GetAllVehicles()
         {            
@@ -68,7 +82,7 @@ namespace CarRentals.Presenters
                 Rego = _mainView.Rego,
                 Make = _mainView.Make,
                 Model = _mainView.Model,
-                ClassType = (ClassType) Enum.Parse(typeof(ClassType), _mainView.Class, true),
+                ClassType = (ClassType)Enum.Parse(typeof(ClassType), _mainView.Class, true),
                 Year = _mainView.Year,
                 TransmissionType = (TransmissionType)Enum.Parse(typeof(TransmissionType), _mainView.Transmission, true),
                 FuelType = (FuelType)Enum.Parse(typeof(FuelType), _mainView.Fuel, true),
@@ -76,7 +90,9 @@ namespace CarRentals.Presenters
                 Sunroof = _mainView.Sunroof,
                 GPS = _mainView.GPS,
                 Colour = _mainView.Colour,
-                DailyRate = _mainView.DailyRate
+                DailyRate = _mainView.DailyRate,
+                IsRented = true
+                
             };
 
             _vehicleService.Add(vehicle);

@@ -2,6 +2,7 @@
 using DomainLayer;
 using DomainLayer.Vehicles;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace InfrastructureLayer.Repositories
 {
@@ -41,11 +42,16 @@ namespace InfrastructureLayer.Repositories
         }
         public IEnumerable<Vehicle> GetAll()
         {
-            var vehicle = _context.Vehicles;
-            return vehicle;
+            var vehicles = _context.Vehicles;
+            return vehicles;
 
         }
+        public IEnumerable<Vehicle> GetRented()
+        {
+            var vehicles = _context.Vehicles.Where(x => x.IsRented == true);
+            return vehicles;
 
+        }
 
 
 

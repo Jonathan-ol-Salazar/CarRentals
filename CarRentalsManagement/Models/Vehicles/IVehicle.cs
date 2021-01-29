@@ -14,6 +14,7 @@
         ClassType ClassType { get; set; }
         string Rego { get; set; }
         string Year { get; set; }
+        bool IsRented { get; set; }
 
         string ToCSVString();
         string ToString();

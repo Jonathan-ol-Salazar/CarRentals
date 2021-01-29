@@ -31,6 +31,13 @@ namespace CarRentals
             set { DataGridView_Customers.DataSource = value; }
         }
 
+        public IEnumerable<Vehicle> ReportList 
+        {
+            get { return (IEnumerable<Vehicle>)DataGridView_Report.DataSource; }
+            set { DataGridView_Report.DataSource = value; }
+        }
+
+
         public string Rego { get { return GroupBox_Fleet_Modify_Add_TextBox_Rego.Text; } set { GroupBox_Fleet_Modify_Add_TextBox_Rego.Text = value; } }
         public string Make { get { return GroupBox_Fleet_Modify_Add_TextBox_Make.Text; } set { GroupBox_Fleet_Modify_Add_TextBox_Make.Text = value; } }
         public string Model { get { return GroupBox_Fleet_Modify_Add_TextBox_Model.Text; } set { GroupBox_Fleet_Modify_Add_TextBox_Model.Text = value; } }
@@ -54,6 +61,7 @@ namespace CarRentals
         public string Title { get { return GroupBox_Customers_Modify_Add_ComboBox_Title.Text; } set { GroupBox_Customers_Modify_Add_ComboBox_Title.Text = value; } }
 
         public Customer SelectedCustomer { get { return (Customer)DataGridView_Customers.CurrentRow.DataBoundItem; } }
+
 
         public void SetPresenter(IMainPresenter mainPresenter)
         {
@@ -155,6 +163,28 @@ namespace CarRentals
             Label_CustomerID.Visible = true;
             AddCustomer = false;
             _mainPresenter.RefreshCustomerForm();
+        }
+
+        private void TabControl_MainView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (TabControl_MainView.SelectedIndex)
+            {
+                case 0:
+                    _mainPresenter.UpdateFleetListView();
+                    break;
+                case 1:
+                    _mainPresenter.UpdateCustomerListView();
+
+                    break;
+                case 2:
+                    _mainPresenter.UpdateReportListView();
+
+                    break;
+                //case 3:
+                //    _mainPresenter.UpdateReportListView();
+
+                //    break;
+            }
         }
     }
 }

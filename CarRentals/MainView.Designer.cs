@@ -87,7 +87,10 @@ namespace CarRentals
             this.Label_CustomerID = new System.Windows.Forms.Label();
             this.DataGridView_Customers = new System.Windows.Forms.DataGridView();
             this.RentalReportTab = new System.Windows.Forms.TabPage();
-            this.DataGridView_RentalReport = new System.Windows.Forms.DataGridView();
+            this.GroupBox_Report = new System.Windows.Forms.GroupBox();
+            this.GroupBox_Report_Button_Return = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DataGridView_Report = new System.Windows.Forms.DataGridView();
             this.RentalSearchTab = new System.Windows.Forms.TabPage();
             this.DataGridView_RentalSearch = new System.Windows.Forms.DataGridView();
             this.TabControl_MainView.SuspendLayout();
@@ -102,7 +105,8 @@ namespace CarRentals
             this.GroupBox_Customers_Modify_Add.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Customers)).BeginInit();
             this.RentalReportTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalReport)).BeginInit();
+            this.GroupBox_Report.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Report)).BeginInit();
             this.RentalSearchTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +123,7 @@ namespace CarRentals
             this.TabControl_MainView.SelectedIndex = 0;
             this.TabControl_MainView.Size = new System.Drawing.Size(800, 692);
             this.TabControl_MainView.TabIndex = 0;
+            this.TabControl_MainView.SelectedIndexChanged += new System.EventHandler(this.TabControl_MainView_SelectedIndexChanged);
             // 
             // FleetTab
             // 
@@ -690,7 +695,8 @@ namespace CarRentals
             // 
             // RentalReportTab
             // 
-            this.RentalReportTab.Controls.Add(this.DataGridView_RentalReport);
+            this.RentalReportTab.Controls.Add(this.GroupBox_Report);
+            this.RentalReportTab.Controls.Add(this.DataGridView_Report);
             this.RentalReportTab.Location = new System.Drawing.Point(4, 24);
             this.RentalReportTab.Name = "RentalReportTab";
             this.RentalReportTab.Padding = new System.Windows.Forms.Padding(3);
@@ -699,15 +705,45 @@ namespace CarRentals
             this.RentalReportTab.Text = "Rental Report";
             this.RentalReportTab.UseVisualStyleBackColor = true;
             // 
-            // DataGridView_RentalReport
+            // GroupBox_Report
             // 
-            this.DataGridView_RentalReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView_RentalReport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridView_RentalReport.Location = new System.Drawing.Point(3, 3);
-            this.DataGridView_RentalReport.Name = "DataGridView_RentalReport";
-            this.DataGridView_RentalReport.RowTemplate.Height = 25;
-            this.DataGridView_RentalReport.Size = new System.Drawing.Size(786, 658);
-            this.DataGridView_RentalReport.TabIndex = 1;
+            this.GroupBox_Report.Controls.Add(this.GroupBox_Report_Button_Return);
+            this.GroupBox_Report.Controls.Add(this.label1);
+            this.GroupBox_Report.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GroupBox_Report.Location = new System.Drawing.Point(3, 606);
+            this.GroupBox_Report.Name = "GroupBox_Report";
+            this.GroupBox_Report.Size = new System.Drawing.Size(786, 55);
+            this.GroupBox_Report.TabIndex = 4;
+            this.GroupBox_Report.TabStop = false;
+            this.GroupBox_Report.Text = "Modify Rentals";
+            // 
+            // GroupBox_Report_Button_Return
+            // 
+            this.GroupBox_Report_Button_Return.Location = new System.Drawing.Point(6, 22);
+            this.GroupBox_Report_Button_Return.Name = "GroupBox_Report_Button_Return";
+            this.GroupBox_Report_Button_Return.Size = new System.Drawing.Size(75, 23);
+            this.GroupBox_Report_Button_Return.TabIndex = 0;
+            this.GroupBox_Report_Button_Return.Text = "Return Vehicle";
+            this.GroupBox_Report_Button_Return.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(409, -75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 15);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Rego:";
+            // 
+            // DataGridView_Report
+            // 
+            this.DataGridView_Report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_Report.Location = new System.Drawing.Point(3, 3);
+            this.DataGridView_Report.Name = "DataGridView_Report";
+            this.DataGridView_Report.RowTemplate.Height = 25;
+            this.DataGridView_Report.Size = new System.Drawing.Size(786, 592);
+            this.DataGridView_Report.TabIndex = 3;
             // 
             // RentalSearchTab
             // 
@@ -755,7 +791,9 @@ namespace CarRentals
             this.GroupBox_Customers_Modify_Add.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Customers)).EndInit();
             this.RentalReportTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalReport)).EndInit();
+            this.GroupBox_Report.ResumeLayout(false);
+            this.GroupBox_Report.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Report)).EndInit();
             this.RentalSearchTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).EndInit();
             this.ResumeLayout(false);
@@ -771,7 +809,6 @@ namespace CarRentals
         private System.Windows.Forms.TabPage RentalSearchTab;
         private System.Windows.Forms.DataGridView DataGridView_Fleet;
         private System.Windows.Forms.DataGridView DataGridView_Customers;
-        private System.Windows.Forms.DataGridView DataGridView_RentalReport;
         private System.Windows.Forms.DataGridView DataGridView_RentalSearch;
         private System.Windows.Forms.GroupBox GroupBox_Fleet;
         private System.Windows.Forms.Button GroupBox_Fleet_Button_Add;
@@ -827,6 +864,10 @@ namespace CarRentals
         private System.Windows.Forms.ComboBox GroupBox_Customers_Modify_Add_ComboBox_Gender;
         private System.Windows.Forms.TextBox GroupBox_;
         private System.Windows.Forms.TextBox Flee;
+        private System.Windows.Forms.GroupBox GroupBox_Report;
+        private System.Windows.Forms.Button GroupBox_Report_Button_Return;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView DataGridView_Report;
     }
 }
 

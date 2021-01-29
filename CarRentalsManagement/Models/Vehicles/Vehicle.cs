@@ -93,6 +93,7 @@ namespace DomainLayer.Vehicles
         public double DailyRate { get; set; }
         public string Colour { get; set; }
 
+        public bool IsRented { get; set; }
     }
     public enum ClassType
     {
