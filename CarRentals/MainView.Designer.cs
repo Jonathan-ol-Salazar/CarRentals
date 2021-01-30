@@ -88,6 +88,8 @@ namespace CarRentals
             this.DataGridView_Customers = new System.Windows.Forms.DataGridView();
             this.RentalReportTab = new System.Windows.Forms.TabPage();
             this.GroupBox_Report = new System.Windows.Forms.GroupBox();
+            this.Label_TotalVehiclesRented = new System.Windows.Forms.Label();
+            this.Label_TotalDailyRate = new System.Windows.Forms.Label();
             this.GroupBox_Report_Button_Return = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.DataGridView_RentalReport = new System.Windows.Forms.DataGridView();
@@ -108,8 +110,6 @@ namespace CarRentals
             this.Label_Customer = new System.Windows.Forms.Label();
             this.ComboBox_Customer = new System.Windows.Forms.ComboBox();
             this.DataGridView_RentalSearch = new System.Windows.Forms.DataGridView();
-            this.Label_TotalDailyRate = new System.Windows.Forms.Label();
-            this.Label_TotalVehiclesRented = new System.Windows.Forms.Label();
             this.TabControl_MainView.SuspendLayout();
             this.FleetTab.SuspendLayout();
             this.GroupBox_Fleet_Modify_Add.SuspendLayout();
@@ -202,14 +202,14 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_NumericUpDown_DailyRate.Location = new System.Drawing.Point(489, 112);
             this.GroupBox_Fleet_Modify_Add_NumericUpDown_DailyRate.Name = "GroupBox_Fleet_Modify_Add_NumericUpDown_DailyRate";
             this.GroupBox_Fleet_Modify_Add_NumericUpDown_DailyRate.Size = new System.Drawing.Size(31, 23);
-            this.GroupBox_Fleet_Modify_Add_NumericUpDown_DailyRate.TabIndex = 29;
+            this.GroupBox_Fleet_Modify_Add_NumericUpDown_DailyRate.TabIndex = 12;
             // 
             // GroupBox_Fleet_Modify_Add_NumericUpDown_Seats
             // 
             this.GroupBox_Fleet_Modify_Add_NumericUpDown_Seats.Location = new System.Drawing.Point(271, 149);
             this.GroupBox_Fleet_Modify_Add_NumericUpDown_Seats.Name = "GroupBox_Fleet_Modify_Add_NumericUpDown_Seats";
             this.GroupBox_Fleet_Modify_Add_NumericUpDown_Seats.Size = new System.Drawing.Size(31, 23);
-            this.GroupBox_Fleet_Modify_Add_NumericUpDown_Seats.TabIndex = 28;
+            this.GroupBox_Fleet_Modify_Add_NumericUpDown_Seats.TabIndex = 8;
             // 
             // GroupBox_Fleet_Modify_Add_CheckBox_GPS
             // 
@@ -217,7 +217,7 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_CheckBox_GPS.Location = new System.Drawing.Point(573, 37);
             this.GroupBox_Fleet_Modify_Add_CheckBox_GPS.Name = "GroupBox_Fleet_Modify_Add_CheckBox_GPS";
             this.GroupBox_Fleet_Modify_Add_CheckBox_GPS.Size = new System.Drawing.Size(15, 14);
-            this.GroupBox_Fleet_Modify_Add_CheckBox_GPS.TabIndex = 27;
+            this.GroupBox_Fleet_Modify_Add_CheckBox_GPS.TabIndex = 10;
             this.GroupBox_Fleet_Modify_Add_CheckBox_GPS.UseVisualStyleBackColor = true;
             // 
             // GroupBox_Fleet_Modify_Add_CheckBox_Sunroof
@@ -226,7 +226,7 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_CheckBox_Sunroof.Location = new System.Drawing.Point(489, 38);
             this.GroupBox_Fleet_Modify_Add_CheckBox_Sunroof.Name = "GroupBox_Fleet_Modify_Add_CheckBox_Sunroof";
             this.GroupBox_Fleet_Modify_Add_CheckBox_Sunroof.Size = new System.Drawing.Size(15, 14);
-            this.GroupBox_Fleet_Modify_Add_CheckBox_Sunroof.TabIndex = 26;
+            this.GroupBox_Fleet_Modify_Add_CheckBox_Sunroof.TabIndex = 9;
             this.GroupBox_Fleet_Modify_Add_CheckBox_Sunroof.UseVisualStyleBackColor = true;
             // 
             // GroupBox_Fleet_Modify_Add_ComboBox_Fuel
@@ -235,7 +235,7 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.Location = new System.Drawing.Point(271, 111);
             this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.Name = "GroupBox_Fleet_Modify_Add_ComboBox_Fuel";
             this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.Size = new System.Drawing.Size(108, 23);
-            this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.TabIndex = 25;
+            this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.TabIndex = 7;
             // 
             // GroupBox_Fleet_Modify_Add_ComboBox_Class
             // 
@@ -243,7 +243,7 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_ComboBox_Class.Location = new System.Drawing.Point(70, 148);
             this.GroupBox_Fleet_Modify_Add_ComboBox_Class.Name = "GroupBox_Fleet_Modify_Add_ComboBox_Class";
             this.GroupBox_Fleet_Modify_Add_ComboBox_Class.Size = new System.Drawing.Size(100, 23);
-            this.GroupBox_Fleet_Modify_Add_ComboBox_Class.TabIndex = 24;
+            this.GroupBox_Fleet_Modify_Add_ComboBox_Class.TabIndex = 4;
             // 
             // GroupBox_Fleet_Modify_Add_ComboBox_Transmission
             // 
@@ -251,23 +251,24 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.Location = new System.Drawing.Point(271, 74);
             this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.Name = "GroupBox_Fleet_Modify_Add_ComboBox_Transmission";
             this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.Size = new System.Drawing.Size(108, 23);
-            this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.TabIndex = 23;
+            this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.TabIndex = 6;
             // 
             // GroupBox_Fleet_Modify_Add_Button_Cancel
             // 
             this.GroupBox_Fleet_Modify_Add_Button_Cancel.Location = new System.Drawing.Point(703, 151);
             this.GroupBox_Fleet_Modify_Add_Button_Cancel.Name = "GroupBox_Fleet_Modify_Add_Button_Cancel";
             this.GroupBox_Fleet_Modify_Add_Button_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.GroupBox_Fleet_Modify_Add_Button_Cancel.TabIndex = 22;
+            this.GroupBox_Fleet_Modify_Add_Button_Cancel.TabIndex = 14;
             this.GroupBox_Fleet_Modify_Add_Button_Cancel.Text = "Cancel";
             this.GroupBox_Fleet_Modify_Add_Button_Cancel.UseVisualStyleBackColor = true;
+            this.GroupBox_Fleet_Modify_Add_Button_Cancel.Click += new System.EventHandler(this.GroupBox_Fleet_Modify_Add_Button_Cancel_Click);
             // 
             // GroupBox_Fleet_Modify_Add_Button_Submit
             // 
             this.GroupBox_Fleet_Modify_Add_Button_Submit.Location = new System.Drawing.Point(622, 151);
             this.GroupBox_Fleet_Modify_Add_Button_Submit.Name = "GroupBox_Fleet_Modify_Add_Button_Submit";
             this.GroupBox_Fleet_Modify_Add_Button_Submit.Size = new System.Drawing.Size(75, 23);
-            this.GroupBox_Fleet_Modify_Add_Button_Submit.TabIndex = 21;
+            this.GroupBox_Fleet_Modify_Add_Button_Submit.TabIndex = 13;
             this.GroupBox_Fleet_Modify_Add_Button_Submit.Text = "Submit";
             this.GroupBox_Fleet_Modify_Add_Button_Submit.UseVisualStyleBackColor = true;
             this.GroupBox_Fleet_Modify_Add_Button_Submit.Click += new System.EventHandler(this.GroupBox_Fleet_Modify_Add_Button_Submit_Click);
@@ -364,7 +365,7 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_TextBox_Year.Location = new System.Drawing.Point(271, 34);
             this.GroupBox_Fleet_Modify_Add_TextBox_Year.Name = "GroupBox_Fleet_Modify_Add_TextBox_Year";
             this.GroupBox_Fleet_Modify_Add_TextBox_Year.Size = new System.Drawing.Size(108, 23);
-            this.GroupBox_Fleet_Modify_Add_TextBox_Year.TabIndex = 9;
+            this.GroupBox_Fleet_Modify_Add_TextBox_Year.TabIndex = 5;
             // 
             // Label_Year
             // 
@@ -381,7 +382,7 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_TextBox_Make.Location = new System.Drawing.Point(70, 74);
             this.GroupBox_Fleet_Modify_Add_TextBox_Make.Name = "GroupBox_Fleet_Modify_Add_TextBox_Make";
             this.GroupBox_Fleet_Modify_Add_TextBox_Make.Size = new System.Drawing.Size(100, 23);
-            this.GroupBox_Fleet_Modify_Add_TextBox_Make.TabIndex = 7;
+            this.GroupBox_Fleet_Modify_Add_TextBox_Make.TabIndex = 2;
             // 
             // Label_Make
             // 
@@ -588,14 +589,14 @@ namespace CarRentals
             this.GroupBox_Customers_Modify_Add_ComboBox_Gender.Location = new System.Drawing.Point(572, 93);
             this.GroupBox_Customers_Modify_Add_ComboBox_Gender.Name = "GroupBox_Customers_Modify_Add_ComboBox_Gender";
             this.GroupBox_Customers_Modify_Add_ComboBox_Gender.Size = new System.Drawing.Size(99, 23);
-            this.GroupBox_Customers_Modify_Add_ComboBox_Gender.TabIndex = 24;
+            this.GroupBox_Customers_Modify_Add_ComboBox_Gender.TabIndex = 6;
             // 
             // GroupBox_Customers_Modify_Add_Button_Cancel
             // 
             this.GroupBox_Customers_Modify_Add_Button_Cancel.Location = new System.Drawing.Point(703, 151);
             this.GroupBox_Customers_Modify_Add_Button_Cancel.Name = "GroupBox_Customers_Modify_Add_Button_Cancel";
             this.GroupBox_Customers_Modify_Add_Button_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.GroupBox_Customers_Modify_Add_Button_Cancel.TabIndex = 22;
+            this.GroupBox_Customers_Modify_Add_Button_Cancel.TabIndex = 8;
             this.GroupBox_Customers_Modify_Add_Button_Cancel.Text = "Cancel";
             this.GroupBox_Customers_Modify_Add_Button_Cancel.UseVisualStyleBackColor = true;
             this.GroupBox_Customers_Modify_Add_Button_Cancel.Click += new System.EventHandler(this.GroupBox_Customers_Modify_Add_Button_Cancel_Click);
@@ -605,7 +606,7 @@ namespace CarRentals
             this.GroupBox_Customers_Modify_Add_Button_Submit.Location = new System.Drawing.Point(622, 151);
             this.GroupBox_Customers_Modify_Add_Button_Submit.Name = "GroupBox_Customers_Modify_Add_Button_Submit";
             this.GroupBox_Customers_Modify_Add_Button_Submit.Size = new System.Drawing.Size(75, 23);
-            this.GroupBox_Customers_Modify_Add_Button_Submit.TabIndex = 21;
+            this.GroupBox_Customers_Modify_Add_Button_Submit.TabIndex = 7;
             this.GroupBox_Customers_Modify_Add_Button_Submit.Text = "Submit";
             this.GroupBox_Customers_Modify_Add_Button_Submit.UseVisualStyleBackColor = true;
             this.GroupBox_Customers_Modify_Add_Button_Submit.Click += new System.EventHandler(this.GroupBox_Customers_Modify_Add_Button_Submit_Click);
@@ -616,14 +617,14 @@ namespace CarRentals
             this.GroupBox_Customers_Modify_Add_ComboBox_Title.Location = new System.Drawing.Point(110, 93);
             this.GroupBox_Customers_Modify_Add_ComboBox_Title.Name = "GroupBox_Customers_Modify_Add_ComboBox_Title";
             this.GroupBox_Customers_Modify_Add_ComboBox_Title.Size = new System.Drawing.Size(100, 23);
-            this.GroupBox_Customers_Modify_Add_ComboBox_Title.TabIndex = 23;
+            this.GroupBox_Customers_Modify_Add_ComboBox_Title.TabIndex = 2;
             // 
             // GroupBox_Customers_Modify_Add_TextBox_DOB
             // 
             this.GroupBox_Customers_Modify_Add_TextBox_DOB.Location = new System.Drawing.Point(572, 56);
             this.GroupBox_Customers_Modify_Add_TextBox_DOB.Name = "GroupBox_Customers_Modify_Add_TextBox_DOB";
             this.GroupBox_Customers_Modify_Add_TextBox_DOB.Size = new System.Drawing.Size(99, 23);
-            this.GroupBox_Customers_Modify_Add_TextBox_DOB.TabIndex = 11;
+            this.GroupBox_Customers_Modify_Add_TextBox_DOB.TabIndex = 5;
             // 
             // Label_DOB
             // 
@@ -660,7 +661,7 @@ namespace CarRentals
             this.GroupBox_Customers_Modify_Add_TextBox_FirstName.Location = new System.Drawing.Point(349, 56);
             this.GroupBox_Customers_Modify_Add_TextBox_FirstName.Name = "GroupBox_Customers_Modify_Add_TextBox_FirstName";
             this.GroupBox_Customers_Modify_Add_TextBox_FirstName.Size = new System.Drawing.Size(100, 23);
-            this.GroupBox_Customers_Modify_Add_TextBox_FirstName.TabIndex = 2;
+            this.GroupBox_Customers_Modify_Add_TextBox_FirstName.TabIndex = 3;
             // 
             // Label_FirstName
             // 
@@ -677,7 +678,7 @@ namespace CarRentals
             this.GroupBox_Customers_Modify_Add_TextBox_LastName.Location = new System.Drawing.Point(349, 93);
             this.GroupBox_Customers_Modify_Add_TextBox_LastName.Name = "GroupBox_Customers_Modify_Add_TextBox_LastName";
             this.GroupBox_Customers_Modify_Add_TextBox_LastName.Size = new System.Drawing.Size(100, 23);
-            this.GroupBox_Customers_Modify_Add_TextBox_LastName.TabIndex = 3;
+            this.GroupBox_Customers_Modify_Add_TextBox_LastName.TabIndex = 4;
             // 
             // Label_LastName
             // 
@@ -741,6 +742,24 @@ namespace CarRentals
             this.GroupBox_Report.TabStop = false;
             this.GroupBox_Report.Text = "Modify Rentals";
             this.GroupBox_Report.Enter += new System.EventHandler(this.GroupBox_Report_Enter);
+            // 
+            // Label_TotalVehiclesRented
+            // 
+            this.Label_TotalVehiclesRented.AutoSize = true;
+            this.Label_TotalVehiclesRented.Location = new System.Drawing.Point(535, 14);
+            this.Label_TotalVehiclesRented.Name = "Label_TotalVehiclesRented";
+            this.Label_TotalVehiclesRented.Size = new System.Drawing.Size(120, 15);
+            this.Label_TotalVehiclesRented.TabIndex = 15;
+            this.Label_TotalVehiclesRented.Text = "Total Vehicles Rented:";
+            // 
+            // Label_TotalDailyRate
+            // 
+            this.Label_TotalDailyRate.AutoSize = true;
+            this.Label_TotalDailyRate.Location = new System.Drawing.Point(514, 34);
+            this.Label_TotalDailyRate.Name = "Label_TotalDailyRate";
+            this.Label_TotalDailyRate.Size = new System.Drawing.Size(141, 15);
+            this.Label_TotalDailyRate.TabIndex = 14;
+            this.Label_TotalDailyRate.Text = "Total Daily Rental Charge:";
             // 
             // GroupBox_Report_Button_Return
             // 
@@ -812,7 +831,7 @@ namespace CarRentals
             this.TextBox_Query.Location = new System.Drawing.Point(35, 19);
             this.TextBox_Query.Name = "TextBox_Query";
             this.TextBox_Query.Size = new System.Drawing.Size(304, 23);
-            this.TextBox_Query.TabIndex = 7;
+            this.TextBox_Query.TabIndex = 1;
             this.TextBox_Query.Text = "Enter query here...";
             // 
             // NumericUpDown_DailyCostRangeTop
@@ -820,21 +839,21 @@ namespace CarRentals
             this.NumericUpDown_DailyCostRangeTop.Location = new System.Drawing.Point(204, 76);
             this.NumericUpDown_DailyCostRangeTop.Name = "NumericUpDown_DailyCostRangeTop";
             this.NumericUpDown_DailyCostRangeTop.Size = new System.Drawing.Size(40, 23);
-            this.NumericUpDown_DailyCostRangeTop.TabIndex = 6;
+            this.NumericUpDown_DailyCostRangeTop.TabIndex = 5;
             // 
             // NumericUpDown_DailyCostRangeBottom
             // 
             this.NumericUpDown_DailyCostRangeBottom.Location = new System.Drawing.Point(140, 76);
             this.NumericUpDown_DailyCostRangeBottom.Name = "NumericUpDown_DailyCostRangeBottom";
             this.NumericUpDown_DailyCostRangeBottom.Size = new System.Drawing.Size(40, 23);
-            this.NumericUpDown_DailyCostRangeBottom.TabIndex = 5;
+            this.NumericUpDown_DailyCostRangeBottom.TabIndex = 4;
             // 
             // Button_ShowAll
             // 
             this.Button_ShowAll.Location = new System.Drawing.Point(446, 19);
             this.Button_ShowAll.Name = "Button_ShowAll";
             this.Button_ShowAll.Size = new System.Drawing.Size(99, 35);
-            this.Button_ShowAll.TabIndex = 4;
+            this.Button_ShowAll.TabIndex = 3;
             this.Button_ShowAll.Text = "Show All";
             this.Button_ShowAll.UseVisualStyleBackColor = true;
             this.Button_ShowAll.Click += new System.EventHandler(this.Button_ShowAll_Click);
@@ -844,7 +863,7 @@ namespace CarRentals
             this.Button_Search.Location = new System.Drawing.Point(341, 19);
             this.Button_Search.Name = "Button_Search";
             this.Button_Search.Size = new System.Drawing.Size(99, 35);
-            this.Button_Search.TabIndex = 3;
+            this.Button_Search.TabIndex = 2;
             this.Button_Search.Text = "Search";
             this.Button_Search.UseVisualStyleBackColor = true;
             this.Button_Search.Click += new System.EventHandler(this.Button_Search_Click);
@@ -899,7 +918,7 @@ namespace CarRentals
             this.NumericUpDown_RentalDuration.Location = new System.Drawing.Point(111, 64);
             this.NumericUpDown_RentalDuration.Name = "NumericUpDown_RentalDuration";
             this.NumericUpDown_RentalDuration.Size = new System.Drawing.Size(69, 23);
-            this.NumericUpDown_RentalDuration.TabIndex = 2;
+            this.NumericUpDown_RentalDuration.TabIndex = 7;
             this.NumericUpDown_RentalDuration.ValueChanged += new System.EventHandler(this.NumericUpDown_RentalDuration_ValueChanged);
             // 
             // Button_Rent
@@ -907,7 +926,7 @@ namespace CarRentals
             this.Button_Rent.Location = new System.Drawing.Point(360, 34);
             this.Button_Rent.Name = "Button_Rent";
             this.Button_Rent.Size = new System.Drawing.Size(99, 35);
-            this.Button_Rent.TabIndex = 1;
+            this.Button_Rent.TabIndex = 8;
             this.Button_Rent.Text = "Rent";
             this.Button_Rent.UseVisualStyleBackColor = true;
             this.Button_Rent.Click += new System.EventHandler(this.Button_Rent_Click);
@@ -927,7 +946,7 @@ namespace CarRentals
             this.ComboBox_Customer.Location = new System.Drawing.Point(111, 20);
             this.ComboBox_Customer.Name = "ComboBox_Customer";
             this.ComboBox_Customer.Size = new System.Drawing.Size(185, 23);
-            this.ComboBox_Customer.TabIndex = 0;
+            this.ComboBox_Customer.TabIndex = 6;
             this.ComboBox_Customer.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Customer_SelectedIndexChanged);
             // 
             // DataGridView_RentalSearch
@@ -938,24 +957,6 @@ namespace CarRentals
             this.DataGridView_RentalSearch.RowTemplate.Height = 25;
             this.DataGridView_RentalSearch.Size = new System.Drawing.Size(721, 383);
             this.DataGridView_RentalSearch.TabIndex = 1;
-            // 
-            // Label_TotalDailyRate
-            // 
-            this.Label_TotalDailyRate.AutoSize = true;
-            this.Label_TotalDailyRate.Location = new System.Drawing.Point(514, 34);
-            this.Label_TotalDailyRate.Name = "Label_TotalDailyRate";
-            this.Label_TotalDailyRate.Size = new System.Drawing.Size(141, 15);
-            this.Label_TotalDailyRate.TabIndex = 14;
-            this.Label_TotalDailyRate.Text = "Total Daily Rental Charge:";
-            // 
-            // Label_TotalVehiclesRented
-            // 
-            this.Label_TotalVehiclesRented.AutoSize = true;
-            this.Label_TotalVehiclesRented.Location = new System.Drawing.Point(535, 14);
-            this.Label_TotalVehiclesRented.Name = "Label_TotalVehiclesRented";
-            this.Label_TotalVehiclesRented.Size = new System.Drawing.Size(120, 15);
-            this.Label_TotalVehiclesRented.TabIndex = 15;
-            this.Label_TotalVehiclesRented.Text = "Total Vehicles Rented:";
             // 
             // MainView
             // 

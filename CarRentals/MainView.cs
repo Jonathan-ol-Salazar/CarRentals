@@ -117,12 +117,9 @@ namespace CarRentals
 
         private void GroupBox_Fleet_Modify_Add_Button_Cancel_Click(object sender, EventArgs e)
         {
-            // Fix: not functional
             GroupBox_Fleet_Modify_Add.Visible = false;
-            GroupBox_Fleet_Modify_Add.Enabled = false;
+
         }
-
-
 
         private void GroupBox_Fleet_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
         {
@@ -157,9 +154,7 @@ namespace CarRentals
 
         private void GroupBox_Customers_Modify_Add_Button_Cancel_Click(object sender, EventArgs e)
         {
-            // Fix: not functional
             GroupBox_Customers_Modify_Add.Visible = false;
-
         }
 
         private void GroupBox_Customers_Button_Remove_Click(object sender, EventArgs e)
@@ -254,5 +249,7 @@ namespace CarRentals
         {
             _mainPresenter.DeleteRental();
         }
+
+
     }
 }
