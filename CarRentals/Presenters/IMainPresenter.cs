@@ -23,7 +23,8 @@ namespace CarRentals.Presenters
         void UpdateFleetListView();
         void UpdateCustomerListView();
         void UpdateReportListView();
-        void RentVehicle();
+        void AddRental();
+        void DeleteRental();
         void UpdateRentalSearchListView();
         List<string> GetNotRenting();
 

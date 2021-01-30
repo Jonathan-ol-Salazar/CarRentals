@@ -48,7 +48,7 @@ namespace CarRentals
         string Query { get; set; }
         bool isQuery { get; set; }
 
-
+        Vehicle SelectedVehicleResult { get; }
     }
 
 

@@ -220,20 +220,19 @@ namespace CarRentals.Presenters
             _mainView.Title = customer.Title;
         }
 
-        public void RentVehicle()
+        public void AddRental()
         {
             Rented rented = new Rented
             {
                 CustomerID = _mainView.RentedCustomerID,
-                Rego = _mainView.RentedRego,
-                DailyRate = _mainView.RentedDailyRate
-                
+                Rego = _mainView.SelectedVehicleResult.Rego,
+                DailyRate = _mainView.SelectedVehicleResult.DailyRate
             };
 
             _rentedService.Add(rented);
         }
 
-        public void ReturnVehicle()
+        public void DeleteRental()
         {
             Rented rented = _mainView.SelectedRented;
 

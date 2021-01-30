@@ -904,6 +904,7 @@ namespace CarRentals
             this.Button_Rent.TabIndex = 1;
             this.Button_Rent.Text = "Rent";
             this.Button_Rent.UseVisualStyleBackColor = true;
+            this.Button_Rent.Click += new System.EventHandler(this.Button_Rent_Click);
             // 
             // Label_Customer
             // 
