@@ -894,6 +894,7 @@ namespace CarRentals
             this.NumericUpDown_RentalDuration.Name = "NumericUpDown_RentalDuration";
             this.NumericUpDown_RentalDuration.Size = new System.Drawing.Size(69, 23);
             this.NumericUpDown_RentalDuration.TabIndex = 2;
+            this.NumericUpDown_RentalDuration.ValueChanged += new System.EventHandler(this.NumericUpDown_RentalDuration_ValueChanged);
             // 
             // Button_Rent
             // 

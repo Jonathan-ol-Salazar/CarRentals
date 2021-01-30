@@ -79,6 +79,7 @@ namespace CarRentals
 
         public string Query { get; set; }
         public bool isQuery { get; set; }
+        public Vehicle SelectedVehicleResult { get { return (Vehicle)DataGridView_RentalSearch.CurrentRow.DataBoundItem; } }
 
 
 
@@ -225,7 +226,13 @@ namespace CarRentals
         private void GroupBox_CreateRental_Enter(object sender, EventArgs e)
         {
             ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
+            Label_TotalCost.Text = "Total Cost: $" + ((double)NumericUpDown_RentalDuration.Value * SelectedVehicleResult.DailyRate).ToString();
 
+        }
+
+        private void NumericUpDown_RentalDuration_ValueChanged(object sender, EventArgs e)
+        {
+            Label_TotalCost.Text = "Total Cost: $" + ((double)NumericUpDown_RentalDuration.Value * SelectedVehicleResult.DailyRate).ToString();
         }
     }
 }
