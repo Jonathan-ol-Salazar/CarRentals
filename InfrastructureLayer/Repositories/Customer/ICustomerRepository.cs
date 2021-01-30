@@ -1,5 +1,4 @@
-﻿using DomainLayer;
-using DomainLayer.Customers;
+﻿using DomainLayer.Customers;
 using System.Collections.Generic;
 
 namespace InfrastructureLayer.Repositories
@@ -10,6 +9,7 @@ namespace InfrastructureLayer.Repositories
         void Update(Customer customer);
         void Delete(Customer customer);
         IEnumerable<Customer> GetAll();
+        IEnumerable<Customer> GetNotRenting();
         Customer GetById(int id);
 
     }

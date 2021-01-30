@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Linq;
 using System;
 using DomainLayer.Rented;
+using ServiceLayer.Services;
 
 namespace CarRentals.Presenters
 {
@@ -15,10 +16,10 @@ namespace CarRentals.Presenters
         // View object
         IMainView _mainView;
         IVehicleRepository _vehicleService;
-        ICustomerRepository _customerService;
+        ICustomerService _customerService;
         IRentedRepository _rentedService;
 
-        public MainPresenter(IMainView mainView,IVehicleRepository vehicleService, ICustomerRepository customerService, IRentedRepository rentedRepository)
+        public MainPresenter(IMainView mainView, IVehicleRepository vehicleService, ICustomerService customerService, IRentedRepository rentedRepository)
         {
             // Set View 
 
@@ -92,7 +93,10 @@ namespace CarRentals.Presenters
             return _vehicleService.GetNotRented().ToList();
         }
 
-
+        public List<string> GetNotRenting()
+        {
+            return _customerService.GetNotRentingList();
+        }
 
         public MainView GetMainView()
         {

@@ -8,6 +8,7 @@
         string DOB { get; set; }
         GenderType GenderType { get; set; }
         string Title { get; set; }
+        bool IsRenting { get; set; }
 
         string ToCSVString();
         string ToString();

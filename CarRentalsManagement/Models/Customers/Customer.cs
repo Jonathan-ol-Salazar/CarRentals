@@ -39,8 +39,7 @@
         public string LastName { get; set; }
         public string DOB { get; set; }
         public GenderType GenderType { get; set; }
-
-
+        public bool IsRenting { get; set; }
     }
     public enum GenderType
     {

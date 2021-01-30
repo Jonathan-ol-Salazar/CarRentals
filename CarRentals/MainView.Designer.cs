@@ -92,22 +92,22 @@ namespace CarRentals
             this.label1 = new System.Windows.Forms.Label();
             this.DataGridView_Report = new System.Windows.Forms.DataGridView();
             this.RentalSearchTab = new System.Windows.Forms.TabPage();
-            this.DataGridView_RentalSearch = new System.Windows.Forms.DataGridView();
+            this.Label_DailyCostRangeMinus = new System.Windows.Forms.Label();
+            this.Label_DailyCostRange = new System.Windows.Forms.Label();
+            this.TextBox_Query = new System.Windows.Forms.TextBox();
+            this.NumericUpDown_DailyCostRangeTop = new System.Windows.Forms.NumericUpDown();
+            this.NumericUpDown_DailyCostRangeBottom = new System.Windows.Forms.NumericUpDown();
+            this.Button_ShowAll = new System.Windows.Forms.Button();
+            this.Button_Search = new System.Windows.Forms.Button();
             this.GroupBox_Results = new System.Windows.Forms.GroupBox();
             this.GroupBox_CreateRental = new System.Windows.Forms.GroupBox();
-            this.Button_Search = new System.Windows.Forms.Button();
-            this.Button_ShowAll = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Button_Rent = new System.Windows.Forms.Button();
-            this.NumericUpDown_DailyCostRangeBottom = new System.Windows.Forms.NumericUpDown();
-            this.NumericUpDown_DailyCostRangeTop = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.TextBox_Query = new System.Windows.Forms.TextBox();
-            this.Label_DailyCostRange = new System.Windows.Forms.Label();
-            this.Label_Customer = new System.Windows.Forms.Label();
             this.Label_TotalCost = new System.Windows.Forms.Label();
             this.Label_RentalDuration = new System.Windows.Forms.Label();
-            this.Label_DailyCostRangeMinus = new System.Windows.Forms.Label();
+            this.NumericUpDown_RentalDuration = new System.Windows.Forms.NumericUpDown();
+            this.Button_Rent = new System.Windows.Forms.Button();
+            this.Label_Customer = new System.Windows.Forms.Label();
+            this.ComboBox_Customer = new System.Windows.Forms.ComboBox();
+            this.DataGridView_RentalSearch = new System.Windows.Forms.DataGridView();
             this.TabControl_MainView.SuspendLayout();
             this.FleetTab.SuspendLayout();
             this.GroupBox_Fleet_Modify_Add.SuspendLayout();
@@ -123,12 +123,12 @@ namespace CarRentals
             this.GroupBox_Report.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Report)).BeginInit();
             this.RentalSearchTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeBottom)).BeginInit();
             this.GroupBox_Results.SuspendLayout();
             this.GroupBox_CreateRental.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeBottom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeTop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_RentalDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl_MainView
@@ -783,14 +783,65 @@ namespace CarRentals
             this.RentalSearchTab.Text = "Rental Search";
             this.RentalSearchTab.UseVisualStyleBackColor = true;
             // 
-            // DataGridView_RentalSearch
+            // Label_DailyCostRangeMinus
             // 
-            this.DataGridView_RentalSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView_RentalSearch.Location = new System.Drawing.Point(17, 22);
-            this.DataGridView_RentalSearch.Name = "DataGridView_RentalSearch";
-            this.DataGridView_RentalSearch.RowTemplate.Height = 25;
-            this.DataGridView_RentalSearch.Size = new System.Drawing.Size(721, 383);
-            this.DataGridView_RentalSearch.TabIndex = 1;
+            this.Label_DailyCostRangeMinus.AutoSize = true;
+            this.Label_DailyCostRangeMinus.Location = new System.Drawing.Point(186, 78);
+            this.Label_DailyCostRangeMinus.Name = "Label_DailyCostRangeMinus";
+            this.Label_DailyCostRangeMinus.Size = new System.Drawing.Size(12, 15);
+            this.Label_DailyCostRangeMinus.TabIndex = 9;
+            this.Label_DailyCostRangeMinus.Text = "-";
+            // 
+            // Label_DailyCostRange
+            // 
+            this.Label_DailyCostRange.AutoSize = true;
+            this.Label_DailyCostRange.Location = new System.Drawing.Point(35, 78);
+            this.Label_DailyCostRange.Name = "Label_DailyCostRange";
+            this.Label_DailyCostRange.Size = new System.Drawing.Size(99, 15);
+            this.Label_DailyCostRange.TabIndex = 8;
+            this.Label_DailyCostRange.Text = "Daily Cost Range:";
+            // 
+            // TextBox_Query
+            // 
+            this.TextBox_Query.Location = new System.Drawing.Point(35, 19);
+            this.TextBox_Query.Name = "TextBox_Query";
+            this.TextBox_Query.Size = new System.Drawing.Size(304, 23);
+            this.TextBox_Query.TabIndex = 7;
+            this.TextBox_Query.Text = "Enter query here...";
+            // 
+            // NumericUpDown_DailyCostRangeTop
+            // 
+            this.NumericUpDown_DailyCostRangeTop.Location = new System.Drawing.Point(204, 76);
+            this.NumericUpDown_DailyCostRangeTop.Name = "NumericUpDown_DailyCostRangeTop";
+            this.NumericUpDown_DailyCostRangeTop.Size = new System.Drawing.Size(40, 23);
+            this.NumericUpDown_DailyCostRangeTop.TabIndex = 6;
+            // 
+            // NumericUpDown_DailyCostRangeBottom
+            // 
+            this.NumericUpDown_DailyCostRangeBottom.Location = new System.Drawing.Point(140, 76);
+            this.NumericUpDown_DailyCostRangeBottom.Name = "NumericUpDown_DailyCostRangeBottom";
+            this.NumericUpDown_DailyCostRangeBottom.Size = new System.Drawing.Size(40, 23);
+            this.NumericUpDown_DailyCostRangeBottom.TabIndex = 5;
+            // 
+            // Button_ShowAll
+            // 
+            this.Button_ShowAll.Location = new System.Drawing.Point(446, 19);
+            this.Button_ShowAll.Name = "Button_ShowAll";
+            this.Button_ShowAll.Size = new System.Drawing.Size(99, 35);
+            this.Button_ShowAll.TabIndex = 4;
+            this.Button_ShowAll.Text = "Show All";
+            this.Button_ShowAll.UseVisualStyleBackColor = true;
+            this.Button_ShowAll.Click += new System.EventHandler(this.Button_ShowAll_Click);
+            // 
+            // Button_Search
+            // 
+            this.Button_Search.Location = new System.Drawing.Point(341, 19);
+            this.Button_Search.Name = "Button_Search";
+            this.Button_Search.Size = new System.Drawing.Size(99, 35);
+            this.Button_Search.TabIndex = 3;
+            this.Button_Search.Text = "Search";
+            this.Button_Search.UseVisualStyleBackColor = true;
+            this.Button_Search.Click += new System.EventHandler(this.Button_Search_Click);
             // 
             // GroupBox_Results
             // 
@@ -807,100 +858,17 @@ namespace CarRentals
             // 
             this.GroupBox_CreateRental.Controls.Add(this.Label_TotalCost);
             this.GroupBox_CreateRental.Controls.Add(this.Label_RentalDuration);
-            this.GroupBox_CreateRental.Controls.Add(this.numericUpDown3);
+            this.GroupBox_CreateRental.Controls.Add(this.NumericUpDown_RentalDuration);
             this.GroupBox_CreateRental.Controls.Add(this.Button_Rent);
             this.GroupBox_CreateRental.Controls.Add(this.Label_Customer);
-            this.GroupBox_CreateRental.Controls.Add(this.comboBox1);
+            this.GroupBox_CreateRental.Controls.Add(this.ComboBox_Customer);
             this.GroupBox_CreateRental.Location = new System.Drawing.Point(259, 411);
             this.GroupBox_CreateRental.Name = "GroupBox_CreateRental";
             this.GroupBox_CreateRental.Size = new System.Drawing.Size(479, 97);
             this.GroupBox_CreateRental.TabIndex = 2;
             this.GroupBox_CreateRental.TabStop = false;
             this.GroupBox_CreateRental.Text = "Create Rental";
-            // 
-            // Button_Search
-            // 
-            this.Button_Search.Location = new System.Drawing.Point(341, 19);
-            this.Button_Search.Name = "Button_Search";
-            this.Button_Search.Size = new System.Drawing.Size(99, 35);
-            this.Button_Search.TabIndex = 3;
-            this.Button_Search.Text = "Search";
-            this.Button_Search.UseVisualStyleBackColor = true;
-            this.Button_Search.Click += new System.EventHandler(this.Button_Search_Click);
-            // 
-            // Button_ShowAll
-            // 
-            this.Button_ShowAll.Location = new System.Drawing.Point(446, 19);
-            this.Button_ShowAll.Name = "Button_ShowAll";
-            this.Button_ShowAll.Size = new System.Drawing.Size(99, 35);
-            this.Button_ShowAll.TabIndex = 4;
-            this.Button_ShowAll.Text = "Show All";
-            this.Button_ShowAll.UseVisualStyleBackColor = true;
-            this.Button_ShowAll.Click += new System.EventHandler(this.Button_ShowAll_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(111, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 23);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // Button_Rent
-            // 
-            this.Button_Rent.Location = new System.Drawing.Point(360, 34);
-            this.Button_Rent.Name = "Button_Rent";
-            this.Button_Rent.Size = new System.Drawing.Size(99, 35);
-            this.Button_Rent.TabIndex = 1;
-            this.Button_Rent.Text = "Rent";
-            this.Button_Rent.UseVisualStyleBackColor = true;
-            // 
-            // NumericUpDown_DailyCostRangeBottom
-            // 
-            this.NumericUpDown_DailyCostRangeBottom.Location = new System.Drawing.Point(140, 76);
-            this.NumericUpDown_DailyCostRangeBottom.Name = "NumericUpDown_DailyCostRangeBottom";
-            this.NumericUpDown_DailyCostRangeBottom.Size = new System.Drawing.Size(40, 23);
-            this.NumericUpDown_DailyCostRangeBottom.TabIndex = 5;
-            // 
-            // NumericUpDown_DailyCostRangeTop
-            // 
-            this.NumericUpDown_DailyCostRangeTop.Location = new System.Drawing.Point(204, 76);
-            this.NumericUpDown_DailyCostRangeTop.Name = "NumericUpDown_DailyCostRangeTop";
-            this.NumericUpDown_DailyCostRangeTop.Size = new System.Drawing.Size(40, 23);
-            this.NumericUpDown_DailyCostRangeTop.TabIndex = 6;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(111, 64);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(69, 23);
-            this.numericUpDown3.TabIndex = 2;
-            // 
-            // TextBox_Query
-            // 
-            this.TextBox_Query.Location = new System.Drawing.Point(35, 19);
-            this.TextBox_Query.Name = "TextBox_Query";
-            this.TextBox_Query.Size = new System.Drawing.Size(304, 23);
-            this.TextBox_Query.TabIndex = 7;
-            this.TextBox_Query.Text = "Enter query here...";
-            // 
-            // Label_DailyCostRange
-            // 
-            this.Label_DailyCostRange.AutoSize = true;
-            this.Label_DailyCostRange.Location = new System.Drawing.Point(35, 78);
-            this.Label_DailyCostRange.Name = "Label_DailyCostRange";
-            this.Label_DailyCostRange.Size = new System.Drawing.Size(99, 15);
-            this.Label_DailyCostRange.TabIndex = 8;
-            this.Label_DailyCostRange.Text = "Daily Cost Range:";
-            // 
-            // Label_Customer
-            // 
-            this.Label_Customer.AutoSize = true;
-            this.Label_Customer.Location = new System.Drawing.Point(43, 23);
-            this.Label_Customer.Name = "Label_Customer";
-            this.Label_Customer.Size = new System.Drawing.Size(62, 15);
-            this.Label_Customer.TabIndex = 3;
-            this.Label_Customer.Text = "Customer:";
+            this.GroupBox_CreateRental.Enter += new System.EventHandler(this.GroupBox_CreateRental_Enter);
             // 
             // Label_TotalCost
             // 
@@ -920,14 +888,48 @@ namespace CarRentals
             this.Label_RentalDuration.TabIndex = 5;
             this.Label_RentalDuration.Text = "Rental Duration:";
             // 
-            // Label_DailyCostRangeMinus
+            // NumericUpDown_RentalDuration
             // 
-            this.Label_DailyCostRangeMinus.AutoSize = true;
-            this.Label_DailyCostRangeMinus.Location = new System.Drawing.Point(186, 78);
-            this.Label_DailyCostRangeMinus.Name = "Label_DailyCostRangeMinus";
-            this.Label_DailyCostRangeMinus.Size = new System.Drawing.Size(12, 15);
-            this.Label_DailyCostRangeMinus.TabIndex = 9;
-            this.Label_DailyCostRangeMinus.Text = "-";
+            this.NumericUpDown_RentalDuration.Location = new System.Drawing.Point(111, 64);
+            this.NumericUpDown_RentalDuration.Name = "NumericUpDown_RentalDuration";
+            this.NumericUpDown_RentalDuration.Size = new System.Drawing.Size(69, 23);
+            this.NumericUpDown_RentalDuration.TabIndex = 2;
+            // 
+            // Button_Rent
+            // 
+            this.Button_Rent.Location = new System.Drawing.Point(360, 34);
+            this.Button_Rent.Name = "Button_Rent";
+            this.Button_Rent.Size = new System.Drawing.Size(99, 35);
+            this.Button_Rent.TabIndex = 1;
+            this.Button_Rent.Text = "Rent";
+            this.Button_Rent.UseVisualStyleBackColor = true;
+            // 
+            // Label_Customer
+            // 
+            this.Label_Customer.AutoSize = true;
+            this.Label_Customer.Location = new System.Drawing.Point(43, 23);
+            this.Label_Customer.Name = "Label_Customer";
+            this.Label_Customer.Size = new System.Drawing.Size(62, 15);
+            this.Label_Customer.TabIndex = 3;
+            this.Label_Customer.Text = "Customer:";
+            // 
+            // ComboBox_Customer
+            // 
+            this.ComboBox_Customer.FormattingEnabled = true;
+            this.ComboBox_Customer.Location = new System.Drawing.Point(111, 20);
+            this.ComboBox_Customer.Name = "ComboBox_Customer";
+            this.ComboBox_Customer.Size = new System.Drawing.Size(185, 23);
+            this.ComboBox_Customer.TabIndex = 0;
+            this.ComboBox_Customer.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Customer_SelectedIndexChanged);
+            // 
+            // DataGridView_RentalSearch
+            // 
+            this.DataGridView_RentalSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_RentalSearch.Location = new System.Drawing.Point(17, 22);
+            this.DataGridView_RentalSearch.Name = "DataGridView_RentalSearch";
+            this.DataGridView_RentalSearch.RowTemplate.Height = 25;
+            this.DataGridView_RentalSearch.Size = new System.Drawing.Size(721, 383);
+            this.DataGridView_RentalSearch.TabIndex = 1;
             // 
             // MainView
             // 
@@ -959,13 +961,13 @@ namespace CarRentals
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Report)).EndInit();
             this.RentalSearchTab.ResumeLayout(false);
             this.RentalSearchTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeBottom)).EndInit();
             this.GroupBox_Results.ResumeLayout(false);
             this.GroupBox_CreateRental.ResumeLayout(false);
             this.GroupBox_CreateRental.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeBottom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeTop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_RentalDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1049,9 +1051,9 @@ namespace CarRentals
         private System.Windows.Forms.Label Label_TotalCost;
         private System.Windows.Forms.Label Label_Customer;
         private System.Windows.Forms.GroupBox GroupBox_CreateRental;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown NumericUpDown_RentalDuration;
         private System.Windows.Forms.Button Button_Rent;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ComboBox_Customer;
         private System.Windows.Forms.Label Label_DailyCostRangeMinus;
     }
 }

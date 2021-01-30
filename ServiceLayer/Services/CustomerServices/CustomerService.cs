@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using DomainLayer;
+﻿using System.Collections.Generic;
 using DomainLayer.Customers;
 using InfrastructureLayer.Repositories;
 
 namespace ServiceLayer.Services
 {
-    public class CustomerService : ICustomerRepository
+    public class CustomerService : ICustomerRepository, ICustomerService
     {
         private ICustomerRepository _customerRepository;
 
@@ -35,9 +33,28 @@ namespace ServiceLayer.Services
             return _customerRepository.GetById(id);
         }
 
+        public List<string> GetNotRentingList()
+        {
+            var customers = _customerRepository.GetNotRenting();
+            List<string> customersList = new List<string>();
+
+            foreach (Customer customer in customers)
+            {
+                customersList.Add(customer.CustomerID.ToString() + " - " + customer.FirstName + " " + customer.LastName);
+            }
+
+            return customersList;
+
+        }
+
         public void Update(Customer customer)
         {
             _customerRepository.Update(customer);
+        }
+
+        public IEnumerable<Customer> GetNotRenting()
+        {
+            return _customerRepository.GetNotRenting();
         }
     }
 }

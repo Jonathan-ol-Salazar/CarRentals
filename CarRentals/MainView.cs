@@ -217,5 +217,15 @@ namespace CarRentals
             isQuery = false;
             _mainPresenter.UpdateRentalSearchListView();
         }
+
+        private void ComboBox_Customer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void GroupBox_CreateRental_Enter(object sender, EventArgs e)
+        {
+            ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
+
+        }
     }
 }

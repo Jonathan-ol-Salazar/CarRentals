@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using CarRentals;
 using DomainLayer;
 using DomainLayer.Customers;
@@ -46,10 +47,10 @@ namespace InfrastructureLayer.Repositories
 
         }
 
-
-
-
-
-
+        public IEnumerable<Customer> GetNotRenting()
+        {
+            var customer = _context.Customers.Where(x => x.IsRenting == false);
+            return customer;
+        }
     }
 }

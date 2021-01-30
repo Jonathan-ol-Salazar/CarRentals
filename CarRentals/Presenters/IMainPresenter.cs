@@ -25,7 +25,7 @@ namespace CarRentals.Presenters
         void UpdateReportListView();
         void RentVehicle();
         void UpdateRentalSearchListView();
-
+        List<string> GetNotRenting();
 
 
     }

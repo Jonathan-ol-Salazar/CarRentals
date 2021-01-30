@@ -50,7 +50,6 @@ namespace InfrastructureLayer.Repositories
         {
             var vehicles = _context.Vehicles.Where(x => x.IsRented == true);
             return vehicles;
-
         }
         public IEnumerable<Vehicle> GetNotRented()
         {
