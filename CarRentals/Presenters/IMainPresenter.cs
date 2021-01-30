@@ -22,7 +22,7 @@ namespace CarRentals.Presenters
         void RefreshCustomerForm();
         void UpdateFleetListView();
         void UpdateCustomerListView();
-        void UpdateReportListView();
+        void UpdateRentalReportListView();
         void AddRental();
         void DeleteRental();
         void UpdateRentalSearchListView();

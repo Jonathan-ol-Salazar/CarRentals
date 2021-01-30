@@ -13,7 +13,7 @@ namespace CarRentals
 
         IEnumerable<Vehicle> FleetList { get; set; }
         IEnumerable<Customer> CustomerList { get; set; }
-        IEnumerable<Rented> ReportList { get; set; }
+        IEnumerable<Rented> RentalReportList { get; set; }
         IEnumerable<Vehicle> RentalSearchList { get; set; }
         
         Vehicle VehicleSearch { get; set; }
@@ -49,6 +49,7 @@ namespace CarRentals
         bool isQuery { get; set; }
 
         Vehicle SelectedVehicleResult { get; }
+
     }
 
 

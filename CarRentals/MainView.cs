@@ -32,10 +32,10 @@ namespace CarRentals
             set { DataGridView_Customers.DataSource = value; }
         }
 
-        public IEnumerable<Rented> ReportList 
+        public IEnumerable<Rented> RentalReportList 
         {
-            get { return (IEnumerable<Rented>)DataGridView_Report.DataSource; }
-            set { DataGridView_Report.DataSource = value; }
+            get { return (IEnumerable<Rented>)DataGridView_RentalReport.DataSource; }
+            set { DataGridView_RentalReport.DataSource = value; }
         }
         public IEnumerable<Vehicle> RentalSearchList
         {
@@ -73,7 +73,7 @@ namespace CarRentals
         public string RentedRego { get; set; }
         public double RentedDailyRate { get; set; }
 
-        public Rented SelectedRented { get; set; }
+        public Rented SelectedRented { get { return (Rented)DataGridView_RentalReport.CurrentRow.DataBoundItem; } }
 
         public Vehicle VehicleSearch { get; set; }
 
@@ -197,13 +197,13 @@ namespace CarRentals
 
                     break;
                 case 2:
-                    _mainPresenter.UpdateReportListView();
+                    _mainPresenter.UpdateRentalReportListView();
 
                     break;
-                //case 3:
-                //    _mainPresenter.UpdateReportListView();
+                case 3:
+                    _mainPresenter.UpdateRentalSearchListView();
 
-                //    break;
+                    break;
             }
         }
 
@@ -221,7 +221,6 @@ namespace CarRentals
 
         private void ComboBox_Customer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RentedCustomerID = int.Parse(ComboBox_Customer.Text.Split('-')[0]);
         }
 
         private void GroupBox_CreateRental_Enter(object sender, EventArgs e)
@@ -238,8 +237,20 @@ namespace CarRentals
 
         private void Button_Rent_Click(object sender, EventArgs e)
         {
-
+            RentedCustomerID = int.Parse(ComboBox_Customer.Text.Split('-')[0]);
             _mainPresenter.AddRental();
+            ComboBox_Customer.SelectedIndex = -1;
+            NumericUpDown_RentalDuration.Value = 0;
+        }
+
+        private void GroupBox_Report_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupBox_Report_Button_Return_Click(object sender, EventArgs e)
+        {
+            _mainPresenter.DeleteRental();
         }
     }
 }

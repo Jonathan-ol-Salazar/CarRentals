@@ -90,7 +90,7 @@ namespace CarRentals
             this.GroupBox_Report = new System.Windows.Forms.GroupBox();
             this.GroupBox_Report_Button_Return = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.DataGridView_Report = new System.Windows.Forms.DataGridView();
+            this.DataGridView_RentalReport = new System.Windows.Forms.DataGridView();
             this.RentalSearchTab = new System.Windows.Forms.TabPage();
             this.Label_DailyCostRangeMinus = new System.Windows.Forms.Label();
             this.Label_DailyCostRange = new System.Windows.Forms.Label();
@@ -121,7 +121,7 @@ namespace CarRentals
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Customers)).BeginInit();
             this.RentalReportTab.SuspendLayout();
             this.GroupBox_Report.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Report)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalReport)).BeginInit();
             this.RentalSearchTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeBottom)).BeginInit();
@@ -716,7 +716,7 @@ namespace CarRentals
             // RentalReportTab
             // 
             this.RentalReportTab.Controls.Add(this.GroupBox_Report);
-            this.RentalReportTab.Controls.Add(this.DataGridView_Report);
+            this.RentalReportTab.Controls.Add(this.DataGridView_RentalReport);
             this.RentalReportTab.Location = new System.Drawing.Point(4, 24);
             this.RentalReportTab.Name = "RentalReportTab";
             this.RentalReportTab.Padding = new System.Windows.Forms.Padding(3);
@@ -736,6 +736,7 @@ namespace CarRentals
             this.GroupBox_Report.TabIndex = 4;
             this.GroupBox_Report.TabStop = false;
             this.GroupBox_Report.Text = "Modify Rentals";
+            this.GroupBox_Report.Enter += new System.EventHandler(this.GroupBox_Report_Enter);
             // 
             // GroupBox_Report_Button_Return
             // 
@@ -745,6 +746,7 @@ namespace CarRentals
             this.GroupBox_Report_Button_Return.TabIndex = 0;
             this.GroupBox_Report_Button_Return.Text = "Return Vehicle";
             this.GroupBox_Report_Button_Return.UseVisualStyleBackColor = true;
+            this.GroupBox_Report_Button_Return.Click += new System.EventHandler(this.GroupBox_Report_Button_Return_Click);
             // 
             // label1
             // 
@@ -756,14 +758,14 @@ namespace CarRentals
             this.label1.TabIndex = 13;
             this.label1.Text = "Rego:";
             // 
-            // DataGridView_Report
+            // DataGridView_RentalReport
             // 
-            this.DataGridView_Report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView_Report.Location = new System.Drawing.Point(3, 3);
-            this.DataGridView_Report.Name = "DataGridView_Report";
-            this.DataGridView_Report.RowTemplate.Height = 25;
-            this.DataGridView_Report.Size = new System.Drawing.Size(786, 592);
-            this.DataGridView_Report.TabIndex = 3;
+            this.DataGridView_RentalReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_RentalReport.Location = new System.Drawing.Point(3, 3);
+            this.DataGridView_RentalReport.Name = "DataGridView_RentalReport";
+            this.DataGridView_RentalReport.RowTemplate.Height = 25;
+            this.DataGridView_RentalReport.Size = new System.Drawing.Size(786, 592);
+            this.DataGridView_RentalReport.TabIndex = 3;
             // 
             // RentalSearchTab
             // 
@@ -960,7 +962,7 @@ namespace CarRentals
             this.RentalReportTab.ResumeLayout(false);
             this.GroupBox_Report.ResumeLayout(false);
             this.GroupBox_Report.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Report)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalReport)).EndInit();
             this.RentalSearchTab.ResumeLayout(false);
             this.RentalSearchTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeTop)).EndInit();
@@ -1041,7 +1043,7 @@ namespace CarRentals
         private System.Windows.Forms.GroupBox GroupBox_Report;
         private System.Windows.Forms.Button GroupBox_Report_Button_Return;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView DataGridView_Report;
+        private System.Windows.Forms.DataGridView DataGridView_RentalReport;
         private System.Windows.Forms.Label Label_DailyCostRange;
         private System.Windows.Forms.TextBox TextBox_Query;
         private System.Windows.Forms.NumericUpDown NumericUpDown_DailyCostRangeTop;

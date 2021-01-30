@@ -38,7 +38,7 @@ namespace CarRentals.Presenters
         {
             UpdateFleetListView();
             UpdateCustomerListView();
-            UpdateReportListView();
+            UpdateRentalReportListView();
         }
 
         public void UpdateFleetListView()
@@ -51,9 +51,9 @@ namespace CarRentals.Presenters
             _mainView.CustomerList = GetAllCustomers();            
         }
 
-        public void UpdateReportListView()
+        public void UpdateRentalReportListView()
         {
-            _mainView.ReportList = GetRented();
+            _mainView.RentalReportList = GetRented();
         }
 
         public void UpdateRentalSearchListView()
@@ -118,11 +118,8 @@ namespace CarRentals.Presenters
                 Sunroof = _mainView.Sunroof,
                 GPS = _mainView.GPS,
                 Colour = _mainView.Colour,
-                DailyRate = _mainView.DailyRate,
-                IsRented = true
-                
+                DailyRate = _mainView.DailyRate                
             };
-
 
             _vehicleService.Add(vehicle);
             UpdateFleetListView();
@@ -230,18 +227,33 @@ namespace CarRentals.Presenters
             };
 
             _rentedService.Add(rented);
+
+            Customer customer = _customerService.GetById(rented.CustomerID);
+            customer.IsRenting = true;
+            _customerService.Update(customer);
+
+            Vehicle vehicle = _vehicleService.GetByRego(rented.Rego);
+            vehicle.IsRented = true;
+            _vehicleService.Update(vehicle);
+
+            UpdateRentalSearchListView();
         }
 
         public void DeleteRental()
         {
             Rented rented = _mainView.SelectedRented;
 
+            Customer customer = _customerService.GetById(rented.CustomerID);
+            customer.IsRenting = false;
+            _customerService.Update(customer);
+
             Vehicle vehicle = _vehicleService.GetByRego(rented.Rego);
             vehicle.IsRented = false;
-
             _vehicleService.Update(vehicle);
+
             _rentedService.Delete(rented);
 
+            UpdateRentalReportListView();
         }
     }
 }
