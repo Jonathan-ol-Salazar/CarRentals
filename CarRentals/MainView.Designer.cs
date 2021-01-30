@@ -826,6 +826,7 @@ namespace CarRentals
             this.Button_Search.TabIndex = 3;
             this.Button_Search.Text = "Search";
             this.Button_Search.UseVisualStyleBackColor = true;
+            this.Button_Search.Click += new System.EventHandler(this.Button_Search_Click);
             // 
             // Button_ShowAll
             // 
@@ -835,6 +836,7 @@ namespace CarRentals
             this.Button_ShowAll.TabIndex = 4;
             this.Button_ShowAll.Text = "Show All";
             this.Button_ShowAll.UseVisualStyleBackColor = true;
+            this.Button_ShowAll.Click += new System.EventHandler(this.Button_ShowAll_Click);
             // 
             // comboBox1
             // 

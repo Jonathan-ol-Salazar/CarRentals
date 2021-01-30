@@ -52,10 +52,10 @@ namespace InfrastructureLayer.Repositories
             return vehicles;
 
         }
-
-
-
-
-
+        public IEnumerable<Vehicle> GetNotRented()
+        {
+            var vehicles = _context.Vehicles.Where(x => x.IsRented == false);
+            return vehicles;
+        }
     }
 }

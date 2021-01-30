@@ -37,6 +37,11 @@ namespace CarRentals
             get { return (IEnumerable<Rented>)DataGridView_Report.DataSource; }
             set { DataGridView_Report.DataSource = value; }
         }
+        public IEnumerable<Vehicle> RentalSearchList
+        {
+            get { return (IEnumerable<Vehicle>)DataGridView_RentalSearch.DataSource; }
+            set { DataGridView_RentalSearch.DataSource = value; }
+        }
 
 
         public string Rego { get { return GroupBox_Fleet_Modify_Add_TextBox_Rego.Text; } set { GroupBox_Fleet_Modify_Add_TextBox_Rego.Text = value; } }
@@ -69,6 +74,13 @@ namespace CarRentals
         public double RentedDailyRate { get; set; }
 
         public Rented SelectedRented { get; set; }
+
+        public Vehicle VehicleSearch { get; set; }
+
+        public string Query { get; set; }
+        public bool isQuery { get; set; }
+
+
 
         public void SetPresenter(IMainPresenter mainPresenter)
         {
@@ -192,6 +204,18 @@ namespace CarRentals
 
                 //    break;
             }
+        }
+
+        private void Button_Search_Click(object sender, EventArgs e)
+        {
+            isQuery = true;
+            _mainPresenter.UpdateRentalSearchListView();
+        }
+
+        private void Button_ShowAll_Click(object sender, EventArgs e)
+        {
+            isQuery = false;
+            _mainPresenter.UpdateRentalSearchListView();
         }
     }
 }

@@ -52,8 +52,20 @@ namespace CarRentals.Presenters
 
         public void UpdateReportListView()
         {
-            _mainView.ReportList = GetAllRented();
+            _mainView.ReportList = GetRented();
+        }
 
+        public void UpdateRentalSearchListView()
+        {
+            if(_mainView.isQuery == true)
+            {
+                _mainView.VehicleSearch = GetSearch(_mainView.Query);
+
+            }
+            else
+            {
+                _mainView.RentalSearchList = GetNotRented();
+            }
         }
 
 
@@ -65,10 +77,21 @@ namespace CarRentals.Presenters
         {
             return _customerService.GetAll().ToList();
         }
-        public IEnumerable<Rented> GetAllRented()
+        public IEnumerable<Rented> GetRented()
         {
             return _rentedService.GetAll().ToList();
         }
+
+        public Vehicle GetSearch(string query)
+        {
+            return _vehicleService.GetByRego(query);
+        }
+
+        public IEnumerable<Vehicle> GetNotRented()
+        {
+            return _vehicleService.GetNotRented().ToList();
+        }
+
 
 
         public MainView GetMainView()

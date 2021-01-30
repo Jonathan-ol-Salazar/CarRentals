@@ -35,6 +35,11 @@ namespace ServiceLayer.Services
             return _vehicleRepository.GetByRego(rego);
         }
 
+        public IEnumerable<Vehicle> GetNotRented()
+        {
+            return _vehicleRepository.GetNotRented();
+        }
+
         public IEnumerable<Vehicle> GetRented()
         {
             return _vehicleRepository.GetRented();

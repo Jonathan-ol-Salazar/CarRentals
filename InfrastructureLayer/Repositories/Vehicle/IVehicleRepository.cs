@@ -10,6 +10,7 @@ namespace InfrastructureLayer.Repositories
         void Delete(Vehicle vehicle);
         IEnumerable<Vehicle> GetAll();
         IEnumerable<Vehicle> GetRented();
+        IEnumerable<Vehicle> GetNotRented();
         Vehicle GetByRego(string rego);
 
 

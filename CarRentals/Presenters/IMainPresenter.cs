@@ -24,7 +24,7 @@ namespace CarRentals.Presenters
         void UpdateCustomerListView();
         void UpdateReportListView();
         void RentVehicle();
-           
+        void UpdateRentalSearchListView();
 
 
 
