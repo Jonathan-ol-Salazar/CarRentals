@@ -50,6 +50,10 @@ namespace CarRentals
 
         Vehicle SelectedVehicleResult { get; }
 
+        string TotalVehiclesRented { get; set; }
+        string TotalDailyRate { get; set; }
+
+
     }
 
 

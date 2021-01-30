@@ -17,9 +17,9 @@ namespace CarRentals.Presenters
         IMainView _mainView;
         IVehicleRepository _vehicleService;
         ICustomerService _customerService;
-        IRentedRepository _rentedService;
+        IRentedService _rentedService;
 
-        public MainPresenter(IMainView mainView, IVehicleRepository vehicleService, ICustomerService customerService, IRentedRepository rentedRepository)
+        public MainPresenter(IMainView mainView, IVehicleRepository vehicleService, ICustomerService customerService, IRentedService rentedRepository)
         {
             // Set View 
 
@@ -54,6 +54,9 @@ namespace CarRentals.Presenters
         public void UpdateRentalReportListView()
         {
             _mainView.RentalReportList = GetRented();
+
+            _mainView.TotalVehiclesRented = "Total Vehicles Rented: " + _mainView.RentalReportList.Count();
+            _mainView.TotalDailyRate = "Total Daily Rental Charge: " + _rentedService.TotalDailyRate();
         }
 
         public void UpdateRentalSearchListView()

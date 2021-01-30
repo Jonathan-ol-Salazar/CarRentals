@@ -108,6 +108,8 @@ namespace CarRentals
             this.Label_Customer = new System.Windows.Forms.Label();
             this.ComboBox_Customer = new System.Windows.Forms.ComboBox();
             this.DataGridView_RentalSearch = new System.Windows.Forms.DataGridView();
+            this.Label_TotalDailyRate = new System.Windows.Forms.Label();
+            this.Label_TotalVehiclesRented = new System.Windows.Forms.Label();
             this.TabControl_MainView.SuspendLayout();
             this.FleetTab.SuspendLayout();
             this.GroupBox_Fleet_Modify_Add.SuspendLayout();
@@ -727,6 +729,8 @@ namespace CarRentals
             // 
             // GroupBox_Report
             // 
+            this.GroupBox_Report.Controls.Add(this.Label_TotalVehiclesRented);
+            this.GroupBox_Report.Controls.Add(this.Label_TotalDailyRate);
             this.GroupBox_Report.Controls.Add(this.GroupBox_Report_Button_Return);
             this.GroupBox_Report.Controls.Add(this.label1);
             this.GroupBox_Report.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -935,6 +939,24 @@ namespace CarRentals
             this.DataGridView_RentalSearch.Size = new System.Drawing.Size(721, 383);
             this.DataGridView_RentalSearch.TabIndex = 1;
             // 
+            // Label_TotalDailyRate
+            // 
+            this.Label_TotalDailyRate.AutoSize = true;
+            this.Label_TotalDailyRate.Location = new System.Drawing.Point(514, 34);
+            this.Label_TotalDailyRate.Name = "Label_TotalDailyRate";
+            this.Label_TotalDailyRate.Size = new System.Drawing.Size(141, 15);
+            this.Label_TotalDailyRate.TabIndex = 14;
+            this.Label_TotalDailyRate.Text = "Total Daily Rental Charge:";
+            // 
+            // Label_TotalVehiclesRented
+            // 
+            this.Label_TotalVehiclesRented.AutoSize = true;
+            this.Label_TotalVehiclesRented.Location = new System.Drawing.Point(535, 14);
+            this.Label_TotalVehiclesRented.Name = "Label_TotalVehiclesRented";
+            this.Label_TotalVehiclesRented.Size = new System.Drawing.Size(120, 15);
+            this.Label_TotalVehiclesRented.TabIndex = 15;
+            this.Label_TotalVehiclesRented.Text = "Total Vehicles Rented:";
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1059,6 +1081,8 @@ namespace CarRentals
         private System.Windows.Forms.Button Button_Rent;
         private System.Windows.Forms.ComboBox ComboBox_Customer;
         private System.Windows.Forms.Label Label_DailyCostRangeMinus;
+        private System.Windows.Forms.Label Label_TotalVehiclesRented;
+        private System.Windows.Forms.Label Label_TotalDailyRate;
     }
 }
 

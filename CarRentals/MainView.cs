@@ -72,6 +72,8 @@ namespace CarRentals
         public int RentedCustomerID { get; set; }
         public string RentedRego { get; set; }
         public double RentedDailyRate { get; set; }
+        public string TotalVehiclesRented { get { return Label_TotalVehiclesRented.Text; } set { Label_TotalVehiclesRented.Text = value; } }
+        public string TotalDailyRate { get { return Label_TotalDailyRate.Text; } set { Label_TotalDailyRate.Text = value; } }
 
         public Rented SelectedRented { get { return (Rented)DataGridView_RentalReport.CurrentRow.DataBoundItem; } }
 
