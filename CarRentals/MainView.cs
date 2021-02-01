@@ -93,15 +93,6 @@ namespace CarRentals
         }
 
 
-        private void MainView_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
 
         private void ResetGroupBoxFleetForm()
         {
@@ -127,14 +118,12 @@ namespace CarRentals
             }
         }
 
-
         private void GroupBox_Fleet_Button_Add_Click(object sender, EventArgs e)
         {
             GroupBox_Fleet_Modify_Add.Visible = true;
             GroupBox_Fleet_Modify_Add.Text = "Add Vehicle";
             ResetGroupBoxFleetForm();
             AddVehicle = true;
-
         }
         private void GroupBox_Fleet_Button_Modify_Click(object sender, EventArgs e)
         {
@@ -149,7 +138,6 @@ namespace CarRentals
         private void GroupBox_Fleet_Modify_Add_Button_Cancel_Click(object sender, EventArgs e)
         {
             GroupBox_Fleet_Modify_Add.Visible = false;
-
         }
 
         private void GroupBox_Fleet_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
@@ -210,9 +198,6 @@ namespace CarRentals
 
         private void GroupBox_Customers_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
         {
-
-
-
             PopupConfirmationView popupConfirmation = new PopupConfirmationView();
 
             if (AddCustomer == true)
@@ -292,14 +277,10 @@ namespace CarRentals
             {
                 case 0:
                     _mainPresenter.UpdateFleetListView();
-                    GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(ClassType));
-                    GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(TransmissionType));
-                    GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(FuelType));
 
                     break;
                 case 1:
                     _mainPresenter.UpdateCustomerListView();
-                    GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(GenderType));
 
                     break;
                 case 2:
@@ -325,10 +306,6 @@ namespace CarRentals
             _mainPresenter.UpdateRentalSearchListView();
         }
 
-        private void ComboBox_Customer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
         private void GroupBox_CreateRental_Enter(object sender, EventArgs e)
         {
             ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
@@ -347,26 +324,6 @@ namespace CarRentals
             _mainPresenter.AddRental();
             ComboBox_Customer.SelectedIndex = -1;
             NumericUpDown_RentalDuration.Value = 0;
-        }
-
-        private void GroupBox_Report_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupBox_Report_Button_Return_Click(object sender, EventArgs e)
-        {
-            _mainPresenter.DeleteRental();
-        }
-
-        private void GroupBox_Customers_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupBox_Fleet_Modify_Add_Enter(object sender, EventArgs e)
-        {
-            GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(ClassType));
         }
     }
 }

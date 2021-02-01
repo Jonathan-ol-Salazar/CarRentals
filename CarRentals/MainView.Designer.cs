@@ -1,4 +1,8 @@
 ﻿
+using DomainLayer.Customers;
+using DomainLayer.Vehicles;
+using System;
+
 namespace CarRentals
 {
     partial class MainView
@@ -236,6 +240,8 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.Name = "GroupBox_Fleet_Modify_Add_ComboBox_Fuel";
             this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.Size = new System.Drawing.Size(108, 23);
             this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.TabIndex = 7;
+            this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.DataSource = Enum.GetValues(typeof(FuelType));
+
             // 
             // GroupBox_Fleet_Modify_Add_ComboBox_Class
             // 
@@ -244,6 +250,8 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_ComboBox_Class.Name = "GroupBox_Fleet_Modify_Add_ComboBox_Class";
             this.GroupBox_Fleet_Modify_Add_ComboBox_Class.Size = new System.Drawing.Size(100, 23);
             this.GroupBox_Fleet_Modify_Add_ComboBox_Class.TabIndex = 4;
+            this.GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(ClassType));
+
             // 
             // GroupBox_Fleet_Modify_Add_ComboBox_Transmission
             // 
@@ -252,6 +260,8 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.Name = "GroupBox_Fleet_Modify_Add_ComboBox_Transmission";
             this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.Size = new System.Drawing.Size(108, 23);
             this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.TabIndex = 6;
+            this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.DataSource = Enum.GetValues(typeof(TransmissionType));
+
             // 
             // GroupBox_Fleet_Modify_Add_Button_Cancel
             // 
@@ -490,7 +500,6 @@ namespace CarRentals
             this.DataGridView_Fleet.RowTemplate.Height = 25;
             this.DataGridView_Fleet.Size = new System.Drawing.Size(786, 592);
             this.DataGridView_Fleet.TabIndex = 1;
-            this.DataGridView_Fleet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CustomersTab
             // 
@@ -518,7 +527,6 @@ namespace CarRentals
             this.GroupBox_Customers.TabIndex = 6;
             this.GroupBox_Customers.TabStop = false;
             this.GroupBox_Customers.Text = "Modify Customer";
-            this.GroupBox_Customers.Enter += new System.EventHandler(this.GroupBox_Customers_Enter);
             // 
             // GroupBox_Customers_Button_Add
             // 
@@ -591,6 +599,8 @@ namespace CarRentals
             this.GroupBox_Customers_Modify_Add_ComboBox_Gender.Name = "GroupBox_Customers_Modify_Add_ComboBox_Gender";
             this.GroupBox_Customers_Modify_Add_ComboBox_Gender.Size = new System.Drawing.Size(99, 23);
             this.GroupBox_Customers_Modify_Add_ComboBox_Gender.TabIndex = 6;
+            this.GroupBox_Customers_Modify_Add_ComboBox_Gender.DataSource = Enum.GetValues(typeof(GenderType));
+
             // 
             // GroupBox_Customers_Modify_Add_Button_Cancel
             // 
@@ -742,7 +752,6 @@ namespace CarRentals
             this.GroupBox_Report.TabIndex = 4;
             this.GroupBox_Report.TabStop = false;
             this.GroupBox_Report.Text = "Modify Rentals";
-            this.GroupBox_Report.Enter += new System.EventHandler(this.GroupBox_Report_Enter);
             // 
             // Label_TotalVehiclesRented
             // 
@@ -770,7 +779,6 @@ namespace CarRentals
             this.GroupBox_Report_Button_Return.TabIndex = 0;
             this.GroupBox_Report_Button_Return.Text = "Return Vehicle";
             this.GroupBox_Report_Button_Return.UseVisualStyleBackColor = true;
-            this.GroupBox_Report_Button_Return.Click += new System.EventHandler(this.GroupBox_Report_Button_Return_Click);
             // 
             // label1
             // 
@@ -948,7 +956,6 @@ namespace CarRentals
             this.ComboBox_Customer.Name = "ComboBox_Customer";
             this.ComboBox_Customer.Size = new System.Drawing.Size(185, 23);
             this.ComboBox_Customer.TabIndex = 6;
-            this.ComboBox_Customer.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Customer_SelectedIndexChanged);
             // 
             // DataGridView_RentalSearch
             // 
@@ -967,7 +974,6 @@ namespace CarRentals
             this.Controls.Add(this.TabControl_MainView);
             this.Name = "MainView";
             this.Text = "Car Rentals";
-            this.Load += new System.EventHandler(this.MainView_Load);
             this.TabControl_MainView.ResumeLayout(false);
             this.FleetTab.ResumeLayout(false);
             this.GroupBox_Fleet_Modify_Add.ResumeLayout(false);
