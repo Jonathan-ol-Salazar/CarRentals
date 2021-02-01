@@ -104,6 +104,15 @@ namespace CarRentals
         {
             GroupBox_Fleet_Modify_Add.Visible = true;
             GroupBox_Fleet_Modify_Add.Text = "Add Vehicle";
+            foreach(Control control in GroupBox_Fleet_Modify_Add.Controls)
+            {
+                if (!control.Name.Contains("Label") && !control.Name.Contains("Button"))
+                {
+                    control.ResetText();
+                    GroupBox_Fleet_Modify_Add_CheckBox_Sunroof.Checked = false;
+                    GroupBox_Fleet_Modify_Add_CheckBox_GPS.Checked = false;
+                }
+            }
             AddVehicle = true;
 
         }
