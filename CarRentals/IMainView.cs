@@ -56,7 +56,8 @@ namespace CarRentals
         bool Button_FleetModifyVisible { get; set; }
         bool Button_CustomersModifyVisible { get;  set; }
 
-
+        bool Button_FleetRemoveVisible { get; set; }
+        bool Button_CustomersRemoveVisible { get; set; }
     }
 
 

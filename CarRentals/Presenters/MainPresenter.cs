@@ -47,28 +47,30 @@ namespace CarRentals.Presenters
             if (data.Count() == 0)
             {
                 _mainView.Button_FleetModifyVisible = false;
+                _mainView.Button_FleetRemoveVisible = false;
             }
             else
             {
                 _mainView.Button_FleetModifyVisible = true;
+                _mainView.Button_FleetRemoveVisible = true;
             }
-
             _mainView.FleetList = data;            
         }
 
         public void UpdateCustomerListView()
         {
             var data = GetAllCustomers();
+
             if (data.Count() == 0)
             {
                 _mainView.Button_CustomersModifyVisible = false;
-
+                _mainView.Button_CustomersRemoveVisible = false;
             }
             else
             {
                 _mainView.Button_CustomersModifyVisible = true;
+                _mainView.Button_CustomersRemoveVisible = true;
             }
-
             _mainView.CustomerList = data;
         }
 

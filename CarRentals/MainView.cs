@@ -19,7 +19,15 @@ namespace CarRentals
         public MainView()
         {
             InitializeComponent();
+            //UpdateListViews();
+        }
 
+        private void UpdateListViews()
+        {
+            _mainPresenter.UpdateFleetListView();
+            _mainPresenter.UpdateCustomerListView();
+            _mainPresenter.UpdateRentalReportListView();
+            _mainPresenter.UpdateRentalSearchListView();
         }
 
         public IEnumerable<Vehicle> FleetList
@@ -85,7 +93,11 @@ namespace CarRentals
         public Vehicle SelectedVehicleResult { get { return (Vehicle)DataGridView_RentalSearch.CurrentRow.DataBoundItem; } }
 
         public bool Button_FleetModifyVisible { get { return GroupBox_Fleet_Button_Modify.Visible; } set { GroupBox_Fleet_Button_Modify.Visible = value; } }
-        public bool Button_CustomersModifyVisible { get { return GroupBox_Fleet_Button_Modify.Visible; } set { GroupBox_Customers_Button_Modify.Visible = value; } }
+        public bool Button_CustomersModifyVisible { get { return GroupBox_Customers_Button_Modify.Visible; } set { GroupBox_Customers_Button_Modify.Visible = value; } }
+
+        public bool Button_FleetRemoveVisible { get { return GroupBox_Fleet_Button_Remove.Visible; } set { GroupBox_Fleet_Button_Remove.Visible = value; } }
+        public bool Button_CustomersRemoveVisible { get { return GroupBox_Customers_Button_Remove.Visible; } set { GroupBox_Customers_Button_Remove.Visible = value; } }
+
 
         public void SetPresenter(IMainPresenter mainPresenter)
         {
