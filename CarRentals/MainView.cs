@@ -1,4 +1,5 @@
 ﻿using CarRentals.Presenters;
+using CarRentals.Views;
 using DomainLayer.Customers;
 using DomainLayer.Rented;
 using DomainLayer.Vehicles;
@@ -168,7 +169,22 @@ namespace CarRentals
 
         private void GroupBox_Customers_Button_Remove_Click(object sender, EventArgs e)
         {
-            _mainPresenter.DeleteCustomer();
+            // Check if a customer is selected
+            if(DataGridView_Customers.CurrentRow == null)
+            {
+
+            }
+
+            PopupConfirmationView popupConfirmation = new PopupConfirmationView();
+            popupConfirmation.LabelText = "Confirm Removal";
+            DialogResult dialogResult = popupConfirmation.ShowDialog();
+            if(dialogResult == DialogResult.OK)
+            {
+                _mainPresenter.DeleteCustomer();
+            }
+
+            popupConfirmation.Dispose();
+
         }
 
         private void GroupBox_Customers_Button_Add_Click(object sender, EventArgs e)
