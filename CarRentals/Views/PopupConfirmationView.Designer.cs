@@ -43,6 +43,7 @@ namespace CarRentals.Views
             this.Button_Cancel.TabIndex = 2;
             this.Button_Cancel.Text = "Cancel";
             this.Button_Cancel.UseVisualStyleBackColor = true;
+            this.Button_Cancel.Click += new System.EventHandler(this.Button_Cancel_Click);
             // 
             // Button_Confirm
             // 
@@ -53,6 +54,7 @@ namespace CarRentals.Views
             this.Button_Confirm.TabIndex = 1;
             this.Button_Confirm.Text = "Confirm";
             this.Button_Confirm.UseVisualStyleBackColor = true;
+            this.Button_Confirm.Click += new System.EventHandler(this.Button_Confirm_Click);
             // 
             // Label
             // 

@@ -135,35 +135,65 @@ namespace CarRentals
 
         private void GroupBox_Fleet_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
         {
-            if(AddVehicle == true)
-            {
-                _mainPresenter.AddVehicle();
-
-            }
-            else
-            {
-                _mainPresenter.UpdateVehicle();
-            }
-        }
-
-        private void GroupBox_Fleet_Button_Remove_Click(object sender, EventArgs e)
-        {
-            _mainPresenter.DeleteVehicle();
-        }
-
-        private void GroupBox_Customers_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
-        {
             // Check to see if all fields are filled
 
 
 
             PopupConfirmationView popupConfirmation = new PopupConfirmationView();
-            popupConfirmation.LabelText = "Confirm Customer Creation";
+
+            if (AddVehicle == true)
+            {
+                popupConfirmation.LabelText = "Confirm Vehicle Creation";
+                DialogResult dialogResult = popupConfirmation.ShowDialog();
+
+                if (dialogResult == DialogResult.OK)
+                {
+                    _mainPresenter.AddVehicle();
+                }
+            }
+            else
+            {
+                popupConfirmation.LabelText = "Confirm Vehicle Update";
+                DialogResult dialogResult = popupConfirmation.ShowDialog();
+
+                if (dialogResult == DialogResult.OK)
+                {
+                    _mainPresenter.UpdateVehicle();
+                }
+            }
+            popupConfirmation.Dispose();
+        }
+
+        private void GroupBox_Fleet_Button_Remove_Click(object sender, EventArgs e)
+        {
+            // Check if a vehicle is selected 
+            if (DataGridView_Fleet.CurrentRow == null)
+            {
+
+            }
+
+            PopupConfirmationView popupConfirmation = new PopupConfirmationView();
+            popupConfirmation.LabelText = "Confirm Vehicle Removal";
             DialogResult dialogResult = popupConfirmation.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                _mainPresenter.DeleteVehicle();
+            }
+
+            popupConfirmation.Dispose();
+        }
+
+        private void GroupBox_Customers_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
+        {
+
+
+
+            PopupConfirmationView popupConfirmation = new PopupConfirmationView();
 
             if (AddCustomer == true)
             {
                 popupConfirmation.LabelText = "Confirm Customer Creation";
+                DialogResult dialogResult = popupConfirmation.ShowDialog();
                 if (dialogResult == DialogResult.OK)
                 {
                     _mainPresenter.AddCustomer();
@@ -173,18 +203,13 @@ namespace CarRentals
             else
             {
                 popupConfirmation.LabelText = "Confirm Customer Update";
+                DialogResult dialogResult = popupConfirmation.ShowDialog();
                 if (dialogResult == DialogResult.OK)
                 {
                     _mainPresenter.UpdateCustomer();
                 }
             }
-
-
-
-
-
             popupConfirmation.Dispose();
-
         }
 
         private void GroupBox_Customers_Modify_Add_Button_Cancel_Click(object sender, EventArgs e)
