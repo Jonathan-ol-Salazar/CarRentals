@@ -121,6 +121,8 @@ namespace CarRentals
         {
             GroupBox_Fleet_Modify_Add.Visible = true;
             GroupBox_Fleet_Modify_Add.Text = "Modify Vehicle";
+            Label_Rego.Visible = false;
+            GroupBox_Fleet_Modify_Add_TextBox_Rego.Visible = false;
             AddVehicle = false;
             _mainPresenter.RefreshVehicleForm();
         }
@@ -151,15 +153,38 @@ namespace CarRentals
 
         private void GroupBox_Customers_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
         {
+            // Check to see if all fields are filled
+
+
+
+            PopupConfirmationView popupConfirmation = new PopupConfirmationView();
+            popupConfirmation.LabelText = "Confirm Customer Creation";
+            DialogResult dialogResult = popupConfirmation.ShowDialog();
+
             if (AddCustomer == true)
             {
-                _mainPresenter.AddCustomer();
+                popupConfirmation.LabelText = "Confirm Customer Creation";
+                if (dialogResult == DialogResult.OK)
+                {
+                    _mainPresenter.AddCustomer();
+                }
 
             }
             else
             {
-                _mainPresenter.UpdateCustomer();
+                popupConfirmation.LabelText = "Confirm Customer Update";
+                if (dialogResult == DialogResult.OK)
+                {
+                    _mainPresenter.UpdateCustomer();
+                }
             }
+
+
+
+
+
+            popupConfirmation.Dispose();
+
         }
 
         private void GroupBox_Customers_Modify_Add_Button_Cancel_Click(object sender, EventArgs e)
@@ -176,7 +201,7 @@ namespace CarRentals
             }
 
             PopupConfirmationView popupConfirmation = new PopupConfirmationView();
-            popupConfirmation.LabelText = "Confirm Removal";
+            popupConfirmation.LabelText = "Confirm Customer Removal";
             DialogResult dialogResult = popupConfirmation.ShowDialog();
             if(dialogResult == DialogResult.OK)
             {
@@ -191,8 +216,8 @@ namespace CarRentals
         {
             GroupBox_Customers_Modify_Add.Visible = true;
             GroupBox_Customers_Modify_Add.Text = "Add Customer";
-            GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = false;
-            Label_CustomerID.Visible = false;
+            GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = true;
+            Label_CustomerID.Visible = true;
             foreach (Control control in GroupBox_Customers_Modify_Add.Controls)
             {
                 if (!control.Name.Contains("Label") && !control.Name.Contains("Button"))
@@ -207,8 +232,8 @@ namespace CarRentals
         {
             GroupBox_Customers_Modify_Add.Visible = true;
             GroupBox_Customers_Modify_Add.Text = "Modify Customer";
-            GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = true;
-            Label_CustomerID.Visible = true;
+            GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = false;
+            Label_CustomerID.Visible = false;
             AddCustomer = false;
             _mainPresenter.RefreshCustomerForm();
         }
