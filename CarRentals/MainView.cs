@@ -177,7 +177,13 @@ namespace CarRentals
             GroupBox_Customers_Modify_Add.Text = "Add Customer";
             GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = false;
             Label_CustomerID.Visible = false;
-
+            foreach (Control control in GroupBox_Customers_Modify_Add.Controls)
+            {
+                if (!control.Name.Contains("Label") && !control.Name.Contains("Button"))
+                {
+                    control.ResetText();
+                }
+            }
             AddCustomer = true;
         }
 
@@ -259,6 +265,9 @@ namespace CarRentals
             _mainPresenter.DeleteRental();
         }
 
+        private void GroupBox_Customers_Enter(object sender, EventArgs e)
+        {
 
+        }
     }
 }

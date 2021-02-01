@@ -518,6 +518,7 @@ namespace CarRentals
             this.GroupBox_Customers.TabIndex = 6;
             this.GroupBox_Customers.TabStop = false;
             this.GroupBox_Customers.Text = "Modify Customer";
+            this.GroupBox_Customers.Enter += new System.EventHandler(this.GroupBox_Customers_Enter);
             // 
             // GroupBox_Customers_Button_Add
             // 
