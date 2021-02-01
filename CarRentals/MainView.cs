@@ -292,25 +292,14 @@ namespace CarRentals
             {
                 case 0:
                     _mainPresenter.UpdateFleetListView();
-                    if(DataGridView_Fleet.Rows.Count == 0)
-                    {
-                        GroupBox_Fleet_Button_Modify.Visible = false;
-                    }
-                    else
-                    {
-                        GroupBox_Fleet_Button_Modify.Visible = true;
-                    }
+                    GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(ClassType));
+                    GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(TransmissionType));
+                    GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(FuelType));
+
                     break;
                 case 1:
                     _mainPresenter.UpdateCustomerListView();
-                    if (DataGridView_Customers.Rows.Count == 0)
-                    {
-                        GroupBox_Customers_Button_Modify.Visible = false;
-                    }
-                    else
-                    {
-                        GroupBox_Customers_Button_Modify.Visible = true;
-                    }
+                    GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(GenderType));
 
                     break;
                 case 2:
@@ -373,6 +362,11 @@ namespace CarRentals
         private void GroupBox_Customers_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void GroupBox_Fleet_Modify_Add_Enter(object sender, EventArgs e)
+        {
+            GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(ClassType));
         }
     }
 }
