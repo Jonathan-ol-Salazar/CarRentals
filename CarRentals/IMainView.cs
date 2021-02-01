@@ -53,6 +53,9 @@ namespace CarRentals
         string TotalVehiclesRented { get; set; }
         string TotalDailyRate { get; set; }
 
+        bool Button_FleetModifyVisible { get; set; }
+        bool Button_CustomersModifyVisible { get;  set; }
+
 
     }
 

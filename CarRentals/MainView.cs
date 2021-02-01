@@ -84,7 +84,8 @@ namespace CarRentals
         public bool isQuery { get; set; }
         public Vehicle SelectedVehicleResult { get { return (Vehicle)DataGridView_RentalSearch.CurrentRow.DataBoundItem; } }
 
-
+        public bool Button_FleetModifyVisible { get { return GroupBox_Fleet_Button_Modify.Visible; } set { GroupBox_Fleet_Button_Modify.Visible = value; } }
+        public bool Button_CustomersModifyVisible { get { return GroupBox_Fleet_Button_Modify.Visible; } set { GroupBox_Customers_Button_Modify.Visible = value; } }
 
         public void SetPresenter(IMainPresenter mainPresenter)
         {
@@ -101,11 +102,10 @@ namespace CarRentals
 
         }
 
-        private void GroupBox_Fleet_Button_Add_Click(object sender, EventArgs e)
+
+        private void ResetGroupBoxFleetForm()
         {
-            GroupBox_Fleet_Modify_Add.Visible = true;
-            GroupBox_Fleet_Modify_Add.Text = "Add Vehicle";
-            foreach(Control control in GroupBox_Fleet_Modify_Add.Controls)
+            foreach (Control control in GroupBox_Fleet_Modify_Add.Controls)
             {
                 if (!control.Name.Contains("Label") && !control.Name.Contains("Button"))
                 {
@@ -114,6 +114,25 @@ namespace CarRentals
                     GroupBox_Fleet_Modify_Add_CheckBox_GPS.Checked = false;
                 }
             }
+        }
+
+        private void ResetGroupBoxCustomersForm()
+        {
+            foreach (Control control in GroupBox_Customers_Modify_Add.Controls)
+            {
+                if (!control.Name.Contains("Label") && !control.Name.Contains("Button"))
+                {
+                    control.ResetText();
+                }
+            }
+        }
+
+
+        private void GroupBox_Fleet_Button_Add_Click(object sender, EventArgs e)
+        {
+            GroupBox_Fleet_Modify_Add.Visible = true;
+            GroupBox_Fleet_Modify_Add.Text = "Add Vehicle";
+            ResetGroupBoxFleetForm();
             AddVehicle = true;
 
         }
@@ -162,6 +181,8 @@ namespace CarRentals
                 }
             }
             popupConfirmation.Dispose();
+            ResetGroupBoxFleetForm();
+
         }
 
         private void GroupBox_Fleet_Button_Remove_Click(object sender, EventArgs e)
@@ -181,6 +202,10 @@ namespace CarRentals
             }
 
             popupConfirmation.Dispose();
+
+            // Resetting Form
+            ResetGroupBoxFleetForm();
+
         }
 
         private void GroupBox_Customers_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
@@ -210,6 +235,8 @@ namespace CarRentals
                 }
             }
             popupConfirmation.Dispose();
+            ResetGroupBoxCustomersForm();
+
         }
 
         private void GroupBox_Customers_Modify_Add_Button_Cancel_Click(object sender, EventArgs e)
@@ -235,6 +262,8 @@ namespace CarRentals
 
             popupConfirmation.Dispose();
 
+            // Resetting Form
+            ResetGroupBoxCustomersForm();
         }
 
         private void GroupBox_Customers_Button_Add_Click(object sender, EventArgs e)
@@ -243,13 +272,7 @@ namespace CarRentals
             GroupBox_Customers_Modify_Add.Text = "Add Customer";
             GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = false;
             Label_CustomerID.Visible = false;
-            foreach (Control control in GroupBox_Customers_Modify_Add.Controls)
-            {
-                if (!control.Name.Contains("Label") && !control.Name.Contains("Button"))
-                {
-                    control.ResetText();
-                }
-            }
+            ResetGroupBoxCustomersForm();
             AddCustomer = true;
         }
 
@@ -269,9 +292,25 @@ namespace CarRentals
             {
                 case 0:
                     _mainPresenter.UpdateFleetListView();
+                    if(DataGridView_Fleet.Rows.Count == 0)
+                    {
+                        GroupBox_Fleet_Button_Modify.Visible = false;
+                    }
+                    else
+                    {
+                        GroupBox_Fleet_Button_Modify.Visible = true;
+                    }
                     break;
                 case 1:
                     _mainPresenter.UpdateCustomerListView();
+                    if (DataGridView_Customers.Rows.Count == 0)
+                    {
+                        GroupBox_Customers_Button_Modify.Visible = false;
+                    }
+                    else
+                    {
+                        GroupBox_Customers_Button_Modify.Visible = true;
+                    }
 
                     break;
                 case 2:

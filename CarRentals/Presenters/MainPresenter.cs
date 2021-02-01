@@ -43,12 +43,33 @@ namespace CarRentals.Presenters
 
         public void UpdateFleetListView()
         {
-            _mainView.FleetList = GetAllVehicles();
+            var data = GetAllVehicles();
+            if (data.Count() == 0)
+            {
+                _mainView.Button_FleetModifyVisible = false;
+            }
+            else
+            {
+                _mainView.Button_FleetModifyVisible = true;
+            }
+
+            _mainView.FleetList = data;            
         }
 
         public void UpdateCustomerListView()
         {
-            _mainView.CustomerList = GetAllCustomers();            
+            var data = GetAllCustomers();
+            if (data.Count() == 0)
+            {
+                _mainView.Button_CustomersModifyVisible = false;
+
+            }
+            else
+            {
+                _mainView.Button_CustomersModifyVisible = true;
+            }
+
+            _mainView.CustomerList = data;
         }
 
         public void UpdateRentalReportListView()
