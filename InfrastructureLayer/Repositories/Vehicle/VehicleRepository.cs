@@ -60,15 +60,6 @@ namespace InfrastructureLayer.Repositories
 
         public IEnumerable<Vehicle> Query(string query)
         {
-            // for enums
-            // check if query is a enum before searching context
-
-            // for ints /doubles
-            // check if query is correct format
-
-            // for bools
-            // check if query is a valid boolean
-
             var x = (_context.Vehicles.Where(x => x.Make == query));
             var vehicles = _context.Vehicles.Where(x => x.Rego == query);
             vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Make == query));
@@ -111,9 +102,7 @@ namespace InfrastructureLayer.Repositories
                 vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.GPS == bool.Parse(query)));
             }
 
-
-
-            return vehicles;
+            return vehicles.Distinct();
         }
     }
 }
