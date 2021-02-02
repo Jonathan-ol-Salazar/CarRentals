@@ -395,6 +395,7 @@ namespace CarRentals
             ComboBox_Customer.SelectedIndex = -1;
             NumericUpDown_RentalDuration.Value = 0;
             _mainPresenter.AddRental();
+            ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
 
         }
 
