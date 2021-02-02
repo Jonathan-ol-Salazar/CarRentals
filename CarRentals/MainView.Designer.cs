@@ -90,9 +90,9 @@ namespace CarRentals
             this.DataGridView_Customers = new System.Windows.Forms.DataGridView();
             this.RentalReportTab = new System.Windows.Forms.TabPage();
             this.GroupBox_Report = new System.Windows.Forms.GroupBox();
+            this.GroupBox_RentalReport_Button_Return = new System.Windows.Forms.Button();
             this.Label_TotalVehiclesRented = new System.Windows.Forms.Label();
             this.Label_TotalDailyRate = new System.Windows.Forms.Label();
-            this.GroupBox_Report_Button_Return = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.DataGridView_RentalReport = new System.Windows.Forms.DataGridView();
             this.RentalSearchTab = new System.Windows.Forms.TabPage();
@@ -712,9 +712,9 @@ namespace CarRentals
             // 
             // GroupBox_Report
             // 
+            this.GroupBox_Report.Controls.Add(this.GroupBox_RentalReport_Button_Return);
             this.GroupBox_Report.Controls.Add(this.Label_TotalVehiclesRented);
             this.GroupBox_Report.Controls.Add(this.Label_TotalDailyRate);
-            this.GroupBox_Report.Controls.Add(this.GroupBox_Report_Button_Return);
             this.GroupBox_Report.Controls.Add(this.label1);
             this.GroupBox_Report.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.GroupBox_Report.Location = new System.Drawing.Point(3, 606);
@@ -723,6 +723,17 @@ namespace CarRentals
             this.GroupBox_Report.TabIndex = 4;
             this.GroupBox_Report.TabStop = false;
             this.GroupBox_Report.Text = "Modify Rentals";
+            this.GroupBox_Report.Enter += new System.EventHandler(this.GroupBox_Report_Enter);
+            // 
+            // GroupBox_RentalReport_Button_Return
+            // 
+            this.GroupBox_RentalReport_Button_Return.Location = new System.Drawing.Point(6, 22);
+            this.GroupBox_RentalReport_Button_Return.Name = "GroupBox_RentalReport_Button_Return";
+            this.GroupBox_RentalReport_Button_Return.Size = new System.Drawing.Size(75, 23);
+            this.GroupBox_RentalReport_Button_Return.TabIndex = 16;
+            this.GroupBox_RentalReport_Button_Return.Text = "Return";
+            this.GroupBox_RentalReport_Button_Return.UseVisualStyleBackColor = true;
+            this.GroupBox_RentalReport_Button_Return.Click += new System.EventHandler(this.GroupBox_RentalReport_Button_Return_Click);
             // 
             // Label_TotalVehiclesRented
             // 
@@ -741,15 +752,6 @@ namespace CarRentals
             this.Label_TotalDailyRate.Size = new System.Drawing.Size(141, 15);
             this.Label_TotalDailyRate.TabIndex = 14;
             this.Label_TotalDailyRate.Text = "Total Daily Rental Charge:";
-            // 
-            // GroupBox_Report_Button_Return
-            // 
-            this.GroupBox_Report_Button_Return.Location = new System.Drawing.Point(6, 22);
-            this.GroupBox_Report_Button_Return.Name = "GroupBox_Report_Button_Return";
-            this.GroupBox_Report_Button_Return.Size = new System.Drawing.Size(75, 23);
-            this.GroupBox_Report_Button_Return.TabIndex = 0;
-            this.GroupBox_Report_Button_Return.Text = "Return Vehicle";
-            this.GroupBox_Report_Button_Return.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -1041,7 +1043,6 @@ namespace CarRentals
         private System.Windows.Forms.TextBox GroupBox_;
         private System.Windows.Forms.TextBox Flee;
         private System.Windows.Forms.GroupBox GroupBox_Report;
-        private System.Windows.Forms.Button GroupBox_Report_Button_Return;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DataGridView_RentalReport;
         private System.Windows.Forms.Label Label_DailyCostRange;
@@ -1061,6 +1062,7 @@ namespace CarRentals
         private System.Windows.Forms.Label Label_DailyCostRangeMinus;
         private System.Windows.Forms.Label Label_TotalVehiclesRented;
         private System.Windows.Forms.Label Label_TotalDailyRate;
+        private System.Windows.Forms.Button GroupBox_RentalReport_Button_Return;
     }
 }
 

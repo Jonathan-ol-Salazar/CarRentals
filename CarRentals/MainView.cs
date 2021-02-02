@@ -361,11 +361,10 @@ namespace CarRentals
 
 
         ////////////////////////// RENTAL REPORT //////////////////////////
-        private void GroupBox_Report_Button_Return_Click(object sender, EventArgs e)
+        private void GroupBox_RentalReport_Button_Return_Click(object sender, EventArgs e)
         {
             _mainPresenter.DeleteRental();
         }
-        
         ////////////////////////// RENTAL SEARCH //////////////////////////
 
         private void Button_Search_Click(object sender, EventArgs e)
@@ -400,6 +399,11 @@ namespace CarRentals
             NumericUpDown_RentalDuration.Value = 0;
         }
 
- 
+        private void GroupBox_Report_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
