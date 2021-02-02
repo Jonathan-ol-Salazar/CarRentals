@@ -245,25 +245,25 @@ namespace CarRentals
 
         private void GroupBox_Fleet_Button_Remove_Click(object sender, EventArgs e)
         {
-            // Check if a vehicle is selected 
+            PopupConfirmationView popupConfirmation = new PopupConfirmationView();
+
             if (DataGridView_Fleet.CurrentRow == null)
             {
-
+                PopupError(popupConfirmation, "No Vehicle Selected!");
             }
-
-            PopupConfirmationView popupConfirmation = new PopupConfirmationView();
-            popupConfirmation.LabelText = "Confirm Vehicle Removal";
-            DialogResult dialogResult = popupConfirmation.ShowDialog();
-            if (dialogResult == DialogResult.OK)
+            else
             {
-                _mainPresenter.DeleteVehicle();
+                popupConfirmation.LabelText = "Confirm Vehicle Removal";
+                DialogResult dialogResult = popupConfirmation.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    _mainPresenter.DeleteVehicle();
+                }
             }
-
             popupConfirmation.Dispose();
 
             // Resetting Form
-            ResetGroupBoxFleetForm();
-
+            ResetGroupBoxCustomersForm();
         }
 
         ////////////////////////// CUSTOMER //////////////////////////
@@ -317,20 +317,21 @@ namespace CarRentals
 
         private void GroupBox_Customers_Button_Remove_Click(object sender, EventArgs e)
         {
-            // Check if a customer is selected
-            if(DataGridView_Customers.CurrentRow == null)
-            {
-
-            }
-
             PopupConfirmationView popupConfirmation = new PopupConfirmationView();
-            popupConfirmation.LabelText = "Confirm Customer Removal";
-            DialogResult dialogResult = popupConfirmation.ShowDialog();
-            if(dialogResult == DialogResult.OK)
-            {
-                _mainPresenter.DeleteCustomer();
-            }
 
+            if (DataGridView_Customers.CurrentRow == null)
+            {
+                PopupError(popupConfirmation, "No Customer Selected!");
+            }
+            else
+            {
+                popupConfirmation.LabelText = "Confirm Customer Removal";
+                DialogResult dialogResult = popupConfirmation.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    _mainPresenter.DeleteCustomer();
+                }
+            }
             popupConfirmation.Dispose();
 
             // Resetting Form
@@ -372,6 +373,7 @@ namespace CarRentals
                     _mainPresenter.DeleteRental();
                 }
             }
+            popupConfirmation.Dispose();
         }
 
         ////////////////////////// RENTAL SEARCH //////////////////////////
@@ -427,6 +429,7 @@ namespace CarRentals
                     GroupBox_CreateRental_ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
                 }
             }
+            popupConfirmation.Dispose();
         }
 
         private void GroupBox_Report_Enter(object sender, EventArgs e)
@@ -441,14 +444,5 @@ namespace CarRentals
 
         }
 
-        private void NumericUpDown_DailyCostRangeBottom_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NumericUpDown_DailyCostRangeTop_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
