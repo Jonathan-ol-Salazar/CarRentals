@@ -1,9 +1,7 @@
-﻿using DomainLayer;
-using DomainLayer.Customers;
+﻿using DomainLayer.Customers;
 using DomainLayer.Vehicles;
 using InfrastructureLayer.Repositories;
 using System.Collections.Generic;
-using System.Windows.Forms;
 using System.Linq;
 using System;
 using DomainLayer.Rented;

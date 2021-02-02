@@ -7,48 +7,7 @@ namespace DomainLayer.Vehicles
         public Vehicle()
         {
 
-        }
-        public Vehicle(string rego, ClassType classType, string make, string model, string year)
-        {
-            Rego = rego;
-            ClassType = classType;
-            Make = make;
-            Model = model;
-            Year = year;
-
-            // Default
-            Seats = 4;
-            TransmissionType = TransmissionType.Automatic;
-            FuelType = FuelType.Petrol;
-            GPS = false;
-            Sunroof = false;
-            Colour = "Black";
-
-
-            switch (ClassType)
-            {
-                case ClassType.Ecomony:
-                    TransmissionType = TransmissionType.Automatic;
-                    DailyRate = 50.00;
-                    break;
-                case ClassType.Family:
-                    TransmissionType = TransmissionType.Automatic;
-                    DailyRate = 80.00;
-                    break;
-                case ClassType.Luxury:
-                    GPS = true;
-                    Sunroof = true;
-                    DailyRate = 120.00;
-                    break;
-                case ClassType.Commercial:
-                    FuelType = FuelType.Diesel;
-                    DailyRate = 130.00;
-                    break;
-
-                default:
-                    break;
-            }
-        }
+        }       
 
         public Vehicle(string rego, ClassType classType, string make,
             string model, string year, int seats, TransmissionType transmissionType,
@@ -67,17 +26,6 @@ namespace DomainLayer.Vehicles
             DailyRate = dailyRate;
             Colour = colour;
         }
-
-        public string ToCSVString()
-        {
-            return Rego + "," + ClassType.ToString() + "," + Make + "," + Model + "," + Year.ToString() + "," + Seats.ToString() + "," + TransmissionType.ToString() + "," + FuelType.ToString() + "," + GPS.ToString() + "," + Sunroof.ToString() + "," + DailyRate.ToString() + "," + Colour;
-        }
-
-        public override string ToString()
-        {
-            return Rego + Make + Model + Year + ClassType + Seats + TransmissionType + FuelType + GPS + Sunroof + Colour + DailyRate;
-        }
-
 
         [Key]
         public string Rego { get; set; }

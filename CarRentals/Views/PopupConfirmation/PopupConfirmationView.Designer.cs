@@ -1,5 +1,5 @@
 ﻿
-namespace CarRentals.Views
+namespace CarRentals
 {
     partial class PopupConfirmationView
     {

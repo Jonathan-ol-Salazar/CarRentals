@@ -1,5 +1,4 @@
 ﻿using CarRentals.Presenters;
-using CarRentals.Views;
 using DomainLayer.Customers;
 using DomainLayer.Rented;
 using DomainLayer.Vehicles;

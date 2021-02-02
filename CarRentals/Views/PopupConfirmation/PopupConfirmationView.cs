@@ -1,7 +1,7 @@
 ﻿using CarRentals.Presenters;
 using System.Windows.Forms;
 
-namespace CarRentals.Views
+namespace CarRentals
 {
     public partial class PopupConfirmationView : Form, IPopupConfirmationView
     {

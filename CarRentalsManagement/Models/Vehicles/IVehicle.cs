@@ -16,7 +16,5 @@
         string Year { get; set; }
         bool IsRented { get; set; }
 
-        string ToCSVString();
-        string ToString();
     }
 }

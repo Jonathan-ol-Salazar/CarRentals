@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace CarRentals.Views
+namespace CarRentals
 {
     public interface IPopupConfirmationView
     {
