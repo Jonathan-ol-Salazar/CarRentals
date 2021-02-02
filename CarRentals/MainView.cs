@@ -127,11 +127,18 @@ namespace CarRentals
                     break;
                 case 3:
                     _mainPresenter.UpdateRentalSearchListView();
+                    ComboBox_Customer.SelectedIndex = -1;
 
                     break;
             }
         }
-
+        private void PopupError(PopupConfirmationView popupConfirmation, string text)
+        {
+            popupConfirmation.LabelText = text;
+            popupConfirmation.Button_Confirm.Location = new Point(84, 74);
+            popupConfirmation.Button_Cancel.Visible = false;
+            DialogResult dialogResult = popupConfirmation.ShowDialog();
+        }
         ////////////////////////// FLEET //////////////////////////
         private void ResetGroupBoxFleetForm()
         {
@@ -194,12 +201,7 @@ namespace CarRentals
                 {
                     if (string.IsNullOrEmpty(control.Text) || string.IsNullOrWhiteSpace(control.Text))
                     {
-                        popupConfirmation.Button_Confirm.Location = new Point(84, 74);
-                        popupConfirmation.Button_Cancel.Visible = false;
-                        popupConfirmation.LabelText = "Missing Fields Required!";
-
-                        DialogResult dialogResult = popupConfirmation.ShowDialog();
-
+                        PopupError(popupConfirmation, "Missing Fields Required!");
                         formComplete = false;
                         break;
                     }
@@ -213,10 +215,7 @@ namespace CarRentals
                     // Check if duplicate rego
                     if (_mainPresenter.RegoExists())
                     {
-                        popupConfirmation.Button_Confirm.Location = new Point(84, 74);
-                        popupConfirmation.Button_Cancel.Visible = false;
-                        popupConfirmation.LabelText = "Rego Already Seleted. Use A Different Rego.";
-                        DialogResult dialogResult = popupConfirmation.ShowDialog();
+                        PopupError(popupConfirmation, "Rego Already Seleted. Use A Different Rego.");
                     }
                     else
                     {
@@ -280,12 +279,7 @@ namespace CarRentals
                 {
                     if (string.IsNullOrEmpty(control.Text) || string.IsNullOrWhiteSpace(control.Text))
                     {
-                        popupConfirmation.Button_Confirm.Location = new Point(84, 74);
-                        popupConfirmation.Button_Cancel.Visible = false;
-                        popupConfirmation.LabelText = "Missing Fields Required!";
-
-                        DialogResult dialogResult = popupConfirmation.ShowDialog();
-
+                        PopupError(popupConfirmation, "Missing Fields Required!");
                         formComplete = false;
                         break;
                     }
@@ -301,7 +295,6 @@ namespace CarRentals
                     {
                         _mainPresenter.AddCustomer();
                     }
-
                 }
                 else
                 {
@@ -314,9 +307,7 @@ namespace CarRentals
                 }
                 ResetGroupBoxCustomersForm();
             }
-
             popupConfirmation.Dispose();
-
         }
 
         private void GroupBox_Customers_Modify_Add_Button_Cancel_Click(object sender, EventArgs e)
@@ -393,14 +384,37 @@ namespace CarRentals
         }
 
         private void Button_Rent_Click(object sender, EventArgs e)
-        {
-            RentedCustomerID = int.Parse(ComboBox_Customer.Text.Split('-')[0]);
-            ComboBox_Customer.SelectedIndex = -1;
-            NumericUpDown_RentalDuration.Value = 0;
-            _mainPresenter.AddRental();
-            ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
+        {            
+            PopupConfirmationView popupConfirmation = new PopupConfirmationView();
 
+            if(DataGridView_RentalSearch.RowCount == 0)
+            {
+                PopupError(popupConfirmation, "No Vehicle Selected!");
+            }
+            else if (ComboBox_Customer.Text == null)
+            {
+                PopupError(popupConfirmation, "No Customer Selected!");
+            }
+            else if(NumericUpDown_RentalDuration.Value <= 0)
+            {
+                PopupError(popupConfirmation, "Rental Duration Must Be Greater Than 1!");
+            }
+            else
+            {
+                popupConfirmation.LabelText = "Confirm Vehicle Rental";
+                DialogResult dialogResult = popupConfirmation.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    RentedCustomerID = int.Parse(ComboBox_Customer.Text.Split('-')[0]);
+                    ComboBox_Customer.SelectedIndex = -1;
+                    NumericUpDown_RentalDuration.Value = 0;
+                    _mainPresenter.AddRental();
+                    ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
+                }
+            }
         }
+
+
 
         private void GroupBox_Report_Enter(object sender, EventArgs e)
         {
