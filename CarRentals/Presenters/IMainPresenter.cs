@@ -27,6 +27,7 @@ namespace CarRentals.Presenters
         void DeleteRental();
         void UpdateRentalSearchListView();
         List<string> GetNotRenting();
+        bool RegoExists();
 
 
     }

@@ -279,5 +279,11 @@ namespace CarRentals.Presenters
 
             UpdateRentalReportListView();
         }
+
+        public bool RegoExists()
+        {
+            return _vehicleService.GetByRego(_mainView.Rego) != null;
+        }
+
     }
 }

@@ -136,7 +136,6 @@ namespace CarRentals
             {
                 if (!control.Name.Contains("Label") && !control.Name.Contains("Button"))
                 {
-                   
                     control.ResetText();
                     GroupBox_Fleet_Modify_Add_CheckBox_Sunroof.Checked = false;
                     GroupBox_Fleet_Modify_Add_CheckBox_GPS.Checked = false;
@@ -159,6 +158,8 @@ namespace CarRentals
         {
             GroupBox_Fleet_Modify_Add.Visible = true;
             GroupBox_Fleet_Modify_Add.Text = "Add Vehicle";
+            Label_Rego.Visible = true;
+            GroupBox_Fleet_Modify_Add_TextBox_Rego.Visible = true;
             ResetGroupBoxFleetForm();
             AddVehicle = true;
         }
@@ -183,6 +184,7 @@ namespace CarRentals
 
             PopupConfirmationView popupConfirmation = new PopupConfirmationView();         
 
+            // Check if Form complete
             foreach(Control control in GroupBox_Fleet_Modify_Add.Controls)
             {
                 if (!control.Name.Contains("CheckBox") && !control.Name.Contains("Button"))
@@ -205,12 +207,23 @@ namespace CarRentals
             {
                 if (AddVehicle == true)
                 {
-                    popupConfirmation.LabelText = "Confirm Vehicle Creation";
-                    DialogResult dialogResult = popupConfirmation.ShowDialog();
-
-                    if (dialogResult == DialogResult.OK)
+                    // Check if duplicate rego
+                    if (_mainPresenter.RegoExists())
                     {
-                        _mainPresenter.AddVehicle();
+                        popupConfirmation.Button_Confirm.Location = new Point(84, 74);
+                        popupConfirmation.Button_Cancel.Visible = false;
+                        popupConfirmation.LabelText = "Rego Already Seleted. Use A Different Rego.";
+                        DialogResult dialogResult = popupConfirmation.ShowDialog();
+                    }
+                    else
+                    {
+                        popupConfirmation.LabelText = "Confirm Vehicle Creation";
+                        DialogResult dialogResult = popupConfirmation.ShowDialog();
+
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            _mainPresenter.AddVehicle();
+                        }
                     }
                 }
                 else
