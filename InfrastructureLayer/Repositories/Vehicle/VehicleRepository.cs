@@ -60,18 +60,49 @@ namespace InfrastructureLayer.Repositories
 
         public IEnumerable<Vehicle> Query(string query)
         {
+            // for enums
+            // check if query is a enum before searching context
+
+            // for ints /doubles
+            // check if query is correct format
+
+            // for bools
+            // check if query is a valid boolean
+
             var x = (_context.Vehicles.Where(x => x.Make == query));
             var vehicles = _context.Vehicles.Where(x => x.Rego == query);
             vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Make == query));
             vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Model == query));
-            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.ClassType == (ClassType)Enum.Parse(typeof(ClassType), query)));
             vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Year == query));
-            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.TransmissionType == (TransmissionType)Enum.Parse(typeof(TransmissionType), query)));
-            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.FuelType == (FuelType)Enum.Parse(typeof(FuelType), query)));
+            vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Colour == query));
+            
+
+            // Enum
+            if(Enum.IsDefined(typeof(ClassType), query))
+            {
+                vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.ClassType == (ClassType)Enum.Parse(typeof(ClassType), query)));
+            }
+            else if(Enum.IsDefined(typeof(TransmissionType), query))
+            {
+                vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.TransmissionType == (TransmissionType)Enum.Parse(typeof(TransmissionType), query)));
+            }
+            else if(Enum.IsDefined(typeof(FuelType), query))
+            {
+                vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.FuelType == (FuelType)Enum.Parse(typeof(FuelType), query)));
+            }
+
+            // Int or Double
+
+
+
+            // Boolean
+
+
+
+
             //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Seats == int.Parse(query)));
             //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Sunroof == Convert.ToBoolean(query)));
             //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.GPS == Convert.ToBoolean(query)));
-            vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Colour == query));
             //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.DailyRate== Convert.ToDouble(query)))
 
 
