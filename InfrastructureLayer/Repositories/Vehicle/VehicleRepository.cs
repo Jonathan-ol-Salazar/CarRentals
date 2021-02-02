@@ -82,11 +82,11 @@ namespace InfrastructureLayer.Repositories
             {
                 vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.ClassType == (ClassType)Enum.Parse(typeof(ClassType), query)));
             }
-            else if(Enum.IsDefined(typeof(TransmissionType), query))
+            if(Enum.IsDefined(typeof(TransmissionType), query))
             {
                 vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.TransmissionType == (TransmissionType)Enum.Parse(typeof(TransmissionType), query)));
             }
-            else if(Enum.IsDefined(typeof(FuelType), query))
+            if(Enum.IsDefined(typeof(FuelType), query))
             {
                 vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.FuelType == (FuelType)Enum.Parse(typeof(FuelType), query)));
             }
@@ -102,13 +102,15 @@ namespace InfrastructureLayer.Repositories
             }
 
             // Boolean
+            if (Boolean.TryParse(query, out bool boolStringSeats))
+            {
+                vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Sunroof == bool.Parse(query)));
+            }
+            if (Boolean.TryParse(query, out bool boolStringSunroof))
+            {
+                vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.GPS == bool.Parse(query)));
+            }
 
-
-
-
-            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Sunroof == Convert.ToBoolean(query)));
-            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.GPS == Convert.ToBoolean(query)));
-            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.DailyRate== Convert.ToDouble(query)))
 
 
             return vehicles;
