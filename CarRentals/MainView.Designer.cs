@@ -87,7 +87,6 @@ namespace CarRentals
             this.Label_FirstName = new System.Windows.Forms.Label();
             this.GroupBox_Customers_Modify_Add_TextBox_LastName = new System.Windows.Forms.TextBox();
             this.Label_LastName = new System.Windows.Forms.Label();
-            this.Label_CustomerID = new System.Windows.Forms.Label();
             this.DataGridView_Customers = new System.Windows.Forms.DataGridView();
             this.RentalReportTab = new System.Windows.Forms.TabPage();
             this.GroupBox_Report = new System.Windows.Forms.GroupBox();
@@ -575,7 +574,6 @@ namespace CarRentals
             this.GroupBox_Customers_Modify_Add.Controls.Add(this.Label_FirstName);
             this.GroupBox_Customers_Modify_Add.Controls.Add(this.GroupBox_Customers_Modify_Add_TextBox_LastName);
             this.GroupBox_Customers_Modify_Add.Controls.Add(this.Label_LastName);
-            this.GroupBox_Customers_Modify_Add.Controls.Add(this.Label_CustomerID);
             this.GroupBox_Customers_Modify_Add.Location = new System.Drawing.Point(3, 413);
             this.GroupBox_Customers_Modify_Add.Name = "GroupBox_Customers_Modify_Add";
             this.GroupBox_Customers_Modify_Add.Size = new System.Drawing.Size(786, 193);
@@ -615,7 +613,7 @@ namespace CarRentals
             // GroupBox_Customers_Modify_Add_ComboBox_Title
             // 
             this.GroupBox_Customers_Modify_Add_ComboBox_Title.FormattingEnabled = true;
-            this.GroupBox_Customers_Modify_Add_ComboBox_Title.Location = new System.Drawing.Point(110, 93);
+            this.GroupBox_Customers_Modify_Add_ComboBox_Title.Location = new System.Drawing.Point(109, 56);
             this.GroupBox_Customers_Modify_Add_ComboBox_Title.Name = "GroupBox_Customers_Modify_Add_ComboBox_Title";
             this.GroupBox_Customers_Modify_Add_ComboBox_Title.Size = new System.Drawing.Size(100, 23);
             this.GroupBox_Customers_Modify_Add_ComboBox_Title.TabIndex = 2;
@@ -641,7 +639,7 @@ namespace CarRentals
             // 
             this.Label_Title.AutoSize = true;
             this.Label_Title.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_Title.Location = new System.Drawing.Point(69, 96);
+            this.Label_Title.Location = new System.Drawing.Point(68, 59);
             this.Label_Title.Name = "Label_Title";
             this.Label_Title.Size = new System.Drawing.Size(35, 15);
             this.Label_Title.TabIndex = 17;
@@ -690,16 +688,6 @@ namespace CarRentals
             this.Label_LastName.Size = new System.Drawing.Size(68, 15);
             this.Label_LastName.TabIndex = 2;
             this.Label_LastName.Text = "Last Name:";
-            // 
-            // Label_CustomerID
-            // 
-            this.Label_CustomerID.AutoSize = true;
-            this.Label_CustomerID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label_CustomerID.Location = new System.Drawing.Point(27, 59);
-            this.Label_CustomerID.Name = "Label_CustomerID";
-            this.Label_CustomerID.Size = new System.Drawing.Size(77, 15);
-            this.Label_CustomerID.TabIndex = 0;
-            this.Label_CustomerID.Text = "CustomerID:";
             // 
             // DataGridView_Customers
             // 
@@ -1049,7 +1037,6 @@ namespace CarRentals
         private System.Windows.Forms.Label Label_FirstName;
         private System.Windows.Forms.TextBox GroupBox_Customers_Modify_Add_TextBox_LastName;
         private System.Windows.Forms.Label Label_LastName;
-        private System.Windows.Forms.Label Label_CustomerID;
         private System.Windows.Forms.ComboBox GroupBox_Customers_Modify_Add_ComboBox_Gender;
         private System.Windows.Forms.TextBox GroupBox_;
         private System.Windows.Forms.TextBox Flee;

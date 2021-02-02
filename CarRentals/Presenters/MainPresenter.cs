@@ -183,12 +183,11 @@ namespace CarRentals.Presenters
         {
             Customer customer = new Customer
             {
-                //CustomerID = _mainView.CustomerID,
                 FirstName = _mainView.FirstName,
                 LastName = _mainView.LastName,
                 DOB = _mainView.DOB,
                 GenderType = (GenderType)Enum.Parse(typeof(GenderType), _mainView.Gender, true),
-                Title = _mainView.Title
+                TitleType = (TitleType)Enum.Parse(typeof(TitleType), _mainView.Title, true),
             };
 
             _customerService.Add(customer);
@@ -208,7 +207,7 @@ namespace CarRentals.Presenters
             customer.LastName = _mainView.LastName;
             customer.DOB = _mainView.DOB;
             customer.GenderType = (GenderType)Enum.Parse(typeof(GenderType), _mainView.Gender, true);
-            customer.Title = _mainView.Title;
+            customer.TitleType = (TitleType)Enum.Parse(typeof(TitleType), _mainView.Title, true);
 
             _customerService.Update(customer);
             UpdateCustomerListView();
@@ -239,7 +238,7 @@ namespace CarRentals.Presenters
             _mainView.LastName = customer.LastName;
             _mainView.DOB = customer.DOB;
             _mainView.Gender = customer.GenderType.ToString();
-            _mainView.Title = customer.Title;
+            _mainView.Title = customer.TitleType.ToString();
         }
 
         public void AddRental()

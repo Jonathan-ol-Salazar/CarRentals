@@ -2,48 +2,44 @@
 {
     public class Customer : ICustomer
     {
-        // Globals
-        private string customerFile = @"CarRentals\ProjectDocuments\customer.csv";
-
-
         public Customer()
         {
 
         }
 
-        public Customer(int customerID, string title, string firstName, string
+        public Customer(int customerID, TitleType titleType, string firstName, string
             lastName, GenderType genderType, string dob)
         {
             CustomerID = customerID;
-            Title = title;
+            TitleType = titleType;
             FirstName = firstName;
             LastName = lastName;
             GenderType = genderType;
             DOB = dob;
         }
 
-        public string ToCSVString()
-        {
-            return CustomerID.ToString() + ',' + Title + ',' + FirstName + ',' + LastName + ',' + GenderType.ToString() + ',' + DOB;
-        }
-
-        public override string ToString()
-        {
-            return CustomerID.ToString() + Title + FirstName + LastName + GenderType.ToString() + DOB;
-        }
-
 
         public int CustomerID { get; set; }
-        public string Title { get; set; }
+        public TitleType TitleType { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string DOB { get; set; }
         public GenderType GenderType { get; set; }
         public bool IsRenting { get; set; }
     }
+
+    public enum TitleType
+    {
+        Mr,
+        Mrs,
+        Miss,
+        Dr
+
+    }
     public enum GenderType
     {
         Male,
         Female
     }
+
 }

@@ -27,6 +27,7 @@ namespace CarRentals
             GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(ClassType));
             GroupBox_Fleet_Modify_Add_ComboBox_Transmission.DataSource = Enum.GetValues(typeof(TransmissionType));
             GroupBox_Fleet_Modify_Add_ComboBox_Fuel.DataSource = Enum.GetValues(typeof(FuelType));
+            GroupBox_Customers_Modify_Add_ComboBox_Title.DataSource = Enum.GetValues(typeof(TitleType));
             GroupBox_Customers_Modify_Add_ComboBox_Gender.DataSource = Enum.GetValues(typeof(GenderType));
 
         }
@@ -333,8 +334,6 @@ namespace CarRentals
         {
             GroupBox_Customers_Modify_Add.Visible = true;
             GroupBox_Customers_Modify_Add.Text = "Add Customer";
-            //GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = false;
-            Label_CustomerID.Visible = false;
             ResetGroupBoxCustomersForm();
             AddCustomer = true;
         }
@@ -343,8 +342,6 @@ namespace CarRentals
         {
             GroupBox_Customers_Modify_Add.Visible = true;
             GroupBox_Customers_Modify_Add.Text = "Modify Customer";
-            //GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = false;
-            Label_CustomerID.Visible = false;
             AddCustomer = false;
             _mainPresenter.RefreshCustomerForm();
         }
