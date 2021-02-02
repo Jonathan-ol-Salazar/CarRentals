@@ -90,7 +90,7 @@ namespace CarRentals
 
         public Vehicle VehicleSearch { get; set; }
 
-        public string Query { get { return TextBox_Query.Text; } set { TextBox_Query.Text = value; } }
+        public string Query { get { return RentalSearch_TextBox_Query.Text; } set { RentalSearch_TextBox_Query.Text = value; } }
         public bool isQuery { get; set; }
         public Vehicle SelectedVehicleResult { get { return (Vehicle)DataGridView_RentalSearch.CurrentRow.DataBoundItem; } }
 
@@ -127,7 +127,7 @@ namespace CarRentals
                     break;
                 case 3:
                     _mainPresenter.UpdateRentalSearchListView();
-                    ComboBox_Customer.SelectedIndex = -1;
+                    GroupBox_CreateRental_ComboBox_Customer.SelectedIndex = -1;
 
                     break;
             }
@@ -357,8 +357,23 @@ namespace CarRentals
         ////////////////////////// RENTAL REPORT //////////////////////////
         private void GroupBox_RentalReport_Button_Return_Click(object sender, EventArgs e)
         {
-            _mainPresenter.DeleteRental();
+            PopupConfirmationView popupConfirmation = new PopupConfirmationView();
+
+            if (DataGridView_RentalReport.RowCount == 0)
+            {
+                PopupError(popupConfirmation, "No Rental Selected!");
+            }
+            else
+            {
+                popupConfirmation.LabelText = "Confirm Vehicle Return";
+                DialogResult dialogResult = popupConfirmation.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    _mainPresenter.DeleteRental();
+                }
+            }
         }
+
         ////////////////////////// RENTAL SEARCH //////////////////////////
 
         private void Button_Search_Click(object sender, EventArgs e)
@@ -375,15 +390,15 @@ namespace CarRentals
 
         private void GroupBox_CreateRental_Enter(object sender, EventArgs e)
         {
-            ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
+            GroupBox_CreateRental_ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
         }
 
         private void NumericUpDown_RentalDuration_ValueChanged(object sender, EventArgs e)
         {
-            Label_TotalCost.Text = "Total Cost: $" + ((double)NumericUpDown_RentalDuration.Value * SelectedVehicleResult.DailyRate).ToString();
+            Label_TotalCost.Text = "Total Cost: $" + ((double)GroupBox_CreateRental_NumericUpDown_RentalDuration.Value * SelectedVehicleResult.DailyRate).ToString();
         }
 
-        private void Button_Rent_Click(object sender, EventArgs e)
+        private void GroupBox_CreateRental_Button_Rent_Click(object sender, EventArgs e)
         {            
             PopupConfirmationView popupConfirmation = new PopupConfirmationView();
 
@@ -391,11 +406,11 @@ namespace CarRentals
             {
                 PopupError(popupConfirmation, "No Vehicle Selected!");
             }
-            else if (ComboBox_Customer.Text == null)
+            else if (GroupBox_CreateRental_ComboBox_Customer.Text == null)
             {
                 PopupError(popupConfirmation, "No Customer Selected!");
             }
-            else if(NumericUpDown_RentalDuration.Value <= 0)
+            else if(GroupBox_CreateRental_NumericUpDown_RentalDuration.Value <= 0)
             {
                 PopupError(popupConfirmation, "Rental Duration Must Be Greater Than 1!");
             }
@@ -405,16 +420,14 @@ namespace CarRentals
                 DialogResult dialogResult = popupConfirmation.ShowDialog();
                 if (dialogResult == DialogResult.OK)
                 {
-                    RentedCustomerID = int.Parse(ComboBox_Customer.Text.Split('-')[0]);
-                    ComboBox_Customer.SelectedIndex = -1;
-                    NumericUpDown_RentalDuration.Value = 0;
+                    RentedCustomerID = int.Parse(GroupBox_CreateRental_ComboBox_Customer.Text.Split('-')[0]);
+                    GroupBox_CreateRental_ComboBox_Customer.SelectedIndex = -1;
+                    GroupBox_CreateRental_NumericUpDown_RentalDuration.Value = 0;
                     _mainPresenter.AddRental();
-                    ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
+                    GroupBox_CreateRental_ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
                 }
             }
         }
-
-
 
         private void GroupBox_Report_Enter(object sender, EventArgs e)
         {
@@ -423,7 +436,7 @@ namespace CarRentals
 
         private void TextBox_Query_Click(object sender, EventArgs e)
         {
-            TextBox_Query.Text = "";
+            RentalSearch_TextBox_Query.Text = "";
 
 
         }

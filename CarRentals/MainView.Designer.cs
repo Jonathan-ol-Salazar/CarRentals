@@ -98,19 +98,19 @@ namespace CarRentals
             this.RentalSearchTab = new System.Windows.Forms.TabPage();
             this.Label_DailyCostRangeMinus = new System.Windows.Forms.Label();
             this.Label_DailyCostRange = new System.Windows.Forms.Label();
-            this.TextBox_Query = new System.Windows.Forms.TextBox();
+            this.RentalSearch_TextBox_Query = new System.Windows.Forms.TextBox();
             this.NumericUpDown_DailyCostRangeTop = new System.Windows.Forms.NumericUpDown();
             this.NumericUpDown_DailyCostRangeBottom = new System.Windows.Forms.NumericUpDown();
-            this.Button_ShowAll = new System.Windows.Forms.Button();
-            this.Button_Search = new System.Windows.Forms.Button();
+            this.RentalSearch_Button_ShowAll = new System.Windows.Forms.Button();
+            this.RentalSearch_Button_Search = new System.Windows.Forms.Button();
             this.GroupBox_Results = new System.Windows.Forms.GroupBox();
             this.GroupBox_CreateRental = new System.Windows.Forms.GroupBox();
             this.Label_TotalCost = new System.Windows.Forms.Label();
             this.Label_RentalDuration = new System.Windows.Forms.Label();
-            this.NumericUpDown_RentalDuration = new System.Windows.Forms.NumericUpDown();
-            this.Button_Rent = new System.Windows.Forms.Button();
+            this.GroupBox_CreateRental_NumericUpDown_RentalDuration = new System.Windows.Forms.NumericUpDown();
+            this.GroupBox_CreateRental_Button_Rent = new System.Windows.Forms.Button();
             this.Label_Customer = new System.Windows.Forms.Label();
-            this.ComboBox_Customer = new System.Windows.Forms.ComboBox();
+            this.GroupBox_CreateRental_ComboBox_Customer = new System.Windows.Forms.ComboBox();
             this.DataGridView_RentalSearch = new System.Windows.Forms.DataGridView();
             this.TabControl_MainView.SuspendLayout();
             this.FleetTab.SuspendLayout();
@@ -131,7 +131,7 @@ namespace CarRentals
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_DailyCostRangeBottom)).BeginInit();
             this.GroupBox_Results.SuspendLayout();
             this.GroupBox_CreateRental.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_RentalDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupBox_CreateRental_NumericUpDown_RentalDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).BeginInit();
             this.SuspendLayout();
             // 
@@ -776,11 +776,11 @@ namespace CarRentals
             // 
             this.RentalSearchTab.Controls.Add(this.Label_DailyCostRangeMinus);
             this.RentalSearchTab.Controls.Add(this.Label_DailyCostRange);
-            this.RentalSearchTab.Controls.Add(this.TextBox_Query);
+            this.RentalSearchTab.Controls.Add(this.RentalSearch_TextBox_Query);
             this.RentalSearchTab.Controls.Add(this.NumericUpDown_DailyCostRangeTop);
             this.RentalSearchTab.Controls.Add(this.NumericUpDown_DailyCostRangeBottom);
-            this.RentalSearchTab.Controls.Add(this.Button_ShowAll);
-            this.RentalSearchTab.Controls.Add(this.Button_Search);
+            this.RentalSearchTab.Controls.Add(this.RentalSearch_Button_ShowAll);
+            this.RentalSearchTab.Controls.Add(this.RentalSearch_Button_Search);
             this.RentalSearchTab.Controls.Add(this.GroupBox_Results);
             this.RentalSearchTab.Location = new System.Drawing.Point(4, 24);
             this.RentalSearchTab.Name = "RentalSearchTab";
@@ -808,15 +808,15 @@ namespace CarRentals
             this.Label_DailyCostRange.TabIndex = 8;
             this.Label_DailyCostRange.Text = "Daily Cost Range:";
             // 
-            // TextBox_Query
+            // RentalSearch_TextBox_Query
             // 
-            this.TextBox_Query.Location = new System.Drawing.Point(35, 19);
-            this.TextBox_Query.Multiline = true;
-            this.TextBox_Query.Name = "TextBox_Query";
-            this.TextBox_Query.Size = new System.Drawing.Size(304, 35);
-            this.TextBox_Query.TabIndex = 1;
-            this.TextBox_Query.Text = "Enter query here...";
-            this.TextBox_Query.Click += new System.EventHandler(this.TextBox_Query_Click);
+            this.RentalSearch_TextBox_Query.Location = new System.Drawing.Point(35, 19);
+            this.RentalSearch_TextBox_Query.Multiline = true;
+            this.RentalSearch_TextBox_Query.Name = "RentalSearch_TextBox_Query";
+            this.RentalSearch_TextBox_Query.Size = new System.Drawing.Size(304, 35);
+            this.RentalSearch_TextBox_Query.TabIndex = 1;
+            this.RentalSearch_TextBox_Query.Text = "Enter query here...";
+            this.RentalSearch_TextBox_Query.Click += new System.EventHandler(this.TextBox_Query_Click);
             // 
             // NumericUpDown_DailyCostRangeTop
             // 
@@ -839,25 +839,25 @@ namespace CarRentals
             this.NumericUpDown_DailyCostRangeBottom.TabIndex = 4;
             this.NumericUpDown_DailyCostRangeBottom.ValueChanged += new System.EventHandler(this.NumericUpDown_DailyCostRangeBottom_ValueChanged);
             // 
-            // Button_ShowAll
+            // RentalSearch_Button_ShowAll
             // 
-            this.Button_ShowAll.Location = new System.Drawing.Point(446, 19);
-            this.Button_ShowAll.Name = "Button_ShowAll";
-            this.Button_ShowAll.Size = new System.Drawing.Size(99, 35);
-            this.Button_ShowAll.TabIndex = 3;
-            this.Button_ShowAll.Text = "Show All";
-            this.Button_ShowAll.UseVisualStyleBackColor = true;
-            this.Button_ShowAll.Click += new System.EventHandler(this.Button_ShowAll_Click);
+            this.RentalSearch_Button_ShowAll.Location = new System.Drawing.Point(446, 19);
+            this.RentalSearch_Button_ShowAll.Name = "RentalSearch_Button_ShowAll";
+            this.RentalSearch_Button_ShowAll.Size = new System.Drawing.Size(99, 35);
+            this.RentalSearch_Button_ShowAll.TabIndex = 3;
+            this.RentalSearch_Button_ShowAll.Text = "Show All";
+            this.RentalSearch_Button_ShowAll.UseVisualStyleBackColor = true;
+            this.RentalSearch_Button_ShowAll.Click += new System.EventHandler(this.Button_ShowAll_Click);
             // 
-            // Button_Search
+            // RentalSearch_Button_Search
             // 
-            this.Button_Search.Location = new System.Drawing.Point(341, 19);
-            this.Button_Search.Name = "Button_Search";
-            this.Button_Search.Size = new System.Drawing.Size(99, 35);
-            this.Button_Search.TabIndex = 2;
-            this.Button_Search.Text = "Search";
-            this.Button_Search.UseVisualStyleBackColor = true;
-            this.Button_Search.Click += new System.EventHandler(this.Button_Search_Click);
+            this.RentalSearch_Button_Search.Location = new System.Drawing.Point(341, 19);
+            this.RentalSearch_Button_Search.Name = "RentalSearch_Button_Search";
+            this.RentalSearch_Button_Search.Size = new System.Drawing.Size(99, 35);
+            this.RentalSearch_Button_Search.TabIndex = 2;
+            this.RentalSearch_Button_Search.Text = "Search";
+            this.RentalSearch_Button_Search.UseVisualStyleBackColor = true;
+            this.RentalSearch_Button_Search.Click += new System.EventHandler(this.Button_Search_Click);
             // 
             // GroupBox_Results
             // 
@@ -874,10 +874,10 @@ namespace CarRentals
             // 
             this.GroupBox_CreateRental.Controls.Add(this.Label_TotalCost);
             this.GroupBox_CreateRental.Controls.Add(this.Label_RentalDuration);
-            this.GroupBox_CreateRental.Controls.Add(this.NumericUpDown_RentalDuration);
-            this.GroupBox_CreateRental.Controls.Add(this.Button_Rent);
+            this.GroupBox_CreateRental.Controls.Add(this.GroupBox_CreateRental_NumericUpDown_RentalDuration);
+            this.GroupBox_CreateRental.Controls.Add(this.GroupBox_CreateRental_Button_Rent);
             this.GroupBox_CreateRental.Controls.Add(this.Label_Customer);
-            this.GroupBox_CreateRental.Controls.Add(this.ComboBox_Customer);
+            this.GroupBox_CreateRental.Controls.Add(this.GroupBox_CreateRental_ComboBox_Customer);
             this.GroupBox_CreateRental.Location = new System.Drawing.Point(259, 411);
             this.GroupBox_CreateRental.Name = "GroupBox_CreateRental";
             this.GroupBox_CreateRental.Size = new System.Drawing.Size(479, 97);
@@ -904,23 +904,23 @@ namespace CarRentals
             this.Label_RentalDuration.TabIndex = 5;
             this.Label_RentalDuration.Text = "Rental Duration:";
             // 
-            // NumericUpDown_RentalDuration
+            // GroupBox_CreateRental_NumericUpDown_RentalDuration
             // 
-            this.NumericUpDown_RentalDuration.Location = new System.Drawing.Point(111, 64);
-            this.NumericUpDown_RentalDuration.Name = "NumericUpDown_RentalDuration";
-            this.NumericUpDown_RentalDuration.Size = new System.Drawing.Size(69, 23);
-            this.NumericUpDown_RentalDuration.TabIndex = 7;
-            this.NumericUpDown_RentalDuration.ValueChanged += new System.EventHandler(this.NumericUpDown_RentalDuration_ValueChanged);
+            this.GroupBox_CreateRental_NumericUpDown_RentalDuration.Location = new System.Drawing.Point(111, 64);
+            this.GroupBox_CreateRental_NumericUpDown_RentalDuration.Name = "GroupBox_CreateRental_NumericUpDown_RentalDuration";
+            this.GroupBox_CreateRental_NumericUpDown_RentalDuration.Size = new System.Drawing.Size(69, 23);
+            this.GroupBox_CreateRental_NumericUpDown_RentalDuration.TabIndex = 7;
+            this.GroupBox_CreateRental_NumericUpDown_RentalDuration.ValueChanged += new System.EventHandler(this.NumericUpDown_RentalDuration_ValueChanged);
             // 
-            // Button_Rent
+            // GroupBox_CreateRental_Button_Rent
             // 
-            this.Button_Rent.Location = new System.Drawing.Point(360, 34);
-            this.Button_Rent.Name = "Button_Rent";
-            this.Button_Rent.Size = new System.Drawing.Size(99, 35);
-            this.Button_Rent.TabIndex = 8;
-            this.Button_Rent.Text = "Rent";
-            this.Button_Rent.UseVisualStyleBackColor = true;
-            this.Button_Rent.Click += new System.EventHandler(this.Button_Rent_Click);
+            this.GroupBox_CreateRental_Button_Rent.Location = new System.Drawing.Point(360, 34);
+            this.GroupBox_CreateRental_Button_Rent.Name = "GroupBox_CreateRental_Button_Rent";
+            this.GroupBox_CreateRental_Button_Rent.Size = new System.Drawing.Size(99, 35);
+            this.GroupBox_CreateRental_Button_Rent.TabIndex = 8;
+            this.GroupBox_CreateRental_Button_Rent.Text = "Rent";
+            this.GroupBox_CreateRental_Button_Rent.UseVisualStyleBackColor = true;
+            this.GroupBox_CreateRental_Button_Rent.Click += new System.EventHandler(this.GroupBox_CreateRental_Button_Rent_Click);
             // 
             // Label_Customer
             // 
@@ -931,13 +931,13 @@ namespace CarRentals
             this.Label_Customer.TabIndex = 3;
             this.Label_Customer.Text = "Customer:";
             // 
-            // ComboBox_Customer
+            // GroupBox_CreateRental_ComboBox_Customer
             // 
-            this.ComboBox_Customer.FormattingEnabled = true;
-            this.ComboBox_Customer.Location = new System.Drawing.Point(111, 20);
-            this.ComboBox_Customer.Name = "ComboBox_Customer";
-            this.ComboBox_Customer.Size = new System.Drawing.Size(185, 23);
-            this.ComboBox_Customer.TabIndex = 6;
+            this.GroupBox_CreateRental_ComboBox_Customer.FormattingEnabled = true;
+            this.GroupBox_CreateRental_ComboBox_Customer.Location = new System.Drawing.Point(111, 20);
+            this.GroupBox_CreateRental_ComboBox_Customer.Name = "GroupBox_CreateRental_ComboBox_Customer";
+            this.GroupBox_CreateRental_ComboBox_Customer.Size = new System.Drawing.Size(185, 23);
+            this.GroupBox_CreateRental_ComboBox_Customer.TabIndex = 6;
             // 
             // DataGridView_RentalSearch
             // 
@@ -983,7 +983,7 @@ namespace CarRentals
             this.GroupBox_Results.ResumeLayout(false);
             this.GroupBox_CreateRental.ResumeLayout(false);
             this.GroupBox_CreateRental.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_RentalDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupBox_CreateRental_NumericUpDown_RentalDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_RentalSearch)).EndInit();
             this.ResumeLayout(false);
 
@@ -1055,19 +1055,19 @@ namespace CarRentals
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DataGridView_RentalReport;
         private System.Windows.Forms.Label Label_DailyCostRange;
-        private System.Windows.Forms.TextBox TextBox_Query;
+        private System.Windows.Forms.TextBox RentalSearch_TextBox_Query;
         private System.Windows.Forms.NumericUpDown NumericUpDown_DailyCostRangeTop;
         private System.Windows.Forms.NumericUpDown NumericUpDown_DailyCostRangeBottom;
-        private System.Windows.Forms.Button Button_ShowAll;
-        private System.Windows.Forms.Button Button_Search;
+        private System.Windows.Forms.Button RentalSearch_Button_ShowAll;
+        private System.Windows.Forms.Button RentalSearch_Button_Search;
         private System.Windows.Forms.GroupBox GroupBox_Results;
         private System.Windows.Forms.Label Label_RentalDuration;
         private System.Windows.Forms.Label Label_TotalCost;
         private System.Windows.Forms.Label Label_Customer;
         private System.Windows.Forms.GroupBox GroupBox_CreateRental;
-        private System.Windows.Forms.NumericUpDown NumericUpDown_RentalDuration;
-        private System.Windows.Forms.Button Button_Rent;
-        private System.Windows.Forms.ComboBox ComboBox_Customer;
+        private System.Windows.Forms.NumericUpDown GroupBox_CreateRental_NumericUpDown_RentalDuration;
+        private System.Windows.Forms.Button GroupBox_CreateRental_Button_Rent;
+        private System.Windows.Forms.ComboBox GroupBox_CreateRental_ComboBox_Customer;
         private System.Windows.Forms.Label Label_DailyCostRangeMinus;
         private System.Windows.Forms.Label Label_TotalVehiclesRented;
         private System.Windows.Forms.Label Label_TotalDailyRate;
