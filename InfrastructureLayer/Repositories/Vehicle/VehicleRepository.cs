@@ -1,6 +1,7 @@
 ﻿using CarRentals;
 using DomainLayer;
 using DomainLayer.Vehicles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -54,6 +55,26 @@ namespace InfrastructureLayer.Repositories
         public IEnumerable<Vehicle> GetNotRented()
         {
             var vehicles = _context.Vehicles.Where(x => x.IsRented == false);
+            return vehicles;
+        }
+
+        public IEnumerable<Vehicle> Query(string query)
+        {
+            var x = (_context.Vehicles.Where(x => x.Make == query));
+            var vehicles = _context.Vehicles.Where(x => x.Rego == query);
+            vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Make == query));
+            vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Model == query));
+            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.ClassType == (ClassType)Enum.Parse(typeof(ClassType), query)));
+            vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Year == query));
+            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.TransmissionType == (TransmissionType)Enum.Parse(typeof(TransmissionType), query)));
+            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.FuelType == (FuelType)Enum.Parse(typeof(FuelType), query)));
+            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Seats == int.Parse(query)));
+            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Sunroof == Convert.ToBoolean(query)));
+            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.GPS == Convert.ToBoolean(query)));
+            vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Colour == query));
+            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.DailyRate== Convert.ToDouble(query)))
+
+
             return vehicles;
         }
     }

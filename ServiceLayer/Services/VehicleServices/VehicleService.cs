@@ -45,6 +45,11 @@ namespace ServiceLayer.Services
             return _vehicleRepository.GetRented();
         }
 
+        public IEnumerable<Vehicle> Query(string query)
+        {
+            return _vehicleRepository.Query(query);
+        }
+
         public void Update(Vehicle vehicle)
         {
             _vehicleRepository.Update(vehicle);

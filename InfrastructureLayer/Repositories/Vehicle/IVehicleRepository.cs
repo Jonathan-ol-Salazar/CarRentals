@@ -11,6 +11,8 @@ namespace InfrastructureLayer.Repositories
         IEnumerable<Vehicle> GetAll();
         IEnumerable<Vehicle> GetRented();
         IEnumerable<Vehicle> GetNotRented();
+        IEnumerable<Vehicle> Query(string query);
+
         Vehicle GetByRego(string rego);
 
 

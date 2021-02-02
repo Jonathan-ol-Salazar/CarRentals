@@ -90,7 +90,7 @@ namespace CarRentals
 
         public Vehicle VehicleSearch { get; set; }
 
-        public string Query { get; set; }
+        public string Query { get { return TextBox_Query.Text; } set { TextBox_Query.Text = value; } }
         public bool isQuery { get; set; }
         public Vehicle SelectedVehicleResult { get { return (Vehicle)DataGridView_RentalSearch.CurrentRow.DataBoundItem; } }
 
@@ -404,6 +404,11 @@ namespace CarRentals
 
         }
 
+        private void TextBox_Query_Click(object sender, EventArgs e)
+        {
+            TextBox_Query.Text = "";
 
+
+        }
     }
 }

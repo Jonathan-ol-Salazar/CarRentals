@@ -811,10 +811,12 @@ namespace CarRentals
             // TextBox_Query
             // 
             this.TextBox_Query.Location = new System.Drawing.Point(35, 19);
+            this.TextBox_Query.Multiline = true;
             this.TextBox_Query.Name = "TextBox_Query";
-            this.TextBox_Query.Size = new System.Drawing.Size(304, 23);
+            this.TextBox_Query.Size = new System.Drawing.Size(304, 35);
             this.TextBox_Query.TabIndex = 1;
             this.TextBox_Query.Text = "Enter query here...";
+            this.TextBox_Query.Click += new System.EventHandler(this.TextBox_Query_Click);
             // 
             // NumericUpDown_DailyCostRangeTop
             // 

@@ -86,7 +86,8 @@ namespace CarRentals.Presenters
         {
             if(_mainView.isQuery == true)
             {
-                _mainView.VehicleSearch = GetSearch(_mainView.Query);
+                var x = GetSearch(_mainView.Query);
+                _mainView.RentalSearchList = x.ToList();
             }
             else
             {
@@ -108,9 +109,9 @@ namespace CarRentals.Presenters
             return _rentedService.GetAll().ToList();
         }
 
-        public Vehicle GetSearch(string query)
+        public IEnumerable<Vehicle> GetSearch(string query)
         {
-            return _vehicleService.GetByRego(query);
+            return _vehicleService.Query(query);
         }
 
         public IEnumerable<Vehicle> GetNotRented()
@@ -150,7 +151,6 @@ namespace CarRentals.Presenters
             UpdateFleetListView();
         }
 
-
         public void DeleteVehicle()
         {
             _vehicleService.Delete(_mainView.SelectedVehicle);
@@ -175,8 +175,6 @@ namespace CarRentals.Presenters
             _vehicleService.Update(vehicle);
             UpdateFleetListView();
         }
-
-
 
         public void AddCustomer()
         {
@@ -211,7 +209,6 @@ namespace CarRentals.Presenters
             _customerService.Update(customer);
             UpdateCustomerListView();
         }
-
 
         public void RefreshVehicleForm()
         {
