@@ -92,15 +92,20 @@ namespace InfrastructureLayer.Repositories
             }
 
             // Int or Double
-
-
+            if(int.TryParse(query, out int intNumber))
+            {
+                vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Seats == int.Parse(query)));
+            }
+            if (double.TryParse(query, out double doubleNumber))
+            {
+                vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.DailyRate == double.Parse(query)));
+            }
 
             // Boolean
 
 
 
 
-            //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Seats == int.Parse(query)));
             //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.Sunroof == Convert.ToBoolean(query)));
             //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.GPS == Convert.ToBoolean(query)));
             //vehicles = vehicles.Concat(_context.Vehicles.Where(x => x.DailyRate== Convert.ToDouble(query)))
