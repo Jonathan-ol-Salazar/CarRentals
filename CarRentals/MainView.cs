@@ -382,8 +382,6 @@ namespace CarRentals
         private void GroupBox_CreateRental_Enter(object sender, EventArgs e)
         {
             ComboBox_Customer.DataSource = _mainPresenter.GetNotRenting();
-            Label_TotalCost.Text = "Total Cost: $" + ((double)NumericUpDown_RentalDuration.Value * SelectedVehicleResult.DailyRate).ToString();
-
         }
 
         private void NumericUpDown_RentalDuration_ValueChanged(object sender, EventArgs e)
@@ -394,9 +392,10 @@ namespace CarRentals
         private void Button_Rent_Click(object sender, EventArgs e)
         {
             RentedCustomerID = int.Parse(ComboBox_Customer.Text.Split('-')[0]);
-            _mainPresenter.AddRental();
             ComboBox_Customer.SelectedIndex = -1;
             NumericUpDown_RentalDuration.Value = 0;
+            _mainPresenter.AddRental();
+
         }
 
         private void GroupBox_Report_Enter(object sender, EventArgs e)

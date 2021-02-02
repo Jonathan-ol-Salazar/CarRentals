@@ -87,7 +87,6 @@ namespace CarRentals.Presenters
             if(_mainView.isQuery == true)
             {
                 _mainView.VehicleSearch = GetSearch(_mainView.Query);
-
             }
             else
             {
