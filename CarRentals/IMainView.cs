@@ -58,6 +58,11 @@ namespace CarRentals
 
         bool Button_FleetRemoveVisible { get; set; }
         bool Button_CustomersRemoveVisible { get; set; }
+
+        double DailyCostRangeTop { get; set; }
+        double DailyCostRangeBottom { get; set; }
+
+
     }
 
 

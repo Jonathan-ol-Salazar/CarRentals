@@ -821,9 +821,15 @@ namespace CarRentals
             // NumericUpDown_DailyCostRangeTop
             // 
             this.NumericUpDown_DailyCostRangeTop.Location = new System.Drawing.Point(204, 76);
+            this.NumericUpDown_DailyCostRangeTop.Maximum = new decimal(new int[] {
+            1661992960,
+            1808227885,
+            5,
+            0});
             this.NumericUpDown_DailyCostRangeTop.Name = "NumericUpDown_DailyCostRangeTop";
             this.NumericUpDown_DailyCostRangeTop.Size = new System.Drawing.Size(40, 23);
             this.NumericUpDown_DailyCostRangeTop.TabIndex = 5;
+            this.NumericUpDown_DailyCostRangeTop.ValueChanged += new System.EventHandler(this.NumericUpDown_DailyCostRangeTop_ValueChanged);
             // 
             // NumericUpDown_DailyCostRangeBottom
             // 
@@ -831,6 +837,7 @@ namespace CarRentals
             this.NumericUpDown_DailyCostRangeBottom.Name = "NumericUpDown_DailyCostRangeBottom";
             this.NumericUpDown_DailyCostRangeBottom.Size = new System.Drawing.Size(40, 23);
             this.NumericUpDown_DailyCostRangeBottom.TabIndex = 4;
+            this.NumericUpDown_DailyCostRangeBottom.ValueChanged += new System.EventHandler(this.NumericUpDown_DailyCostRangeBottom_ValueChanged);
             // 
             // Button_ShowAll
             // 

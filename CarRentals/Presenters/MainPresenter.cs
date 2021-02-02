@@ -86,8 +86,7 @@ namespace CarRentals.Presenters
         {
             if(_mainView.isQuery == true)
             {
-                var x = GetSearch(_mainView.Query);
-                _mainView.RentalSearchList = x.ToList();
+                _mainView.RentalSearchList = GetSearch(_mainView.Query);
             }
             else
             {
@@ -111,7 +110,17 @@ namespace CarRentals.Presenters
 
         public IEnumerable<Vehicle> GetSearch(string query)
         {
-            return _vehicleService.Query(query);
+            List<Vehicle> vehicles = _vehicleService.Query(query).ToList();
+            List<Vehicle> searchVehicles = new List<Vehicle>();
+
+            foreach(Vehicle vehicle in vehicles)
+            {
+                if(vehicle.DailyRate <= _mainView.DailyCostRangeTop && vehicle.DailyRate >= _mainView.DailyCostRangeBottom)
+                {
+                    searchVehicles.Add(vehicle);
+                }
+            }
+            return searchVehicles;
         }
 
         public IEnumerable<Vehicle> GetNotRented()

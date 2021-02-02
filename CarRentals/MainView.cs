@@ -100,6 +100,9 @@ namespace CarRentals
         public bool Button_FleetRemoveVisible { get { return GroupBox_Fleet_Button_Remove.Visible; } set { GroupBox_Fleet_Button_Remove.Visible = value; } }
         public bool Button_CustomersRemoveVisible { get { return GroupBox_Customers_Button_Remove.Visible; } set { GroupBox_Customers_Button_Remove.Visible = value; } }
 
+        public double DailyCostRangeTop { get { return (double)NumericUpDown_DailyCostRangeTop.Value; }  set { NumericUpDown_DailyCostRangeTop.Value = (decimal)value; } }
+        public double DailyCostRangeBottom { get { return (double)NumericUpDown_DailyCostRangeBottom.Value; } set { NumericUpDown_DailyCostRangeBottom.Value = (decimal)value; } }
+
 
         public void SetPresenter(IMainPresenter mainPresenter)
         {
@@ -408,6 +411,16 @@ namespace CarRentals
         {
             TextBox_Query.Text = "";
 
+
+        }
+
+        private void NumericUpDown_DailyCostRangeBottom_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumericUpDown_DailyCostRangeTop_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }
