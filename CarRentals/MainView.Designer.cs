@@ -87,7 +87,6 @@ namespace CarRentals
             this.Label_FirstName = new System.Windows.Forms.Label();
             this.GroupBox_Customers_Modify_Add_TextBox_LastName = new System.Windows.Forms.TextBox();
             this.Label_LastName = new System.Windows.Forms.Label();
-            this.GroupBox_Customers_Modify_Add_TextBox_CustomerID = new System.Windows.Forms.TextBox();
             this.Label_CustomerID = new System.Windows.Forms.Label();
             this.DataGridView_Customers = new System.Windows.Forms.DataGridView();
             this.RentalReportTab = new System.Windows.Forms.TabPage();
@@ -240,8 +239,6 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.Name = "GroupBox_Fleet_Modify_Add_ComboBox_Fuel";
             this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.Size = new System.Drawing.Size(108, 23);
             this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.TabIndex = 7;
-            this.GroupBox_Fleet_Modify_Add_ComboBox_Fuel.DataSource = Enum.GetValues(typeof(FuelType));
-
             // 
             // GroupBox_Fleet_Modify_Add_ComboBox_Class
             // 
@@ -250,8 +247,6 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_ComboBox_Class.Name = "GroupBox_Fleet_Modify_Add_ComboBox_Class";
             this.GroupBox_Fleet_Modify_Add_ComboBox_Class.Size = new System.Drawing.Size(100, 23);
             this.GroupBox_Fleet_Modify_Add_ComboBox_Class.TabIndex = 4;
-            this.GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(ClassType));
-
             // 
             // GroupBox_Fleet_Modify_Add_ComboBox_Transmission
             // 
@@ -260,8 +255,6 @@ namespace CarRentals
             this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.Name = "GroupBox_Fleet_Modify_Add_ComboBox_Transmission";
             this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.Size = new System.Drawing.Size(108, 23);
             this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.TabIndex = 6;
-            this.GroupBox_Fleet_Modify_Add_ComboBox_Transmission.DataSource = Enum.GetValues(typeof(TransmissionType));
-
             // 
             // GroupBox_Fleet_Modify_Add_Button_Cancel
             // 
@@ -582,7 +575,6 @@ namespace CarRentals
             this.GroupBox_Customers_Modify_Add.Controls.Add(this.Label_FirstName);
             this.GroupBox_Customers_Modify_Add.Controls.Add(this.GroupBox_Customers_Modify_Add_TextBox_LastName);
             this.GroupBox_Customers_Modify_Add.Controls.Add(this.Label_LastName);
-            this.GroupBox_Customers_Modify_Add.Controls.Add(this.GroupBox_Customers_Modify_Add_TextBox_CustomerID);
             this.GroupBox_Customers_Modify_Add.Controls.Add(this.Label_CustomerID);
             this.GroupBox_Customers_Modify_Add.Location = new System.Drawing.Point(3, 413);
             this.GroupBox_Customers_Modify_Add.Name = "GroupBox_Customers_Modify_Add";
@@ -599,8 +591,6 @@ namespace CarRentals
             this.GroupBox_Customers_Modify_Add_ComboBox_Gender.Name = "GroupBox_Customers_Modify_Add_ComboBox_Gender";
             this.GroupBox_Customers_Modify_Add_ComboBox_Gender.Size = new System.Drawing.Size(99, 23);
             this.GroupBox_Customers_Modify_Add_ComboBox_Gender.TabIndex = 6;
-            this.GroupBox_Customers_Modify_Add_ComboBox_Gender.DataSource = Enum.GetValues(typeof(GenderType));
-
             // 
             // GroupBox_Customers_Modify_Add_Button_Cancel
             // 
@@ -700,13 +690,6 @@ namespace CarRentals
             this.Label_LastName.Size = new System.Drawing.Size(68, 15);
             this.Label_LastName.TabIndex = 2;
             this.Label_LastName.Text = "Last Name:";
-            // 
-            // GroupBox_Customers_Modify_Add_TextBox_CustomerID
-            // 
-            this.GroupBox_Customers_Modify_Add_TextBox_CustomerID.Location = new System.Drawing.Point(110, 56);
-            this.GroupBox_Customers_Modify_Add_TextBox_CustomerID.Name = "GroupBox_Customers_Modify_Add_TextBox_CustomerID";
-            this.GroupBox_Customers_Modify_Add_TextBox_CustomerID.Size = new System.Drawing.Size(100, 23);
-            this.GroupBox_Customers_Modify_Add_TextBox_CustomerID.TabIndex = 1;
             // 
             // Label_CustomerID
             // 
@@ -974,6 +957,7 @@ namespace CarRentals
             this.Controls.Add(this.TabControl_MainView);
             this.Name = "MainView";
             this.Text = "Car Rentals";
+            this.Load += new System.EventHandler(this.MainView_Load);
             this.TabControl_MainView.ResumeLayout(false);
             this.FleetTab.ResumeLayout(false);
             this.GroupBox_Fleet_Modify_Add.ResumeLayout(false);
@@ -1065,7 +1049,6 @@ namespace CarRentals
         private System.Windows.Forms.Label Label_FirstName;
         private System.Windows.Forms.TextBox GroupBox_Customers_Modify_Add_TextBox_LastName;
         private System.Windows.Forms.Label Label_LastName;
-        private System.Windows.Forms.TextBox GroupBox_Customers_Modify_Add_TextBox_CustomerID;
         private System.Windows.Forms.Label Label_CustomerID;
         private System.Windows.Forms.ComboBox GroupBox_Customers_Modify_Add_ComboBox_Gender;
         private System.Windows.Forms.TextBox GroupBox_;

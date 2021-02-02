@@ -203,7 +203,7 @@ namespace CarRentals.Presenters
 
         public void UpdateCustomer()
         {
-            Customer customer = _customerService.GetById(_mainView.CustomerID);
+            Customer customer = _customerService.GetById(_mainView.SelectedCustomer.CustomerID);
             customer.FirstName = _mainView.FirstName;
             customer.LastName = _mainView.LastName;
             customer.DOB = _mainView.DOB;
@@ -235,7 +235,6 @@ namespace CarRentals.Presenters
         public void RefreshCustomerForm()
         {
             Customer customer = _mainView.SelectedCustomer;
-            _mainView.CustomerID = customer.CustomerID;
             _mainView.FirstName = customer.FirstName;
             _mainView.LastName = customer.LastName;
             _mainView.DOB = customer.DOB;

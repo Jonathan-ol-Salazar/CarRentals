@@ -5,6 +5,7 @@ using DomainLayer.Rented;
 using DomainLayer.Vehicles;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CarRentals
@@ -19,15 +20,15 @@ namespace CarRentals
         public MainView()
         {
             InitializeComponent();
-            //UpdateListViews();
         }
 
-        private void UpdateListViews()
+        private void MainView_Load(object sender, EventArgs e)
         {
-            _mainPresenter.UpdateFleetListView();
-            _mainPresenter.UpdateCustomerListView();
-            _mainPresenter.UpdateRentalReportListView();
-            _mainPresenter.UpdateRentalSearchListView();
+            GroupBox_Fleet_Modify_Add_ComboBox_Class.DataSource = Enum.GetValues(typeof(ClassType));
+            GroupBox_Fleet_Modify_Add_ComboBox_Transmission.DataSource = Enum.GetValues(typeof(TransmissionType));
+            GroupBox_Fleet_Modify_Add_ComboBox_Fuel.DataSource = Enum.GetValues(typeof(FuelType));
+            GroupBox_Customers_Modify_Add_ComboBox_Gender.DataSource = Enum.GetValues(typeof(GenderType));
+
         }
 
         public IEnumerable<Vehicle> FleetList
@@ -68,7 +69,7 @@ namespace CarRentals
 
         public Vehicle SelectedVehicle { get { return (Vehicle)DataGridView_Fleet.CurrentRow.DataBoundItem; } }
 
-        public int CustomerID { get { return int.Parse(GroupBox_Customers_Modify_Add_TextBox_CustomerID.Text); } set { GroupBox_Customers_Modify_Add_TextBox_CustomerID.Text = value.ToString(); } }
+        //public int CustomerID { get { return int.Parse(GroupBox_Customers_Modify_Add_TextBox_CustomerID.Text); } set { GroupBox_Customers_Modify_Add_TextBox_CustomerID.Text = value.ToString(); } }
         public string FirstName { get { return GroupBox_Customers_Modify_Add_TextBox_FirstName.Text; } set { GroupBox_Customers_Modify_Add_TextBox_FirstName.Text = value; } }
         public string LastName { get { return GroupBox_Customers_Modify_Add_TextBox_LastName.Text; } set { GroupBox_Customers_Modify_Add_TextBox_LastName.Text = value; } }
         public string DOB { get { return GroupBox_Customers_Modify_Add_TextBox_DOB.Text; } set { GroupBox_Customers_Modify_Add_TextBox_DOB.Text = value; } }
@@ -104,14 +105,37 @@ namespace CarRentals
             _mainPresenter = mainPresenter;
         }
 
+        private void TabControl_MainView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (TabControl_MainView.SelectedIndex)
+            {
+                case 0:
+                    _mainPresenter.UpdateFleetListView();
 
+                    break;
+                case 1:
+                    _mainPresenter.UpdateCustomerListView();
 
+                    break;
+                case 2:
+                    _mainPresenter.UpdateRentalReportListView();
+
+                    break;
+                case 3:
+                    _mainPresenter.UpdateRentalSearchListView();
+
+                    break;
+            }
+        }
+
+        ////////////////////////// FLEET //////////////////////////
         private void ResetGroupBoxFleetForm()
         {
             foreach (Control control in GroupBox_Fleet_Modify_Add.Controls)
             {
                 if (!control.Name.Contains("Label") && !control.Name.Contains("Button"))
                 {
+                   
                     control.ResetText();
                     GroupBox_Fleet_Modify_Add_CheckBox_Sunroof.Checked = false;
                     GroupBox_Fleet_Modify_Add_CheckBox_GPS.Checked = false;
@@ -154,35 +178,53 @@ namespace CarRentals
 
         private void GroupBox_Fleet_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
         {
-            // Check to see if all fields are filled
+            bool formComplete = true;     
 
+            PopupConfirmationView popupConfirmation = new PopupConfirmationView();         
 
-
-            PopupConfirmationView popupConfirmation = new PopupConfirmationView();
-
-            if (AddVehicle == true)
+            foreach(Control control in GroupBox_Fleet_Modify_Add.Controls)
             {
-                popupConfirmation.LabelText = "Confirm Vehicle Creation";
-                DialogResult dialogResult = popupConfirmation.ShowDialog();
-
-                if (dialogResult == DialogResult.OK)
+                if (!control.Name.Contains("CheckBox") && !control.Name.Contains("Button"))
                 {
-                    _mainPresenter.AddVehicle();
-                }
+                    if (string.IsNullOrEmpty(control.Text) || string.IsNullOrWhiteSpace(control.Text))
+                    {
+                        popupConfirmation.Button_Confirm.Location = new Point(84, 74);
+                        popupConfirmation.Button_Cancel.Visible = false;
+                        popupConfirmation.LabelText = "Missing Fields Required!";
+
+                        DialogResult dialogResult = popupConfirmation.ShowDialog();
+
+                        formComplete = false;
+                        break;
+                    }
+                }               
             }
-            else
-            {
-                popupConfirmation.LabelText = "Confirm Vehicle Update";
-                DialogResult dialogResult = popupConfirmation.ShowDialog();
 
-                if (dialogResult == DialogResult.OK)
+            if(formComplete)
+            {
+                if (AddVehicle == true)
                 {
-                    _mainPresenter.UpdateVehicle();
+                    popupConfirmation.LabelText = "Confirm Vehicle Creation";
+                    DialogResult dialogResult = popupConfirmation.ShowDialog();
+
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        _mainPresenter.AddVehicle();
+                    }
                 }
+                else
+                {
+                    popupConfirmation.LabelText = "Confirm Vehicle Update";
+                    DialogResult dialogResult = popupConfirmation.ShowDialog();
+
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        _mainPresenter.UpdateVehicle();
+                    }
+                }
+                ResetGroupBoxFleetForm();
             }
             popupConfirmation.Dispose();
-            ResetGroupBoxFleetForm();
-
         }
 
         private void GroupBox_Fleet_Button_Remove_Click(object sender, EventArgs e)
@@ -208,31 +250,55 @@ namespace CarRentals
 
         }
 
+        ////////////////////////// CUSTOMER //////////////////////////
+
         private void GroupBox_Customers_Modify_Add_Button_Submit_Click(object sender, EventArgs e)
         {
+            bool formComplete = true;
+
             PopupConfirmationView popupConfirmation = new PopupConfirmationView();
-
-            if (AddCustomer == true)
+            foreach (Control control in GroupBox_Customers_Modify_Add.Controls)
             {
-                popupConfirmation.LabelText = "Confirm Customer Creation";
-                DialogResult dialogResult = popupConfirmation.ShowDialog();
-                if (dialogResult == DialogResult.OK)
+                if (!control.Name.Contains("Button"))
                 {
-                    _mainPresenter.AddCustomer();
-                }
+                    if (string.IsNullOrEmpty(control.Text) || string.IsNullOrWhiteSpace(control.Text))
+                    {
+                        popupConfirmation.Button_Confirm.Location = new Point(84, 74);
+                        popupConfirmation.Button_Cancel.Visible = false;
+                        popupConfirmation.LabelText = "Missing Fields Required!";
 
-            }
-            else
-            {
-                popupConfirmation.LabelText = "Confirm Customer Update";
-                DialogResult dialogResult = popupConfirmation.ShowDialog();
-                if (dialogResult == DialogResult.OK)
-                {
-                    _mainPresenter.UpdateCustomer();
+                        DialogResult dialogResult = popupConfirmation.ShowDialog();
+
+                        formComplete = false;
+                        break;
+                    }
                 }
             }
+            if (formComplete)
+            {
+                if (AddCustomer == true)
+                {
+                    popupConfirmation.LabelText = "Confirm Customer Creation";
+                    DialogResult dialogResult = popupConfirmation.ShowDialog();
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        _mainPresenter.AddCustomer();
+                    }
+
+                }
+                else
+                {
+                    popupConfirmation.LabelText = "Confirm Customer Update";
+                    DialogResult dialogResult = popupConfirmation.ShowDialog();
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        _mainPresenter.UpdateCustomer();
+                    }
+                }
+                ResetGroupBoxCustomersForm();
+            }
+
             popupConfirmation.Dispose();
-            ResetGroupBoxCustomersForm();
 
         }
 
@@ -267,7 +333,7 @@ namespace CarRentals
         {
             GroupBox_Customers_Modify_Add.Visible = true;
             GroupBox_Customers_Modify_Add.Text = "Add Customer";
-            GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = false;
+            //GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = false;
             Label_CustomerID.Visible = false;
             ResetGroupBoxCustomersForm();
             AddCustomer = true;
@@ -277,34 +343,20 @@ namespace CarRentals
         {
             GroupBox_Customers_Modify_Add.Visible = true;
             GroupBox_Customers_Modify_Add.Text = "Modify Customer";
-            GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = false;
+            //GroupBox_Customers_Modify_Add_TextBox_CustomerID.Visible = false;
             Label_CustomerID.Visible = false;
             AddCustomer = false;
             _mainPresenter.RefreshCustomerForm();
         }
 
-        private void TabControl_MainView_SelectedIndexChanged(object sender, EventArgs e)
+
+        ////////////////////////// RENTAL REPORT //////////////////////////
+        private void GroupBox_Report_Button_Return_Click(object sender, EventArgs e)
         {
-            switch (TabControl_MainView.SelectedIndex)
-            {
-                case 0:
-                    _mainPresenter.UpdateFleetListView();
-
-                    break;
-                case 1:
-                    _mainPresenter.UpdateCustomerListView();
-
-                    break;
-                case 2:
-                    _mainPresenter.UpdateRentalReportListView();
-
-                    break;
-                case 3:
-                    _mainPresenter.UpdateRentalSearchListView();
-
-                    break;
-            }
+            _mainPresenter.DeleteRental();
         }
+        
+        ////////////////////////// RENTAL SEARCH //////////////////////////
 
         private void Button_Search_Click(object sender, EventArgs e)
         {
@@ -337,5 +389,7 @@ namespace CarRentals
             ComboBox_Customer.SelectedIndex = -1;
             NumericUpDown_RentalDuration.Value = 0;
         }
+
+ 
     }
 }

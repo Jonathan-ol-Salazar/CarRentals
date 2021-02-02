@@ -32,7 +32,7 @@ namespace CarRentals
         double DailyRate { get; set; }
         Vehicle SelectedVehicle { get; }
 
-        int CustomerID { get; set; }
+        //int CustomerID { get; set; }
         string FirstName { get; set; }
         string LastName { get; set; }
         string DOB { get; set; }

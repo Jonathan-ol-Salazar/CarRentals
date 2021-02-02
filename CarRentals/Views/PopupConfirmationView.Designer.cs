@@ -29,32 +29,32 @@ namespace CarRentals.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.Button_Cancel = new System.Windows.Forms.Button();
-            this.Button_Confirm = new System.Windows.Forms.Button();
+            this.PopupConfirmation_Button_Cancel = new System.Windows.Forms.Button();
+            this.PopupConfirmation_Button_Confirm = new System.Windows.Forms.Button();
             this.Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Button_Cancel
+            // PopupConfirmation_Button_Cancel
             // 
-            this.Button_Cancel.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.Button_Cancel.Location = new System.Drawing.Point(139, 74);
-            this.Button_Cancel.Name = "Button_Cancel";
-            this.Button_Cancel.Size = new System.Drawing.Size(93, 38);
-            this.Button_Cancel.TabIndex = 2;
-            this.Button_Cancel.Text = "Cancel";
-            this.Button_Cancel.UseVisualStyleBackColor = true;
-            this.Button_Cancel.Click += new System.EventHandler(this.Button_Cancel_Click);
+            this.PopupConfirmation_Button_Cancel.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.PopupConfirmation_Button_Cancel.Location = new System.Drawing.Point(139, 74);
+            this.PopupConfirmation_Button_Cancel.Name = "PopupConfirmation_Button_Cancel";
+            this.PopupConfirmation_Button_Cancel.Size = new System.Drawing.Size(93, 38);
+            this.PopupConfirmation_Button_Cancel.TabIndex = 2;
+            this.PopupConfirmation_Button_Cancel.Text = "Cancel";
+            this.PopupConfirmation_Button_Cancel.UseVisualStyleBackColor = true;
+            this.PopupConfirmation_Button_Cancel.Click += new System.EventHandler(this.PopupConfirmation_Button_Cancel_Click);
             // 
-            // Button_Confirm
+            // PopupConfirmation_Button_Confirm
             // 
-            this.Button_Confirm.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.Button_Confirm.Location = new System.Drawing.Point(40, 74);
-            this.Button_Confirm.Name = "Button_Confirm";
-            this.Button_Confirm.Size = new System.Drawing.Size(93, 38);
-            this.Button_Confirm.TabIndex = 1;
-            this.Button_Confirm.Text = "Confirm";
-            this.Button_Confirm.UseVisualStyleBackColor = true;
-            this.Button_Confirm.Click += new System.EventHandler(this.Button_Confirm_Click);
+            this.PopupConfirmation_Button_Confirm.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.PopupConfirmation_Button_Confirm.Location = new System.Drawing.Point(40, 74);
+            this.PopupConfirmation_Button_Confirm.Name = "PopupConfirmation_Button_Confirm";
+            this.PopupConfirmation_Button_Confirm.Size = new System.Drawing.Size(93, 38);
+            this.PopupConfirmation_Button_Confirm.TabIndex = 1;
+            this.PopupConfirmation_Button_Confirm.Text = "Confirm";
+            this.PopupConfirmation_Button_Confirm.UseVisualStyleBackColor = true;
+            this.PopupConfirmation_Button_Confirm.Click += new System.EventHandler(this.PopupConfirmation_Button_Confirm_Click);
             // 
             // Label
             // 
@@ -71,8 +71,8 @@ namespace CarRentals.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(271, 124);
             this.Controls.Add(this.Label);
-            this.Controls.Add(this.Button_Confirm);
-            this.Controls.Add(this.Button_Cancel);
+            this.Controls.Add(this.PopupConfirmation_Button_Confirm);
+            this.Controls.Add(this.PopupConfirmation_Button_Cancel);
             this.Name = "PopupConfirmationView";
             this.Text = "PopupConfirmation";
             this.ResumeLayout(false);
@@ -83,8 +83,7 @@ namespace CarRentals.Views
         #endregion
 
         private System.Windows.Forms.Button PopupConfirmation_Button_Cancel;
-        private System.Windows.Forms.Button Button_Confirm;
+        private System.Windows.Forms.Button PopupConfirmation_Button_Confirm;
         private System.Windows.Forms.Label Label;
-        private System.Windows.Forms.Button Button_Cancel;
     }
 }
