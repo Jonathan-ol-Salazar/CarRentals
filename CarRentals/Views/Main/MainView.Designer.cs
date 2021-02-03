@@ -1,5 +1,4 @@
 ﻿
-using DomainLayer.Customers;
 using DomainLayer.Vehicles;
 using System;
 
