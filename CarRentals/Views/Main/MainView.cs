@@ -200,7 +200,26 @@ namespace CarRentals
                         formComplete = false;
                         break;
                     }
-                }               
+                }
+
+                if (control.Equals(GroupBox_Fleet_Modify_Add_ComboBox_Class) && !Enum.TryParse(typeof(ClassType), control.Text, out object ClassResult))
+                {
+                    PopupError(popupConfirmation, "Class Is Not A Valid Input!");
+                    formComplete = false;
+                    break;
+                }
+                else if (control.Equals(GroupBox_Fleet_Modify_Add_ComboBox_Transmission) && !Enum.TryParse(typeof(TransmissionType), control.Text, out object TransmissionResult))
+                {
+                    PopupError(popupConfirmation, "Transmission Is Not A Valid Input!");
+                    formComplete = false;
+                    break;
+                }
+                else if (control.Equals(GroupBox_Fleet_Modify_Add_ComboBox_Fuel) && !Enum.TryParse(typeof(FuelType), control.Text, out object FuelResult))
+                {
+                    PopupError(popupConfirmation, "Fuel Is Not A Valid Input!");
+                    formComplete = false;
+                    break;
+                }
             }
 
             if(formComplete)
@@ -276,7 +295,29 @@ namespace CarRentals
                     {
                         PopupError(popupConfirmation, "Missing Fields Required!");
                         formComplete = false;
-                        break;
+                        break;                        
+                    }
+
+                    if (control.Name.Contains("ComboBox"))
+                    {
+                        if (!Enum.IsDefined(typeof(ClassType), Enum.Parse(typeof(ClassType), control.Text)))
+                        {
+                            PopupError(popupConfirmation, "Class Is Not A Valid Input!");
+                            formComplete = false;
+                            break;
+                        }
+                        else if (!Enum.IsDefined(typeof(TransmissionType), Enum.Parse(typeof(TransmissionType), control.Text)))
+                        {
+                            PopupError(popupConfirmation, "Transmission Is Not A Valid Input!");
+                            formComplete = false;
+                            break;
+                        }
+                        else if (!Enum.IsDefined(typeof(FuelType), Enum.Parse(typeof(FuelType), control.Text)))
+                        {
+                            PopupError(popupConfirmation, "Fuel Is Not A Valid Input!");
+                            formComplete = false;
+                            break;
+                        }
                     }
                 }
             }
