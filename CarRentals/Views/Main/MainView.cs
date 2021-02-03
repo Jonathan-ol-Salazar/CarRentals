@@ -28,7 +28,6 @@ namespace CarRentals
             GroupBox_Fleet_Modify_Add_ComboBox_Fuel.DataSource = Enum.GetValues(typeof(FuelType));
             GroupBox_Customers_Modify_Add_ComboBox_Title.DataSource = Enum.GetValues(typeof(TitleType));
             GroupBox_Customers_Modify_Add_ComboBox_Gender.DataSource = Enum.GetValues(typeof(GenderType));
-
         }
 
         public IEnumerable<Vehicle> FleetList
@@ -68,8 +67,6 @@ namespace CarRentals
         public double DailyRate { get { return (double)GroupBox_Fleet_Modify_Add_NumericUpDown_DailyRate.Value; } set { GroupBox_Fleet_Modify_Add_NumericUpDown_DailyRate.Value = (decimal)value; } }
 
         public Vehicle SelectedVehicle { get { return (Vehicle)DataGridView_Fleet.CurrentRow.DataBoundItem; } }
-
-        //public int CustomerID { get { return int.Parse(GroupBox_Customers_Modify_Add_TextBox_CustomerID.Text); } set { GroupBox_Customers_Modify_Add_TextBox_CustomerID.Text = value.ToString(); } }
         public string FirstName { get { return GroupBox_Customers_Modify_Add_TextBox_FirstName.Text; } set { GroupBox_Customers_Modify_Add_TextBox_FirstName.Text = value; } }
         public string LastName { get { return GroupBox_Customers_Modify_Add_TextBox_LastName.Text; } set { GroupBox_Customers_Modify_Add_TextBox_LastName.Text = value; } }
         public string DOB { get { return GroupBox_Customers_Modify_Add_TextBox_DOB.Text; } set { GroupBox_Customers_Modify_Add_TextBox_DOB.Text = value; } }
@@ -114,23 +111,22 @@ namespace CarRentals
             {
                 case 0:
                     _mainPresenter.UpdateFleetListView();
-
+                    GroupBox_Fleet_Modify_Add.Visible = false;
                     break;
                 case 1:
                     _mainPresenter.UpdateCustomerListView();
-
+                    GroupBox_Customers_Modify_Add.Visible = false;
                     break;
                 case 2:
                     _mainPresenter.UpdateRentalReportListView();
-
                     break;
                 case 3:
                     _mainPresenter.UpdateRentalSearchListView();
                     GroupBox_CreateRental_ComboBox_Customer.SelectedIndex = -1;
-
                     break;
             }
         }
+
         private void PopupError(PopupConfirmationView popupConfirmation, string text)
         {
             popupConfirmation.LabelText = text;
