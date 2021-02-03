@@ -52,7 +52,7 @@ namespace CarRentals
             this.PopupConfirmation_Button_Confirm.Name = "PopupConfirmation_Button_Confirm";
             this.PopupConfirmation_Button_Confirm.Size = new System.Drawing.Size(93, 38);
             this.PopupConfirmation_Button_Confirm.TabIndex = 1;
-            this.PopupConfirmation_Button_Confirm.Text = "Confirm";
+            this.PopupConfirmation_Button_Confirm.Text = "OK";
             this.PopupConfirmation_Button_Confirm.UseVisualStyleBackColor = true;
             this.PopupConfirmation_Button_Confirm.Click += new System.EventHandler(this.PopupConfirmation_Button_Confirm_Click);
             // 
