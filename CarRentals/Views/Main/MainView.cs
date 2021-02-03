@@ -265,6 +265,10 @@ namespace CarRentals
             {
                 PopupError(popupConfirmation, "No Vehicle Selected!");
             }
+            else if (SelectedVehicle.IsRented)
+            {
+                PopupError(popupConfirmation, "Vehicle Is Currently Rented!");
+            }
             else
             {
                 popupConfirmation.LabelText = "Confirm Vehicle Removal";
@@ -349,6 +353,10 @@ namespace CarRentals
             if (DataGridView_Customers.CurrentRow == null)
             {
                 PopupError(popupConfirmation, "No Customer Selected!");
+            }
+            else if (SelectedCustomer.IsRenting)
+            {
+                PopupError(popupConfirmation, "Customer Is Currently Renting A Vehicle!");
             }
             else
             {
