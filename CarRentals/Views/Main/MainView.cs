@@ -298,26 +298,17 @@ namespace CarRentals
                         break;                        
                     }
 
-                    if (control.Name.Contains("ComboBox"))
+                    if (control.Equals(GroupBox_Customers_Modify_Add_ComboBox_Title) && !Enum.TryParse(typeof(TitleType), control.Text, out object TitleResult))
                     {
-                        if (!Enum.IsDefined(typeof(ClassType), Enum.Parse(typeof(ClassType), control.Text)))
-                        {
-                            PopupError(popupConfirmation, "Class Is Not A Valid Input!");
-                            formComplete = false;
-                            break;
-                        }
-                        else if (!Enum.IsDefined(typeof(TransmissionType), Enum.Parse(typeof(TransmissionType), control.Text)))
-                        {
-                            PopupError(popupConfirmation, "Transmission Is Not A Valid Input!");
-                            formComplete = false;
-                            break;
-                        }
-                        else if (!Enum.IsDefined(typeof(FuelType), Enum.Parse(typeof(FuelType), control.Text)))
-                        {
-                            PopupError(popupConfirmation, "Fuel Is Not A Valid Input!");
-                            formComplete = false;
-                            break;
-                        }
+                        PopupError(popupConfirmation, "Title Is Not A Valid Input!");
+                        formComplete = false;
+                        break;
+                    }
+                    else if (control.Equals(GroupBox_Customers_Modify_Add_ComboBox_Gender) && !Enum.TryParse(typeof(GenderType), control.Text, out object GenderResult))
+                    {
+                        PopupError(popupConfirmation, "Gender Is Not A Valid Input!");
+                        formComplete = false;
+                        break;
                     }
                 }
             }
