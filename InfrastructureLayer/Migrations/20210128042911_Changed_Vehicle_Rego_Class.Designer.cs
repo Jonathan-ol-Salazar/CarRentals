@@ -3,14 +3,16 @@ using CarRentals;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarRentals.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20210128042911_Changed_Vehicle_Rego_Class")]
+    partial class Changed_Vehicle_Rego_Class
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18,7 +20,7 @@ namespace CarRentals.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
-            modelBuilder.Entity("CarRentalsManagement.Customer", b =>
+            modelBuilder.Entity("DomainLayer.Customers.Customer", b =>
                 {
                     b.Property<int>("CustomerID")
                         .ValueGeneratedOnAdd()
@@ -45,10 +47,13 @@ namespace CarRentals.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("CarRentalsManagement.Vehicle", b =>
+            modelBuilder.Entity("DomainLayer.Vehicles.Vehicle", b =>
                 {
-                    b.Property<string>("VehicleRego")
+                    b.Property<string>("Rego")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ClassType")
+                        .HasColumnType("int");
 
                     b.Property<string>("Colour")
                         .HasColumnType("nvarchar(max)");
@@ -77,13 +82,10 @@ namespace CarRentals.Migrations
                     b.Property<int>("TransmissionType")
                         .HasColumnType("int");
 
-                    b.Property<int>("VehicleClass")
-                        .HasColumnType("int");
-
                     b.Property<int>("Year")
                         .HasColumnType("int");
 
-                    b.HasKey("VehicleRego");
+                    b.HasKey("Rego");
 
                     b.ToTable("Vehicles");
                 });

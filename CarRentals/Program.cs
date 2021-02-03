@@ -1,7 +1,7 @@
+using CarRentals.Presenters;
+using InfrastructureLayer.Repositories;
+using ServiceLayer.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarRentals
@@ -17,7 +17,23 @@ namespace CarRentals
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            // Setup Context -> Repository -> Service
+            Context context = new Context();
+            VehicleRepository vehicleRepository = new VehicleRepository(context);
+            CustomerRepository customerRepository = new CustomerRepository(context);
+            VehicleService vehicleService = new VehicleService(vehicleRepository);
+            CustomerService customerService = new CustomerService(customerRepository);
+            RentedRepository rentedRepository = new RentedRepository(context);
+            RentedService rentedService = new RentedService(rentedRepository);
+
+            // Initialize View
+            MainView mainView = new MainView();
+
+            // Initialize Presenter
+            MainPresenter mainPresenter = new MainPresenter(mainView, vehicleService, customerService, rentedService);
+
+            Application.Run(mainView);
         }
     }
 }
